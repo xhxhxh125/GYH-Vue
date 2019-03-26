@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en-us" class="smart-style-6">
+
+<head>
+	<meta charset="utf-8">
+	<title> 公司信息 </title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- #CSS Links -->
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="<%=appsettings.imgPrefix%>/favicon/favicon.ico">
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>bootstrap/bootstrap.min.css">
+	<!-- CSS Global Icons -->
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-line/css/simple-line-icons.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-etlinefont/style.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-line-pro/style.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-hs/style.css">
+
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>hs-admin-icons/hs-admin-icons.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>animate.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>bootstrap-select/css/bootstrap-select.min.css">
+
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>summernote-themes/unify-lite.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>multiselect/css/multi-select.css">
+
+	<!-- CSS Unify -->
+	<link rel="stylesheet" href="<%=appsettings.cssPrefix%>unify-admin.css">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="<%=appsettings.cssPrefix%>custom.css">
+</head>
+
+<body class="desktop-detected pace-done smart-style-6">
+	<div id="app"></div>
+
+	<script src="<%=appsettings.vendorPrefix%>jquery/jquery.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>jquery-migrate/jquery-migrate.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>popper.js/popper.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bootstrap/bootstrap.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>cookiejs/jquery.cookie.js"></script>
+
+	<!-- JS Plugins Init. -->
+	<script src="<%=appsettings.vendorPrefix%>appear.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>multiselect/js/jquery.multi-select.js"></script>
+
+	<!-- JS Unify -->
+	<script src="<%=appsettings.jsPrefix%>hs.core.js"></script>
+	<script src="<%=appsettings.jsPrefix%>helpers/hs.hamburgers.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.dropdown.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.scrollbar.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.side-nav.js"></script>
+		<script src="<%=appsettings.jsPrefix%>components/hs.multi-select.js"></script>
+		
+		<!-- 用到imagecropper 需要引用这两个js -->
+	<script src="<%=appsettings.jsPrefix%>jcrop/jquery.Jcrop.min.js"></script>
+	<script src="<%=appsettings.jsPrefix%>jcrop/jquery.color.min.js"></script>
+
+	<!-- JS Custom -->
+	<script src="<%=appsettings.jsPrefix%>custom.js"></script>
+
+	<!-- #PLUGINS -->
+	<script>
+		$(document).on('ready', function () {
+      // initialization of custom scrollbar
+      $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+
+      // initialization of HSDropdown component
+      $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+        dropdownHideOnScroll: false
+      });
+
+      // initialization of hamburger
+      $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+      // initialization of sidebar navigation component
+      $.HSCore.components.HSSideNav.init('.js-side-nav');
+
+      // initialization of custom select
+      $('.js-select').selectpicker();
+
+      // initialization of custom multi select
+      $.HSCore.components.HSMultiSelect.init('.js-multi-select', {
+        selectableHeader: '<h3 class="u-heading-v1-4 g-top-100x--before g-left-50x--before g-font-weight-400 g-font-size-default g-brd-top g-brd-gray-light-v7 g-px-20 g-py-20 mb-0">Categories</h3>',
+        selectionHeader: '<h3 class="g-font-weight-400 g-font-size-default g-brd-top g-brd-gray-light-v7 g-px-20 g-py-20 mb-0">Selected</h3>'
+      });
+    });
+	</script>
+
+</body>
+
+
+</html>

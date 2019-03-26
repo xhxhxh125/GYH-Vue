@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en-us" class="smart-style-6">
+
+<head>
+	<meta charset="utf-8">
+	<title> 我的产品 </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- #CSS Links -->
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="<%=appsettings.imgPrefix%>/favicon/favicon.ico">
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>bootstrap/bootstrap.min.css">
+	<!-- CSS Global Icons -->
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-line/css/simple-line-icons.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-etlinefont/style.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-line-pro/style.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-hs/style.css">
+
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>hs-admin-icons/hs-admin-icons.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>animate.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>bootstrap-select/css/bootstrap-select.min.css">
+
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>flatpickr/dist/css/flatpickr.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>chartist-js/chartist.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>fancybox/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>jquery-ui/themes/base/jquery-ui.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>bootstrap-tagsinput/css/bootstrap-tagsinput.css">
+
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>hamburgers/hamburgers.min.css">
+
+	<!-- CSS Unify -->
+	<link rel="stylesheet" href="<%=appsettings.cssPrefix%>unify-admin.css">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="<%=appsettings.cssPrefix%>custom.css">
+
+	<style type="text/css">
+
+	</style>
+</head>
+
+<body class="desktop-detected pace-done smart-style-6">
+	<div id="app"></div>
+
+	<script src="<%=appsettings.vendorPrefix%>jquery/jquery.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>jquery-migrate/jquery-migrate.min.js"></script>
+
+	<script src="<%=appsettings.vendorPrefix%>popper.js/popper.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bootstrap/bootstrap.min.js"></script>
+
+	<script src="<%=appsettings.vendorPrefix%>cookiejs/jquery.cookie.js"></script>
+
+
+	<!-- JS Plugins Init. -->
+	<script src="<%=appsettings.vendorPrefix%>appear.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>jquery-ui/jquery-ui.core.min.js"></script>
+
+	<script src="<%=appsettings.vendorPrefix%>flatpickr/dist/js/flatpickr.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>chartist-js/chartist.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>fancybox/jquery.fancybox.min.js"></script>
+
+	<!-- jQuery UI Helpers -->
+	<script src="<%=appsettings.vendorPrefix%>jquery-ui/ui/widgets/menu.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>jquery-ui/ui/widgets/mouse.js"></script>
+
+	<!-- jQuery UI Widgets -->
+	<script src="<%=appsettings.vendorPrefix%>jquery-ui/ui/widgets/slider.js"></script>
+
+	<!-- JS Plugins Init. -->
+	<script src="<%=appsettings.vendorPrefix%>bloodhound-js/js/bloodhound.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bloodhound-js/js/typeahead.jquery.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>datatables/media/js/dataTables.select.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>table-edits/build/table-edits.min.js"></script>
+
+	<!-- JS Unify -->
+	<script src="<%=appsettings.jsPrefix%>hs.core.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.side-nav.js"></script>
+	<script src="<%=appsettings.jsPrefix%>helpers/hs.hamburgers.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.dropdown.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.scrollbar.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.range-datepicker.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.bar-chart.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.popup.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.slider.js"></script>
+	<script src="<%=appsettings.jsPrefix%>helpers/hs.focus-state.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.file-upload.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.datatables.js"></script>
+
+
+	<!-- 用到imagecropper 需要引用这两个js -->
+	<script src="<%=appsettings.jsPrefix%>jcrop/jquery.Jcrop.min.js"></script>
+	<script src="<%=appsettings.jsPrefix%>jcrop/jquery.color.min.js"></script>
+
+	<!-- JS Custom -->
+	<script src="<%=appsettings.jsPrefix%>custom.js"></script>
+
+	<!-- #PLUGINS -->
+
+
+	<script>
+		$(document).on('ready', function () {
+			// initialization of custom select
+			$('.js-select').selectpicker();
+
+			// initialization of sidebar navigation component
+			$.HSCore.components.HSSideNav.init('.js-side-nav');
+
+			// initialization of hamburger
+			$.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+			// initialization of charts
+			$.HSCore.components.HSBarChart.init('.js-bar-chart');
+
+			// initialization of HSDropdown component
+			$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+				dropdownHideOnScroll: false
+			});
+
+			// initialization of range slider
+			$.HSCore.components.HSSlider.init('#regularSlider');
+
+			// initialization of custom scrollbar
+			$.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+
+			// initialization of range datepicker
+			$.HSCore.components.HSRangeDatepicker.init('#datepicker');
+
+			// initialization of popups
+			$.HSCore.components.HSPopup.init('.js-fancybox', {
+				btnTpl: {
+					smallBtn: '<button data-fancybox-close class="btn g-pos-abs g-top-25 g-right-30 g-line-height-1 g-bg-transparent g-font-size-16 g-color-gray-light-v6 g-brd-none p-0" title=""><i class="hs-admin-close"></i></button>'
+				}
+			});
+
+			// initialization of file upload
+			$.HSCore.components.HSFileUpload.init('.js-file-upload');
+		});
+	</script>
+
+</body>
+<style>
+	[class*="u-table--v3"] td {
+		padding: 12px;
+	}
+	[class*="u-table--v3"] th {
+		padding: 12px;
+	}
+</style>
+
+</html>

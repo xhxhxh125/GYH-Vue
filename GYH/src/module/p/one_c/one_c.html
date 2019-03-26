@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en-us" class="smart-style-6">
+
+<head>
+	<meta charset="utf-8">
+	<title>  </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- #CSS Links -->
+	<!-- Basic Styles -->
+	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>cidep-font.css">
+
+	<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>smartadmin-production-plugins.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>smartadmin-production.min.css">
+	 
+
+	<!-- SmartAdmin RTL Support -->
+	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>smartadmin-rtl.min.css">
+
+	<!-- #FAVICONS -->
+	<link rel="shortcut icon" href="<%=appsettings.imgPrefix%>favicon/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="<%=appsettings.imgPrefix%>favicon/favicon.ico" type="image/x-icon">
+
+	<!-- #APP SCREEN / ICONS -->
+	<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+	<link rel="apple-touch-icon" href="<%=appsettings.imgPrefix%>splash/sptouch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<%=appsettings.imgPrefix%>splash/touch-icon-ipad.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="<%=appsettings.imgPrefix%>splash/touch-icon-iphone-retina.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="<%=appsettings.imgPrefix%>splash/touch-icon-ipad-retina.png">
+
+	<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- Startup image for web apps -->
+	<link rel="apple-touch-startup-image" href="<%=appsettings.imgPrefix%>splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+	<link rel="apple-touch-startup-image" href="<%=appsettings.imgPrefix%>splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+	<link rel="apple-touch-startup-image" href="<%=appsettings.imgPrefix%>splash/iphone.png" media="screen and (max-device-width: 320px)">
+
+</head>
+
+<body class="desktop-detected pace-done smart-style-6">
+	<div id="app"></div>
+
+	<!-- #PLUGINS -->
+	<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+	<script>
+		if (!window.jQuery) {
+			document.write('<script src="<%=appsettings.jsPrefix%>libs/jquery-2.1.1.min.js"><\/script>');
+		}
+	</script>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
+	<script>
+		if (!window.jQuery.ui) {
+			document.write('<script src="<%=appsettings.jsPrefix%>libs/jquery-ui-1.10.3.min.js"><\/script>');
+		}
+	</script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="<%=appsettings.jsPrefix%>app.config.js"></script>
+		<!-- BOOTSTRAP JS -->
+		<script src="<%=appsettings.jsPrefix%>bootstrap/bootstrap.min.js"></script>
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="<%=appsettings.jsPrefix%>notification/SmartNotification.min.js"></script>
+		<!-- JARVIS WIDGETS -->
+		<script src="<%=appsettings.jsPrefix%>smartwidgets/jarvis.widget.min.js"></script>
+		<!-- JQUERY VALIDATE -->
+		<script src="<%=appsettings.jsPrefix%>plugin/jquery-validate/jquery.validate.min.js"></script>
+		<!-- browser msie issue fix -->
+		<script src="<%=appsettings.jsPrefix%>plugin/msie-fix/jquery.mb.browser.min.js"></script>
+		<!-- MAIN APP JS FILE -->
+		<script src="<%=appsettings.jsPrefix%>app.min.js"></script>
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="<%=appsettings.jsPrefix%>plugin/select2/select2.min.js"></script>
+		
+	<!-- 需要表格组件el-DataTable的界面需要这段script引用 -->
+	<script src="<%=appsettings.jsPrefix%>plugin/datatables/jquery.dataTables.min.js"></script>
+	<script src="<%=appsettings.jsPrefix%>plugin/datatables/dataTables.colVis.min.js"></script>
+	<script src="<%=appsettings.jsPrefix%>plugin/datatables/dataTables.tableTools.min.js"></script>
+	<script src="<%=appsettings.jsPrefix%>plugin/datatables/dataTables.bootstrap.min.js"></script>
+	<script src="<%=appsettings.jsPrefix%>plugin/datatable-responsive/datatables.responsive.min.js"></script>
+	<!-- end 需要表格组件el-DataTable的界面需要这段script引用 -->
+
+	<!--custom.js -->
+</body>
+
+</html>

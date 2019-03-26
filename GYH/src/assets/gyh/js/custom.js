@@ -1,0 +1,215 @@
+// DO NOT REMOVE : GLOBAL FUNCTIONS!
+! function (a) {
+    a.fn.SuperBox = function (b) {
+        var c = a('<div class="superbox-show"></div>'),
+            d = a('<img src="" class="superbox-current-img"><div id="imgInfoBox" class="superbox-imageinfo inline-block"> <h1>Image Title</h1><span><p><em></em></p><p class="superbox-img-description">Image description</p><p><a href="javascript:void(0);" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a></p></span> </div>'),
+            e = a('<div class="superbox-close txt-color-white"><i class="fa fa-times fa-lg"></i></div>');
+        c.append(d).append(e);
+        a(".superbox-imageinfo");
+        return this.each(function () {
+            a(".superbox-list").click(function () {
+                $this = a(this);
+                var b = $this.find(".superbox-img"),
+                    e = b.data("img"),
+                    f = b.attr("alt") || "",
+                    g = e,
+                    h = b.attr("title") || "";
+                d.attr("src", e), a(".superbox-list").removeClass("active"), $this.addClass("active"), d.find("em").text(g), d.find(">:first-child").text(h), d.find(".superbox-img-description").text(f), 0 == a(".superbox-current-img").css("opacity") && a(".superbox-current-img").animate({
+                    "opacity": 1
+                }), a(this).next().hasClass("superbox-show") ? (c.is(":visible") && a(".superbox-list").removeClass("active"), c.toggle()) : (c.insertAfter(this).css("display", "block"), $this.addClass("active"))
+            }), a(".superbox").on("click", ".superbox-close", function () {
+                a(".superbox-list").removeClass("active"), a(".superbox-current-img").animate({
+                    "opacity": 0
+                }, 200, function () {
+                    a(".superbox-show").slideUp()
+                })
+            })
+        })
+    }
+}(jQuery);
+
+// jQuery.validator.addMethod("isMobile", function (value, element) {
+//     var length = value.length;
+//     var mobile = /^1(3|4|5|6|7|8|9)\d{9}$/;
+//     return this.optional(element) || (length == 11 && mobile.test(value));
+// }, "Please enter VALID phone number");
+
+function InitDatatable(config) {
+    //document.write('<script src="'+jslocation+'plugin/datatables/jquery.dataTables.min.js"></script>');
+    //document.write('<script src="'+jslocation+'plugin/datatables/dataTables.colVis.min.js"></script>');
+    //document.write('<script src="'+jslocation+'plugin/datatables/dataTables.tableTools.min.js"></script>');
+    //document.write('<script src="'+jslocation+'plugin/datatables/dataTables.bootstrap.min.js"></script>');
+    //document.write('<script src="'+jslocation+'plugin/datatable-responsive/datatables.responsive.min.js"></script>');
+
+    //pageSetUp();
+    var responsiveHelper_datatable_tabletools = undefined;
+    var breakpointDefinition = {
+        tablet: 1024,
+        phone: 480
+    };
+    //展开操作按钮panel
+    $('.details-control').click(function (e) {
+        tableCancelEditRow(this);
+        e.stopPropagation();
+    });
+    //编辑当前行
+    $('.row-edit').click(function (e) {
+        tableEditRow(this);
+        e.stopPropagation();
+    });
+    //保存当前行的修改
+    $('.row-save').click(function (e) {
+        tableSaveRow(this);
+        e.stopPropagation();
+    });
+    //取消当前行的修改
+    $('.row-cancel').click(function (e) {
+        tableCancelEditRow(this);
+        e.stopPropagation();
+    });
+    //点击其他行的事件响应
+    $('.row-show').click(function (e) {
+        if ($(this).hasClass("row-show")) {
+            $(this.parentNode).find('.row-editable').each(function () {
+                tableCancelEditRow($(this).find('.row-save')[0]);
+            });
+        }
+    });
+
+    /* TABLETOOLS */
+    $('#' + config.tableid).dataTable({
+        "bFilter": false, //不显示filter框
+        "bInfo": false, //不显示统计数量
+        //"bLengthChange": false,
+        //"bAutoWidth": false,
+        "bPaginate": false, //不在前端分页
+        //"bStateSave": true,
+
+        "sDom": "t" + "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+
+        // "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'T>r>" +
+        // "t" +
+        // "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+        // "oLanguage": {
+        //    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+        // },
+        // "oTableTools": {
+        //     "aButtons": [
+        //         "copy",
+        //         "csv",
+        //         "xls",
+        //         {
+        //             "sExtends": "pdf",
+        //             "sTitle": "SmartAdmin_PDF",
+        //             "sPdfMessage": "SmartAdmin PDF Export",
+        //             "sPdfSize": "letter"
+        //         },
+        //         {
+        //             "sExtends": "print",
+        //             "sMessage": "Generated by SmartAdmin <i>(press Esc to close)</i>"
+        //         }
+        //     ],
+        //     "sSwfPath": config.jslocation + "plugin/datatables/swf/copy_csv_xls_pdf.swf"
+        // },
+        "autoWidth": true,
+        "preDrawCallback": function () {
+            // Initialize the responsive datatables helper once.
+            if (!responsiveHelper_datatable_tabletools) {
+                responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+            }
+        },
+        "rowCallback": function (nRow) {
+            responsiveHelper_datatable_tabletools.createExpandIcon(nRow);
+        },
+        "drawCallback": function (oSettings) {
+            responsiveHelper_datatable_tabletools.respond();
+        }
+    });
+
+
+};
+
+function ValidateConfig(config) {
+    //pageSetUp();
+    var errorClass = 'invalid';
+    var errorElement = 'em';
+
+    var validator = $('#' + config.formid).validate({
+        errorClass: errorClass,
+        errorElement: errorElement,
+        highlight: function (element) {
+            // if (config.error != null && config.error != undefined) {
+            //     config.error();
+            // }
+            $(element).parent().removeClass('state-success').addClass("state-error");
+            $(element).removeClass('valid');
+        },
+        unhighlight: function (element) {
+            // if (config.success != null && config.success != undefined) {
+            //     config.success();
+            // }
+            $(element).parent().removeClass("state-error").addClass('state-success');
+            $(element).addClass('valid');
+        },
+
+        // Rules for form validation
+        rules: config.rules,
+        // Messages for form validation
+        messages: config.messages,
+
+        // Do not change code below
+        errorPlacement: function (error, element) {
+            error.insertAfter(element.parent());
+        },
+
+    });
+    return validator;
+};
+
+
+
+function tableEditRow(e) {
+    //tableRowOriginalData = $(e).val;
+    $(e.parentNode.parentNode).removeClass("row-show").addClass("row-editable");
+    $(e.parentNode.parentNode).find("input").removeAttr("disabled"); //要变成Enable，JQuery只能这么写  
+    $(e.parentNode.parentNode).find("input").each(function () {
+        $(this).attr('data-original', $(this).val());
+    });
+}
+
+function tableSaveRow(e) {
+    $(e.parentNode.parentNode).removeClass("row-editable").addClass("row-show");
+    $(e.parentNode.parentNode).find("input").attr("disabled", "disabled");
+}
+
+function tableCancelEditRow(e) {
+    //$(e).val(tableRowOriginalData);
+    $(e.parentNode.parentNode).removeClass("row-editable").addClass("row-show");
+    $(e.parentNode.parentNode).find("input").attr("disabled", "disabled");
+    $(e.parentNode.parentNode).find("input").each(function () {
+        $(this).val($(this).attr('data-original'));
+        $(this.parentNode).find('label').html($(this).attr('data-original'));
+    });
+}
+
+function showTableRowEditBar(e) {
+    //if($(e.parentNode))
+    $(e.parentNode).addClass("shown");
+    $(e.parentNode).after('<tr></tr>');
+}
+Array.prototype.removeByValue = function (val) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) {
+            this.splice(i, 1);
+            i--;
+        }
+    }
+}
+String.prototype.substr1 = function (start, len) {
+    var length = this.length;
+    if (len <= length) {
+        return this.substr(start, length);
+    } else {
+        return this.substr(start, len);
+    }
+}
