@@ -66,7 +66,7 @@
                     <tr>
                       <th>ID</th>
                       <th>新闻名字</th>
-                      <th>新闻类别</th>
+                      <th>作者</th>
                       <th>日期</th>
                       <th>状态</th>
                       <th>操作</th>
@@ -80,7 +80,7 @@
                     >
                       <td>{{index+1}}</td>
                       <td>{{news.caption}}</td>
-                      <td>加工中心</td>
+                      <td>{{news.account_name}}</td>
                       <td>{{getDateTime(news.update_time)}}</td>
                       <td>
                         <span
