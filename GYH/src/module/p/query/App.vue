@@ -861,6 +861,7 @@ export default {
   },
   computed: {},
   created: function() {
+    this.queryClick()
     // this.queryClick()
     //类别名称
     //类别code
