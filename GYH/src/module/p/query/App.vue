@@ -277,7 +277,7 @@
                               <li>
                                 <a
                                   class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14"
-                                  href="#!"
+                                  :href="'/p/edit.html?id='+pro.oid+'&c='+pro.category+'&cnn='+catInfo.name"
                                 >
                                   <i class="hs-admin-pencil g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
                                   编辑
@@ -287,6 +287,7 @@
                                 <a
                                   class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14"
                                   href="#!"
+                                  @click="deleteProduct(pro,index)"
                                 >
                                   <i class="hs-admin-trash g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
                                   删除
@@ -376,63 +377,13 @@
             </div>
 
             <!-- 分页 -->
-            <nav aria-label="Page Navigation">
-              <ul class="list-inline d-flex align-items-center justify-content-center g-my-60">
-                <li class="list-inline-item g-mr-10">
-                  <a
-                    class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4"
-                    href="#!"
-                    aria-label="Previous"
-                  >
-                    <span aria-hidden="true">
-                      <i class="hs-admin-angle-left"></i>
-                    </span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li class="list-inline-item g-hidden-sm-down g-mr-10">
-                  <a
-                    class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4 active"
-                    href="#!"
-                  >1</a>
-                </li>
-                <li class="list-inline-item g-hidden-sm-down g-mr-10">
-                  <span class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4">2</span>
-                </li>
-                <li class="list-inline-item g-hidden-sm-down g-mr-10">
-                  <a
-                    class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4"
-                    href="#!"
-                  >3</a>
-                </li>
-                <li class="list-inline-item g-hidden-sm-down g-mr-10">
-                  <a
-                    class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4"
-                    href="#!"
-                  >4</a>
-                </li>
-                <li class="list-inline-item g-hidden-sm-down g-mr-10">
-                  <a
-                    class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4"
-                    href="#!"
-                  >5</a>
-                </li>
-                <li class="list-inline-item">
-                  <a
-                    class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4"
-                    href="#!"
-                    aria-label="Next"
-                  >
-                    <span aria-hidden="true">
-                      <i class="hs-admin-angle-right"></i>
-                    </span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+            <!-- <ElPager
+                  class="pull-left"
+                  :pageTotal="usersearch.pageTotal"
+                  @changePage="changePage"
+                ></ElPager> -->
 
-            <!-- <div class="media g-mb-30">
+            <div class="media g-mb-30">
               <div class="d-flex align-self-center">
                 <h1 class="g-font-weight-300 g-font-size-28 g-color-black mb-0">产品管理</h1>
               </div>
@@ -553,7 +504,7 @@
                 class="d-flex ml-auto"
                 aria-label="Page Navigation"
               ></nav>
-            </div> -->
+            </div>
 
           </div>
         </div>
@@ -805,6 +756,7 @@ import "common/httputils"; //引用js
 import htmlHelper from "common/htmlutils";
 import ElPageFrame from "components/el-PageFrame/el-PageFrame";
 import ElBlockAlert from "components/el-BlockAlert/el-BlockAlert";
+import ElPager from "components/el-Pager/el-Pager";
 import Vue from "vue";
 export default {
   name: "app",
@@ -857,7 +809,8 @@ export default {
     };
   },
   components: {
-    ElPageFrame
+    ElPageFrame,
+    ElPager
   },
   computed: {},
   created: function() {

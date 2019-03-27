@@ -1,470 +1,471 @@
 <template>
   <div id="app">
-    <ElPageFrame ref="pf"></ElPageFrame>
+    <ElPageFrame ref="pf">
+      <div slot="mainslot">
+        <div id="main" role="main">
+          <!-- RIBBON -->
+          <div id="ribbon">
+            <span class="ribbon-button-alignment">
+              <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom"
+                data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
+                data-html="true">
+                <i class="fa fa-refresh"></i>
+              </span>
+            </span>
+            <!-- breadcrumb -->
+            <ol class="breadcrumb">
+              <li><a :href="appsettings.portal_root">首页</a></li>
+              <li>个人中心</li>
+              <li>产品</li>
+              <li>{{edit_mode=="edit"?'编辑':'新增'}}产品</li>
+            </ol>
+            <!-- end breadcrumb -->
+          </div>
+          <!-- END RIBBON -->
 
-    <div id="main" role="main">
-      <!-- RIBBON -->
-      <div id="ribbon">
-        <span class="ribbon-button-alignment">
-          <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom"
-            data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
-            data-html="true">
-            <i class="fa fa-refresh"></i>
-          </span>
-        </span>
-        <!-- breadcrumb -->
-        <ol class="breadcrumb">
-          <li><a :href="appsettings.portal_root">首页</a></li>
-          <li>个人中心</li>
-          <li>产品</li>
-          <li>{{edit_mode=="edit"?'编辑':'新增'}}产品</li>
-        </ol>
-        <!-- end breadcrumb -->
-      </div>
-      <!-- END RIBBON -->
-
-      <!-- MAIN CONTENT -->
-      <div id="content">
-
-
-        <section id="widget-grid" class="">
-          <ElBlockAlert ref="alert"></ElBlockAlert>
-          <div class="row">
-            <article class="col-sm-12 col-md-12">
-              <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-                data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
-                data-widget-sortable="false">
-                <header>
-                  <span class="widget-icon">
-                    <i class="fa fa-edit"></i>
-                  </span>
-                  <h2>产品基本信息 </h2>
-                </header>
-                <div>
-                  <!-- widget edit box -->
-                  <div class="jarviswidget-editbox">
-                    <!-- This area used as dropdown edit box -->
-                  </div>
-                  <!-- end widget edit box -->
-
-                  <!-- widget content -->
-                  <div class="widget-body no-padding">
-                    <div id="base_form" class="smart-form">
-
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-8">
-                            <ElProCategory :required="true" :category="category_code" @categoryChanged="categoryChanged"></ElProCategory>
-                          </section>
-                          <section class="col col-4">
-                            <label class="label">&nbsp;</label>
-                            <label class="input">
-                              <a href="javascript:void(0);" @click="createNewProduct()" class="bope col-sm-6 btn btn-primary pull-left">
-                                <i class="fa fa-plus"></i> 新建产品</a>
-                              <a v-if="edit_mode=='edit' && functionlist.indexOf('copy@information_product_edit')>=0" href="javascript:void(0);" @click="copyProduct()"
-                                class="bope col-sm-6 btn bg-color-orange txt-color-white pull-left">
-                                <i class="fa fa-files-o"></i> 复制本产品</a>
-                            </label>
-                          </section>
-                        </div>
-                      </fieldset>
+          <!-- MAIN CONTENT -->
+          <div id="content">
 
 
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">*产品名称</label>
-                            <label class="input">
-                              <input type="text" id="name" name="text" v-model="productInfo.core.product_name">
-                            </label>
-                          </section>
-                        </div>
-                      </fieldset>
+            <section id="widget-grid" class="">
+              <ElBlockAlert ref="alert"></ElBlockAlert>
+              <div class="row">
+                <article class="col-sm-12 col-md-12">
+                  <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
+                    data-widget-sortable="false">
+                    <header>
+                      <span class="widget-icon">
+                        <i class="fa fa-edit"></i>
+                      </span>
+                      <h2>产品基本信息 </h2>
+                    </header>
+                    <div>
+                      <!-- widget edit box -->
+                      <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+                      </div>
+                      <!-- end widget edit box -->
 
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">产品标签</label>
-                            <label class="input">
-                              <input type="text" name="text" v-model="productInfo.core.tags" placeholder="多个标签之间以逗号隔开">
-                            </label>
-                          </section>
-                        </div>
-                      </fieldset>
+                      <!-- widget content -->
+                      <div class="widget-body no-padding">
+                        <div id="base_form" class="smart-form">
 
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">产品图片</label>
-                            <div class="textarea">
-                              <div class="superbox col-sm-12">
-                                <div class="superbox-list imgbox" :class="selectedPic==pic?'active':''" v-for="(pic,index) in productInfo.picture_list" :key="index">
-                                  <img :src="appsettings.proimg+pic.oid+pic.file_type" :data-img="appsettings.proimg+pic.oid+pic.file_type" class="superbox-img">
-                                  <i class="fa fa-times ibtn" style="color: red;" @click="deleteProductPic(pic,index,'list')"></i>
-                                </div>
-
-                                <div class="superbox-list imgbox" v-for="(pic,index) in productInfo.update_pictures" :key="index" v-show="productInfo.update_pictures!=null">
-                                  <img :src="pic.base64" :data-img="pic.base64" class="superbox-img">
-                                  <i class="fa fa-times ibtn" style="color: red;" @click="deleteProductPic(pic,index,'update')"></i>
-                                </div>
-
-                                <div class="superbox-list" style="text-align:center;" @click="chooseLocalPicture()">
-                                  <!-- <img :src="appsettings.gyhImgPrefix+'add.png'" class="superbox-img" style="width: auto;" title="上传新的产品图片"> -->
-                                  <i class="fa  fa-plus-circle" style="color: #2196F3;font-size: 50px;cursor:pointer;" title="上传新的产品图片"></i>
-                                </div>
-                                <!-- <div v-if="selectedPic!=null" class="superbox-show" :style="selectedPic!=null?' display: block;':' display: none;'">
-																	<img :src="selectedPic.base64!=undefined && selectedPic.base64!=null?selectedPic.base64:(appsettings.proimg+selectedPic.oid+selectedPic.file_type)" class="superbox-current-img">
-																	<div id="imgInfoBox" class="superbox-imageinfo inline-block" :src="selectedPic.base64!=undefined && selectedPic.base64!=null?selectedPic.base64:(appsettings.proimg+selectedPic.oid+selectedPic.file_type)"> 
-																		<h1></h1><span><p><em>图片名称:{{selectedPic.file_name}}</em></p>
-																		<p class="superbox-img-description"></p>
-																		<p><a href="javascript:void(0);" class="btn btn-danger btn-sm" title="删除该产品图片" @click="deleteProductPic(selectedPic)">
-																			<i class="glyphicon glyphicon-trash"></i></a></p></span> </div>
-																			<div class="superbox-close txt-color-white" @click="closeBigPicture()" title="关闭"><i class="fa fa-times fa-lg"></i>
-																			</div>
-																		</div>
-
-																<div class="superbox-float"></div>
-																<div class="superbox-show" style="height:300px; display: none"></div> -->
-                              </div>
-
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-8">
+                                <ElProCategory :required="true" :category="category_code" @categoryChanged="categoryChanged"></ElProCategory>
+                              </section>
+                              <section class="col col-4">
+                                <label class="label">&nbsp;</label>
+                                <label class="input">
+                                  <a href="javascript:void(0);" @click="createNewProduct()" class="bope col-sm-6 btn btn-primary pull-left">
+                                    <i class="fa fa-plus"></i> 新建产品</a>
+                                  <a v-if="edit_mode=='edit' && functionlist.indexOf('copy@information_product_edit')>=0" href="javascript:void(0);" @click="copyProduct()"
+                                    class="bope col-sm-6 btn bg-color-orange txt-color-white pull-left">
+                                    <i class="fa fa-files-o"></i> 复制本产品</a>
+                                </label>
+                              </section>
                             </div>
-                          </section>
-                        </div>
-                      </fieldset>
+                          </fieldset>
 
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-3">
-                            <label class="label">产品系列</label>
-                            <label class="input">
-                              <input type="text" v-model="productInfo.core.series">
-                            </label>
-                          </section>
 
-                          <section class="col col-3">
-                            <label class="label">产品工艺</label>
-                            <label class="input">
-                              <input type="text" v-model="productInfo.core.process">
-                            </label>
-                          </section>
-
-                          <section class="col col-3">
-                            <label class="label">产品来源</label>
-                            <div class="inline-group">
-                              <label class="radio">
-                                <input type="radio" name="psource" value="0" :checked="productInfo.core.product_source==0" @change="changeRource(0,$event)">
-                                <i></i>原厂</label>
-
-                              <label class="radio">
-                                <input type="radio" name="psource" value="2" :checked="productInfo.core.product_source==2" @change="changeRource(2,$event)">
-                                <i></i>代理</label>
-
-                              <label class="radio">
-                                <input type="radio" name="psource" value="1" :checked="productInfo.core.product_source==1" @change="changeRource(1,$event)">
-                                <i></i>二手</label>
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">*产品名称</label>
+                                <label class="input">
+                                  <input type="text" id="name" name="text" v-model="productInfo.core.product_name">
+                                </label>
+                              </section>
                             </div>
-                          </section>
-                        </div>
+                          </fieldset>
 
-                      </fieldset>
-
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">适用行业</label>
-                            <div class="smart-form">
-                              <div class="inline-group">
-                                <label class="checkbox col-sm-2" v-for="(prof,index) in professions" :key="index">
-                                  <input type="checkbox" :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
-                                  <i></i>{{prof.enum_name}}</label>
-
-                              </div>
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">产品标签</label>
+                                <label class="input">
+                                  <input type="text" name="text" v-model="productInfo.core.tags" placeholder="多个标签之间以逗号隔开">
+                                </label>
+                              </section>
                             </div>
-                          </section>
-                        </div>
-                      </fieldset>
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-6">
-                              <label class="label">产品价格</label>
-                              <label class="input col col-4 nopaddingl rl">
-                                <input type="text" placeholder="最低价" v-model="productInfo.core.min_price">
-                              </label>
-                              <label class="nopaddingl col to">—</label>
-                              <label class="input col col-4 nopaddingl rr">
-                                <input type="text" placeholder="最高价" v-model="productInfo.core.max_price">
-                              </label>
-                              <label class="input col col-4 rr">
-                                <input type="text" placeholder="单位" v-model="productInfo.core.price_unit">
-                              </label>
-                          </section>
-                        </div>
-                      </fieldset>
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">产品亮点</label>
-                            <div class="textarea">
-                              <textarea rows="10" width="100%" v-model="productInfo.core.highlight"></textarea>
-                            </div>
-                          </section>
-                        </div>
-                      </fieldset>
+                          </fieldset>
 
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">产品描述</label>
-                            <div class="textarea">
-                              <ElUEditor id="ueditor" ref="ueditor" :code="'2'"></ElUEditor>
-                            </div>
-                          </section>
-                        </div>
-                      </fieldset>
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">产品图片</label>
+                                <div class="textarea">
+                                  <div class="superbox col-sm-12">
+                                    <div class="superbox-list imgbox" :class="selectedPic==pic?'active':''" v-for="(pic,index) in productInfo.picture_list" :key="index">
+                                      <img :src="appsettings.proimg+pic.oid+pic.file_type" :data-img="appsettings.proimg+pic.oid+pic.file_type" class="superbox-img">
+                                      <i class="fa fa-times ibtn" style="color: red;" @click="deleteProductPic(pic,index,'list')"></i>
+                                    </div>
 
-                      <footer>
-                        <a @click="saveBasicInfo()" href="javascript:void(0);" :class="need_save_basic?'btn-danger':'btn-primary'" class="btn pull-left">
-                          <i class="fa fa-save"></i> 保存基本信息</a>
-                      </footer>
+                                    <div class="superbox-list imgbox" v-for="(pic,index) in productInfo.update_pictures" :key="index" v-show="productInfo.update_pictures!=null">
+                                      <img :src="pic.base64" :data-img="pic.base64" class="superbox-img">
+                                      <i class="fa fa-times ibtn" style="color: red;" @click="deleteProductPic(pic,index,'update')"></i>
+                                    </div>
 
-                    </div>
-                  </div>
-                  <!-- end widget content -->
-                </div>
-                <!-- end widget div -->
-              </div>
+                                    <div class="superbox-list" style="text-align:center;" @click="chooseLocalPicture()">
+                                      <!-- <img :src="appsettings.gyhImgPrefix+'add.png'" class="superbox-img" style="width: auto;" title="上传新的产品图片"> -->
+                                      <i class="fa  fa-plus-circle" style="color: #2196F3;font-size: 50px;cursor:pointer;" title="上传新的产品图片"></i>
+                                    </div>
+                                    <!-- <div v-if="selectedPic!=null" class="superbox-show" :style="selectedPic!=null?' display: block;':' display: none;'">
+                                      <img :src="selectedPic.base64!=undefined && selectedPic.base64!=null?selectedPic.base64:(appsettings.proimg+selectedPic.oid+selectedPic.file_type)" class="superbox-current-img">
+                                      <div id="imgInfoBox" class="superbox-imageinfo inline-block" :src="selectedPic.base64!=undefined && selectedPic.base64!=null?selectedPic.base64:(appsettings.proimg+selectedPic.oid+selectedPic.file_type)"> 
+                                        <h1></h1><span><p><em>图片名称:{{selectedPic.file_name}}</em></p>
+                                        <p class="superbox-img-description"></p>
+                                        <p><a href="javascript:void(0);" class="btn btn-danger btn-sm" title="删除该产品图片" @click="deleteProductPic(selectedPic)">
+                                          <i class="glyphicon glyphicon-trash"></i></a></p></span> </div>
+                                          <div class="superbox-close txt-color-white" @click="closeBigPicture()" title="关闭"><i class="fa fa-times fa-lg"></i>
+                                          </div>
+                                        </div>
 
-              <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-                data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
-                data-widget-sortable="false">
-                <header>
-                  <span class="widget-icon">
-                    <i class="fa fa-edit"></i>
-                  </span>
-                  <h2>产品参数信息 </h2>
-                </header>
-                <div>
-                  <div class="jarviswidget-editbox">
-                  </div>
+                                    <div class="superbox-float"></div>
+                                    <div class="superbox-show" style="height:300px; display: none"></div> -->
+                                  </div>
 
-                  <div class="widget-body no-padding">
-                    <div id="para_form" class="smart-form">
-                      <fieldset v-for="group in parametergroups" :key="group.group_code">
-                        <div class="row">
-                          <section class="col col-3">
-                            <label class="label" style="font-size:15px">{{group.group_name}}</label>
-                          </section>
-                        </div>
-
-                        <div class="row">
-                          <div v-for="para in group.parameters" :key="para.column_id">
-
-                            <section v-if="para.data_type==0 && para.is_enum_data!=1" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <label class="input">
-                                <input type="text" name="text" v-model="para.value">
-                              </label>
-                            </section>
-
-                            <section v-if="para.data_type==1 && para.is_region_data!=1&& para.is_enum_data!=1" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <label class="input">
-                                <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i>
-                                <input type="text" name="num" v-model="para.value">
-                              </label>
-                            </section>
-
-
-                            <section v-if="para.data_type==2" class="col col-sm-12">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <div class="textarea">
-                                <textarea rows="5" width="100%" v-model="para.value"></textarea>
-                              </div>
-                            </section>
-
-
-                            <section v-if="para.data_type==7 || para.is_region_data==1" class="col col-6">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
-                              <label class="input col col-6 nopaddingl rl">
-
-                                <input type="text" v-model="para.mininput">
-                              </label>
-                              <label class="nopaddingl col to">—</label>
-                              <label class="input col col-6 nopaddingl rr">
-                                <!-- <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i> -->
-                                <input type="text" v-model="para.maxinput">
-                              </label>
-
-                              <!-- <ElRegionInput :min="para.mininput" :max="para.maxinput"  @change="changeRegionPara($event,para)" ></ElRegionInput> -->
-                            </section>
-
-                            <section v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <label class="select">
-                                <select name="country" v-model="para.value">
-                                  <option value=""></option>
-                                  <option :selected="para.value==ch.enum_code" :value="ch.enum_code" v-for="ch in para.enum_list" :key="ch.enum_code">{{ch.enum_name}}</option>
-                                </select>
-                                <i></i>
-                              </label>
-                            </section>
-
-                            <fieldset v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1" class="border col col-sm-12">
-                              <section>
-                                <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                <div class="inline-group">
-                                  <label class="checkbox" v-for="ch in para.enum_list" :key="ch.enum_code">
-                                    <input type="checkbox" :checked="checkEnumValue(ch.enum_code,para)" name="checkbox-inline" @change="enumParaChanged(ch.enum_code,para,$event)">
-                                    <i></i>{{ch.enum_name}}</label>
                                 </div>
                               </section>
-                            </fieldset>
+                            </div>
+                          </fieldset>
 
-                            <section v-if="para.data_type==9" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <label class="input">
-                                <section v-if="para.value!=null && para.value!=undefined && para.value.indexOf('{')>=0">
-                                  <a :href="v.href" target="_blank" class="btn pull-left" v-for="(v,ridx) in JSON.parse(para.value)" :key="ridx">{{ridx>0?",":""+v.value}}</a>
-                                </section>
-                                <a href="javascript:void(0);" class="btn pull-left btn-primary" @click="editRefParameter(para)">
-                                  <i class="fa fa-edit"></i>编辑</a>
-                              </label>
-                            </section>
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-3">
+                                <label class="label">产品系列</label>
+                                <label class="input">
+                                  <input type="text" v-model="productInfo.core.series">
+                                </label>
+                              </section>
 
-                          </div>
+                              <section class="col col-3">
+                                <label class="label">产品工艺</label>
+                                <label class="input">
+                                  <input type="text" v-model="productInfo.core.process">
+                                </label>
+                              </section>
+
+                              <section class="col col-3">
+                                <label class="label">产品来源</label>
+                                <div class="inline-group">
+                                  <label class="radio">
+                                    <input type="radio" name="psource" value="0" :checked="productInfo.core.product_source==0" @change="changeRource(0,$event)">
+                                    <i></i>原厂</label>
+
+                                  <label class="radio">
+                                    <input type="radio" name="psource" value="2" :checked="productInfo.core.product_source==2" @change="changeRource(2,$event)">
+                                    <i></i>代理</label>
+
+                                  <label class="radio">
+                                    <input type="radio" name="psource" value="1" :checked="productInfo.core.product_source==1" @change="changeRource(1,$event)">
+                                    <i></i>二手</label>
+                                </div>
+                              </section>
+                            </div>
+
+                          </fieldset>
+
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">适用行业</label>
+                                <div class="smart-form">
+                                  <div class="inline-group">
+                                    <label class="checkbox col-sm-2" v-for="(prof,index) in professions" :key="index">
+                                      <input type="checkbox" :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
+                                      <i></i>{{prof.enum_name}}</label>
+
+                                  </div>
+                                </div>
+                              </section>
+                            </div>
+                          </fieldset>
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-6">
+                                  <label class="label">产品价格</label>
+                                  <label class="input col col-4 nopaddingl rl">
+                                    <input type="text" placeholder="最低价" v-model="productInfo.core.min_price">
+                                  </label>
+                                  <label class="nopaddingl col to">—</label>
+                                  <label class="input col col-4 nopaddingl rr">
+                                    <input type="text" placeholder="最高价" v-model="productInfo.core.max_price">
+                                  </label>
+                                  <label class="input col col-4 rr">
+                                    <input type="text" placeholder="单位" v-model="productInfo.core.price_unit">
+                                  </label>
+                              </section>
+                            </div>
+                          </fieldset>
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">产品亮点</label>
+                                <div class="textarea">
+                                  <textarea rows="10" width="100%" v-model="productInfo.core.highlight"></textarea>
+                                </div>
+                              </section>
+                            </div>
+                          </fieldset>
+
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">产品描述</label>
+                                <div class="textarea">
+                                  <ElUEditor id="ueditor" ref="ueditor" :code="'2'"></ElUEditor>
+                                </div>
+                              </section>
+                            </div>
+                          </fieldset>
+
+                          <footer>
+                            <a @click="saveBasicInfo()" href="javascript:void(0);" :class="need_save_basic?'btn-danger':'btn-primary'" class="btn pull-left">
+                              <i class="fa fa-save"></i> 保存基本信息</a>
+                          </footer>
+
                         </div>
-                      </fieldset>
-
-                      <footer>
-                        <a href="javascript:void(0);" :class="need_save_para?'btn-danger':'btn-primary'" class="btn pull-left" @click="saveParas()">
-                          <i class="fa fa-save"></i> 保存参数信息</a>
-                      </footer>
-
+                      </div>
+                      <!-- end widget content -->
                     </div>
-                  </div>
-                  <!-- end widget content -->
-                </div>
-                <!-- end widget div -->
-              </div>
-
-
-
-
-              <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-                data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
-                data-widget-sortable="false">
-                <header>
-                  <span class="widget-icon">
-                    <i class="fa fa-table"></i>
-                  </span>
-                  <h2>上传产品附件</h2>
-                </header>
-
-                <!-- widget div-->
-                <div>
-                  <div class="btn-upload">
-                    <a href="javascript:void(0);" @click="uploadAttachment()" class="btn btn-primary pull-left">
-                      <i class="fa fa-upload"></i>上传附件</a>
+                    <!-- end widget div -->
                   </div>
 
-                  <!-- widget edit box -->
-                  <div class="jarviswidget-editbox">
-                    <!-- This area used as dropdown edit box -->
+                  <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
+                    data-widget-sortable="false">
+                    <header>
+                      <span class="widget-icon">
+                        <i class="fa fa-edit"></i>
+                      </span>
+                      <h2>产品参数信息 </h2>
+                    </header>
+                    <div>
+                      <div class="jarviswidget-editbox">
+                      </div>
 
-                  </div>
-                  <!-- end widget edit box -->
+                      <div class="widget-body no-padding">
+                        <div id="para_form" class="smart-form">
+                          <fieldset v-for="group in parametergroups" :key="group.group_code">
+                            <div class="row">
+                              <section class="col col-3">
+                                <label class="label" style="font-size:15px">{{group.group_name}}</label>
+                              </section>
+                            </div>
 
-                  <!-- widget content -->
-                  <div class="widget-body no-padding">
-                    <table id="datatable_tabletools1" class="table table-striped table-bordered table-hover" width="100%">
-                      <thead>
-                        <tr>
-                          <th data-hide="phone">ID</th>
-                          <th data-class="expand">文件名称</th>
-                          <th>文件类型</th>
-                          <th data-hide="phone">上传时间</th>
-                          <th data-hide="phone,tablet">操作</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <tr v-for="(f,index) in productInfo.attachment_list" :key="index">
-                            <td>{{index+1}}</td>
-                            <td>
-                              {{f.file_name}}
-                            </td>
-                            <td>{{f.file_type!=null?f.file_type.toUpperCase().replace(".",""):""}}</td>
-                            <td>{{f.create_time}}</td>
-                            <td>
-                              <a href="javascript:void(0);" class="btn btn-danger btn-xs" @click="deleteAtttachment(f,index)">
-                                删除 </a>
-                            </td>
-                          </tr>
+                            <div class="row">
+                              <div v-for="para in group.parameters" :key="para.column_id">
 
-                          <tr v-for="(uploading_file,index) in uploading_files" :key="index" v-if="uploading_file.ok!==true">
-                            <td>{{productInfo.attachment_list.length+index+1-uploading_ok_count}}</td>
-                            <td>
-                              <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" :data-percent="uploading_progress" data-pie-size="20">
-										<span class="percent font-xs">{{uploading_progress}}</span></div> -->
-                              <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" data-percent="80" data-pie-size="20">
-										<span class="percent font-xs">80</span></div> -->
-                              <span style="padding-left:100px;">{{uploading_file.name.replace('.'+uploading_file.ext,'')}}</span>
-                              <div class="progress">
-                                <div class="progress-bar bg-color-blue" :style="'width: '+uploading_progresses[uploading_file.index]+'%;'"></div>
+                                <section v-if="para.data_type==0 && para.is_enum_data!=1" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="input">
+                                    <input type="text" name="text" v-model="para.value">
+                                  </label>
+                                </section>
+
+                                <section v-if="para.data_type==1 && para.is_region_data!=1&& para.is_enum_data!=1" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="input">
+                                    <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i>
+                                    <input type="text" name="num" v-model="para.value">
+                                  </label>
+                                </section>
+
+
+                                <section v-if="para.data_type==2" class="col col-sm-12">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <div class="textarea">
+                                    <textarea rows="5" width="100%" v-model="para.value"></textarea>
+                                  </div>
+                                </section>
+
+
+                                <section v-if="para.data_type==7 || para.is_region_data==1" class="col col-6">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
+                                  <label class="input col col-6 nopaddingl rl">
+
+                                    <input type="text" v-model="para.mininput">
+                                  </label>
+                                  <label class="nopaddingl col to">—</label>
+                                  <label class="input col col-6 nopaddingl rr">
+                                    <!-- <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i> -->
+                                    <input type="text" v-model="para.maxinput">
+                                  </label>
+
+                                  <!-- <ElRegionInput :min="para.mininput" :max="para.maxinput"  @change="changeRegionPara($event,para)" ></ElRegionInput> -->
+                                </section>
+
+                                <section v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="select">
+                                    <select name="country" v-model="para.value">
+                                      <option value=""></option>
+                                      <option :selected="para.value==ch.enum_code" :value="ch.enum_code" v-for="ch in para.enum_list" :key="ch.enum_code">{{ch.enum_name}}</option>
+                                    </select>
+                                    <i></i>
+                                  </label>
+                                </section>
+
+                                <fieldset v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1" class="border col col-sm-12">
+                                  <section>
+                                    <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                    <div class="inline-group">
+                                      <label class="checkbox" v-for="ch in para.enum_list" :key="ch.enum_code">
+                                        <input type="checkbox" :checked="checkEnumValue(ch.enum_code,para)" name="checkbox-inline" @change="enumParaChanged(ch.enum_code,para,$event)">
+                                        <i></i>{{ch.enum_name}}</label>
+                                    </div>
+                                  </section>
+                                </fieldset>
+
+                                <section v-if="para.data_type==9" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="input">
+                                    <section v-if="para.value!=null && para.value!=undefined && para.value.indexOf('{')>=0">
+                                      <a :href="v.href" target="_blank" class="btn pull-left" v-for="(v,ridx) in JSON.parse(para.value)" :key="ridx">{{ridx>0?",":""+v.value}}</a>
+                                    </section>
+                                    <a href="javascript:void(0);" class="btn pull-left btn-primary" @click="editRefParameter(para)">
+                                      <i class="fa fa-edit"></i>编辑</a>
+                                  </label>
+                                </section>
+
                               </div>
-                            </td>
-                            <td>{{uploading_file.ext!=null?uploading_file.ext.toUpperCase():""}}</td>
-                            <td></td>
-                            <td></td>
-                          </tr>
+                            </div>
+                          </fieldset>
 
+                          <footer>
+                            <a href="javascript:void(0);" :class="need_save_para?'btn-danger':'btn-primary'" class="btn pull-left" @click="saveParas()">
+                              <i class="fa fa-save"></i> 保存参数信息</a>
+                          </footer>
 
-
-
-                      </tbody>
-                    </table>
+                        </div>
+                      </div>
+                      <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
                   </div>
-                  <!-- end widget content -->
-                </div>
-                <!-- end widget div -->
+
+
+
+
+                  <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
+                    data-widget-sortable="false">
+                    <header>
+                      <span class="widget-icon">
+                        <i class="fa fa-table"></i>
+                      </span>
+                      <h2>上传产品附件</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                      <div class="btn-upload">
+                        <a href="javascript:void(0);" @click="uploadAttachment()" class="btn btn-primary pull-left">
+                          <i class="fa fa-upload"></i>上传附件</a>
+                      </div>
+
+                      <!-- widget edit box -->
+                      <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+
+                      </div>
+                      <!-- end widget edit box -->
+
+                      <!-- widget content -->
+                      <div class="widget-body no-padding">
+                        <table id="datatable_tabletools1" class="table table-striped table-bordered table-hover" width="100%">
+                          <thead>
+                            <tr>
+                              <th data-hide="phone">ID</th>
+                              <th data-class="expand">文件名称</th>
+                              <th>文件类型</th>
+                              <th data-hide="phone">上传时间</th>
+                              <th data-hide="phone,tablet">操作</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <tr v-for="(f,index) in productInfo.attachment_list" :key="index">
+                                <td>{{index+1}}</td>
+                                <td>
+                                  {{f.file_name}}
+                                </td>
+                                <td>{{f.file_type!=null?f.file_type.toUpperCase().replace(".",""):""}}</td>
+                                <td>{{f.create_time}}</td>
+                                <td>
+                                  <a href="javascript:void(0);" class="btn btn-danger btn-xs" @click="deleteAtttachment(f,index)">
+                                    删除 </a>
+                                </td>
+                              </tr>
+
+                              <tr v-for="(uploading_file,index) in uploading_files" :key="index" v-if="uploading_file.ok!==true">
+                                <td>{{productInfo.attachment_list.length+index+1-uploading_ok_count}}</td>
+                                <td>
+                                  <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" :data-percent="uploading_progress" data-pie-size="20">
+                        <span class="percent font-xs">{{uploading_progress}}</span></div> -->
+                                  <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" data-percent="80" data-pie-size="20">
+                        <span class="percent font-xs">80</span></div> -->
+                                  <span style="padding-left:100px;">{{uploading_file.name.replace('.'+uploading_file.ext,'')}}</span>
+                                  <div class="progress">
+                                    <div class="progress-bar bg-color-blue" :style="'width: '+uploading_progresses[uploading_file.index]+'%;'"></div>
+                                  </div>
+                                </td>
+                                <td>{{uploading_file.ext!=null?uploading_file.ext.toUpperCase():""}}</td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+
+
+
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                  </div>
+
+
+
+                  <div class="jarviswidget jarviswidget-color-darken" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
+
+                    <div>
+                      <div class="jarviswidget-editbox">
+                      </div>
+
+                      <div class="widget-body no-padding" style="min-height:0;">
+                        <form id="query-form" class="smart-form">
+                          <footer>
+                            <!-- <a target="_blank" :href="appsettings.portal_root+'product/oneproduct.aspx?id='+product_oid" class="btn btn-primary pull-left"
+                              :disabled="product_oid==null">
+                              <i class="fa fa-eye"></i> 预览产品</a> -->
+
+                            <!-- <a href="javascript:void(0);" class="btn btn-warning pull-left" @click="publishProduct()" :disabled="product_oid==null">
+                                <i class="fa fa-check"></i> 发布产品</a> -->
+                            <button class="btn btn-warning pull-left"
+                              @click="editProjects()" :disabled="product_oid==null">
+                              <i class="fa fa-envira"></i> 维护产品案例</button>
+
+                          </footer>
+                        </form>
+                      </div>
+                      <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                  </div>
+
+
+                </article>
               </div>
-
-
-
-              <div class="jarviswidget jarviswidget-color-darken" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
-
-                <div>
-                  <div class="jarviswidget-editbox">
-                  </div>
-
-                  <div class="widget-body no-padding" style="min-height:0;">
-                    <form id="query-form" class="smart-form">
-                      <footer>
-                        <!-- <a target="_blank" :href="appsettings.portal_root+'product/oneproduct.aspx?id='+product_oid" class="btn btn-primary pull-left"
-                          :disabled="product_oid==null">
-                          <i class="fa fa-eye"></i> 预览产品</a> -->
-
-                        <!-- <a href="javascript:void(0);" class="btn btn-warning pull-left" @click="publishProduct()" :disabled="product_oid==null">
-														<i class="fa fa-check"></i> 发布产品</a> -->
-                        <button class="btn btn-warning pull-left"
-                          @click="editProjects()" :disabled="product_oid==null">
-                          <i class="fa fa-envira"></i> 维护产品案例</button>
-
-                      </footer>
-                    </form>
-                  </div>
-                  <!-- end widget content -->
-                </div>
-                <!-- end widget div -->
-              </div>
-
-
-            </article>
+            </section>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
-
+    </ElPageFrame>
     <div id="uploaderInput" ref="uploaderInput1" v-show="false"></div>
     <input id = "uploaderPicture" type="file" ref="uploadPic" v-show="false" @change="uploadPicChanged()" />
     <ElLoading ref="loading"></ElLoading>
