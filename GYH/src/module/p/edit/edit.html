@@ -29,8 +29,8 @@
 	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>flatpickr/dist/css/flatpickr.min.css">
 	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>chartist-js/chartist.min.css">
 	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>fancybox/jquery.fancybox.min.css">
-	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>chartist-js-tooltip/chartist-plugin-tooltip.css">
-  	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>summernote-themes/unify-lite.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>jquery-ui/themes/base/jquery-ui.min.css">
+	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>bootstrap-tagsinput/css/bootstrap-tagsinput.css">
 
 	<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>hamburgers/hamburgers.min.css">
 
@@ -61,7 +61,7 @@
 	<script src="<%=appsettings.vendorPrefix%>appear.js"></script>
 	<script src="<%=appsettings.vendorPrefix%>bootstrap-select/js/bootstrap-select.min.js"></script>
 	<script src="<%=appsettings.vendorPrefix%>malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
+	<script src="<%=appsettings.vendorPrefix%>jquery-ui/jquery-ui.core.min.js"></script>
 
 	<script src="<%=appsettings.vendorPrefix%>flatpickr/dist/js/flatpickr.min.js"></script>
 	<script src="<%=appsettings.vendorPrefix%>chartist-js/chartist.min.js"></script>
@@ -123,7 +123,10 @@
 
 			// initialization of HSDropdown component
 			$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-				dropdownHideOnScroll: false
+				dropdownHideOnScroll: false,
+				dropdownType: 'css-animation',
+				dropdownAnimationIn: 'fadeIn',
+				dropdownAnimationOut: 'fadeOut'
 			});
 
 			// initialization of range slider
@@ -144,6 +147,17 @@
 
 			// initialization of file upload
 			$.HSCore.components.HSFileUpload.init('.js-file-upload');
+
+			// initialization of range datepicker
+			$.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker2');
+
+			// initialization of text editors
+			$.HSCore.components.HSTextEditor.init('.js-text-editor');
+
+			// initialization of form validation
+			$.HSCore.components.HSValidation.init('.js-validate');
+
+
 		});
 	</script>
 
@@ -152,6 +166,7 @@
 	[class*="u-table--v3"] td {
 		padding: 12px;
 	}
+
 	[class*="u-table--v3"] th {
 		padding: 12px;
 	}

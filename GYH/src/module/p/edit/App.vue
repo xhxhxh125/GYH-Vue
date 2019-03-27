@@ -2,6 +2,546 @@
   <div id="app">
     <ElPageFrame ref="pf">
       <div slot="mainslot">
+
+        <!-- 新插入的页面 -->
+        <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
+        <div class="g-pa-20">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0">编辑产品</h2>
+            </div>
+            <hr class="g-my-15 g-my-15--md">
+            <div class="col-md-3 g-mb-30 g-mb-0--md">
+              <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+                <!-- Profile Sidebar -->
+                <section>
+                  <ul class="list-unstyled mb-0">
+                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
+                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15 active"
+                        href="../4-product/4-product-edit.html">
+                        <span
+                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">基本信息</span>
+                      </a>
+                    </li>
+                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
+                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
+                        href="../4-product/4-product-edit-parameter.html">
+                        <span
+                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">参数信息</span>
+                      </a>
+                    </li>
+                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
+                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
+                        href="../4-product/4-product-edit-video.html">
+                        <span
+                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">产品视频</span>
+                      </a>
+                    </li>
+                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
+                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
+                        href="../4-product/4-product-egit-img.html">
+                        <span
+                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">产品图库</span>
+                      </a>
+                    </li>
+                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
+                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
+                        href="../4-product/4-product-edit-file.html">
+                        <span
+                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">上传产品附件</span>
+                      </a>
+                    </li>
+                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
+                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
+                        href="../4-product/4-product-case.html">
+                        <span
+                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">案例维护</span>
+                      </a>
+                    </li>
+                  </ul>
+                </section>
+                <!-- End Profile Sidebar -->
+              </div>
+
+            </div>
+
+            <div class="col-md-9">
+              <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+                <header>
+                  <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">产品基本信息</h2>
+                </header>
+
+                <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
+
+                <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0">产品类别</label>
+                  </div>
+
+                  <div class="col-md-9 align-self-center row">
+                    <div class="col-md-9 align-self-center">
+                      <div class="row g-mx-minus-10">
+                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
+                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
+                            <span
+                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                            </span>
+                            <select class="js-select u-select--v2-select w-100" required="required"
+                              style="display: none;">
+                              <option>1900</option>
+                              <option>1901</option>
+                              <option>1902</option>
+                              <option>1903</option>
+                              <option>1904</option>
+                              <option>1905</option>
+                              <option>1906</option>
+                              <option>1907</option>
+                              <option>1908</option>
+                              <option>1909</option>
+                              <option>1910</option>
+                              <option>1911</option>
+                              <option>1912</option>
+                              <option>1913</option>
+                              <option>1914</option>
+                              <option>1915</option>
+                              <option>1916</option>
+                              <option>1917</option>
+                              <option>1918</option>
+                              <option>1919</option>
+                              <option>1920</option>
+                              <option>1921</option>
+                              <option>1922</option>
+                              <option>1923</option>
+                              <option>1924</option>
+                              <option>1925</option>
+                              <option>1926</option>
+                              <option>1927</option>
+                              <option>1928</option>
+                              <option>1929</option>
+                              <option>1930</option>
+                              <option>1931</option>
+                              <option>1932</option>
+                              <option>1933</option>
+                              <option>1934</option>
+                              <option>1935</option>
+                              <option>1936</option>
+                              <option>1937</option>
+                              <option>1938</option>
+                              <option>1939</option>
+                              <option>1940</option>
+                              <option>1941</option>
+                              <option>1942</option>
+                              <option>1943</option>
+                              <option>1944</option>
+                              <option>1945</option>
+                              <option>1946</option>
+                              <option>1947</option>
+                              <option>1948</option>
+                              <option>1949</option>
+                              <option>1950</option>
+                              <option>1951</option>
+                              <option>1952</option>
+                              <option>1953</option>
+                              <option>1954</option>
+                              <option>1955</option>
+                              <option>1956</option>
+                              <option>1957</option>
+                              <option>1958</option>
+                              <option>1959</option>
+                              <option>1960</option>
+                              <option>1961</option>
+                              <option>1962</option>
+                              <option>1963</option>
+                              <option>1964</option>
+                              <option>1965</option>
+                              <option>1966</option>
+                              <option>1967</option>
+                              <option>1968</option>
+                              <option>1969</option>
+                              <option>1970</option>
+                              <option>1971</option>
+                              <option>1972</option>
+                              <option>1973</option>
+                              <option>1974</option>
+                              <option>1975</option>
+                              <option>1976</option>
+                              <option>1977</option>
+                              <option>1978</option>
+                              <option>1979</option>
+                              <option>1980</option>
+                              <option>1981</option>
+                              <option>1982</option>
+                              <option>1983</option>
+                              <option>1984</option>
+                              <option>1985</option>
+                              <option selected="selected">1986</option>
+                              <option>1987</option>
+                              <option>1988</option>
+                              <option>1989</option>
+                              <option>1990</option>
+                              <option>1991</option>
+                              <option>1992</option>
+                              <option>1993</option>
+                              <option>1994</option>
+                              <option>1995</option>
+                              <option>1996</option>
+                              <option>1997</option>
+                              <option>1998</option>
+                              <option>1999</option>
+                              <option>2000</option>
+                              <option>2001</option>
+                              <option>2002</option>
+                              <option>2003</option>
+                              <option>2004</option>
+                              <option>2005</option>
+                              <option>2006</option>
+                              <option>2007</option>
+                              <option>2008</option>
+                              <option>2009</option>
+                              <option>2010</option>
+                              <option>2011</option>
+                              <option>2012</option>
+                              <option>2013</option>
+                              <option>2014</option>
+                              <option>2015</option>
+                              <option>2016</option>
+                              <option>2017</option>
+                            </select>
+                            <i
+                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                          </div>
+                        </div>
+
+                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
+                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
+                            <span
+                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                            </span>
+                            <select class="js-select u-select--v2-select w-100" required="required"
+                              style="display: none;">
+                              <option>一月</option>
+                              <option>二月</option>
+                              <option>三月</option>
+                              <option selected="selected">四月</option>
+                              <option>五月</option>
+                              <option>六月</option>
+                              <option>七月</option>
+                              <option>八月</option>
+                              <option>九月</option>
+                              <option>十月</option>
+                              <option>十一月</option>
+                              <option>十二月</option>
+                            </select>
+                            <i
+                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                          </div>
+                        </div>
+
+                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
+                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
+                            <span
+                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                            </span>
+                            <select class="js-select u-select--v2-select w-100" required="required"
+                              style="display: none;">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option selected="selected">12</option>
+                              <option>13</option>
+                              <option>14</option>
+                              <option>15</option>
+                              <option>16</option>
+                              <option>17</option>
+                              <option>18</option>
+                              <option>19</option>
+                              <option>20</option>
+                              <option>21</option>
+                              <option>22</option>
+                              <option>23</option>
+                              <option>24</option>
+                              <option>25</option>
+                              <option>26</option>
+                              <option>27</option>
+                              <option>28</option>
+                              <option>29</option>
+                              <option>30</option>
+                              <option>31</option>
+                            </select>
+                            <i
+                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                      <button class="obtain" for="#currentPassword"><a href="#">新建案例</a></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0" for="#currentPassword">产品名称</label>
+                  </div>
+                  <div class="col-md-9 align-self-center">
+                    <div class="form-group g-pos-rel mb-0">
+                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                      </span>
+                      <input id="email" name="email"
+                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0" for="#currentPassword">产品系列</label>
+                  </div>
+                  <div class="col-md-9 align-self-center">
+                    <div class="form-group g-pos-rel mb-0">
+                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                      </span>
+                      <input id="email" name="email"
+                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0" for="#currentPassword">产品标签</label>
+                  </div>
+                  <div class="col-md-9 align-self-center">
+                    <div class="form-group g-pos-rel mb-0">
+                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                      </span>
+                      <input id="email" name="email"
+                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0" for="#currentPassword">产品工艺</label>
+                  </div>
+                  <div class="col-md-9 align-self-center">
+                    <div class="form-group g-pos-rel mb-0">
+                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                      </span>
+                      <input id="email" name="email"
+                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0" for="#currentPassword">产品来源</label>
+                  </div>
+                  <div class="col-md-9 align-self-center">
+                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" checked=""
+                        type="radio">
+                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+                      </div>
+                      原厂
+                    </label>
+
+                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" type="radio">
+                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+                      </div>
+                      代理
+                    </label>
+
+                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" type="radio">
+                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+                      </div>
+                      二手
+                    </label>
+                  </div>
+                </div>
+
+                <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0" for="#currentPassword">适用行业</label>
+                  </div>
+                  <div class="col-md-9 align-self-center">
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      设备加工
+                    </label>
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      设备加工
+                    </label>
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      设备加工
+                    </label>
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      设备加工
+                    </label>
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      设备加工
+                    </label>
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      设备加工
+                    </label>
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      设备加工2
+                    </label>
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      设备加工
+                    </label>
+                  </div>
+                </div>
+
+                <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0" for="#currentPassword">产品价钱</label>
+                  </div>
+                  <div class="col-md-9 align-self-center">
+                    <div class="form-group g-pos-rel mb-0">
+                      <input id="email" name="email"
+                        class="price h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
+                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                      <span class="g-ml-20 g-mr-20">-----</span>
+                      <input id="email" name="email"
+                        class="price h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
+                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                      <input id="email" name="email"
+                        class="price h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
+                        placeholder="元">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0" for="#currentPassword">产品亮点</label>
+                  </div>
+                  <div class="col-md-9 align-self-center">
+                    <div class="form-group g-pos-rel mb-0">
+                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                      </span>
+                      <input id="email" name="email"
+                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="g-mb-20">
+                  <label class="g-mb-10" for="#bio">产品描述</label>
+                  <div class="form-group mb-0">
+                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-mb-30">
+                      <div class="js-text-editor" data-height="156" data-placeholder="在这里开始打字"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">保存</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div id="main" role="main">
           <!-- RIBBON -->
           <div id="ribbon">
