@@ -2,252 +2,316 @@
   <div id="app">
     <ElPageFrame ref="pf">
       <div slot="mainslot">
-        <div
-          id="main"
-          role="main"
-        >
-          <!-- RIBBON -->
-          <div id="ribbon">
-            <span class="ribbon-button-alignment">
-              <span
-                id="refresh"
-                class="btn btn-ribbon"
-                data-action="resetWidgets"
-                data-title="refresh"
-                rel="tooltip"
-                data-placement="bottom"
-                data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
-                data-html="true"
-              >
-                <i class="fa fa-refresh"></i>
-              </span>
-            </span>
+        <div id="main" role="main" >
+         
+          
 
-            <!-- breadcrumb -->
-            <ol class="breadcrumb">
-              <li><a :href="appsettings.portal_root">首页</a></li>
-              <li>人脉管理</li>
-              <li>我的联系人</li>
-            </ol>
-            <!-- end breadcrumb -->
-          </div>
-          <!-- END RIBBON -->
 
-          <!-- MAIN CONTENT -->
-          <div id="content">
-            <div class="row">
-              <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                <h1 class="page-title txt-color-blueDark">
-                  <i class="fa fa-fw fa-pencil-square-o"></i> 人脉管理
-                  <span>> 我的联系人
-                  </span>
-                </h1>
-              </div>
-            </div>
-            <!-- 每一个widget必须在同一个id为“widget-grid”的元素中 -->
-            <section
-              id="widget-grid"
-              class=""
-            >
-              <ElBlockAlert ref="alert"></ElBlockAlert>
 
-              <!-- START ROW Search Condition-->
-              <div class="row">
-                <!-- NEW COL START -->
-                <article class="col-sm-12 col-md-12">
-                  <!-- Widget ID (each widget will need unique ID)-->
-                  <div
-                    class="jarviswidget"
-                    id="wid-id-0"
-                    data-widget-colorbutton="false"
-                    data-widget-editbutton="false"
-                    data-widget-custombutton="false"
-                  >
-                    <header>
-                      <span class="widget-icon">
-                        <i class="fa fa-edit"></i>
-                      </span>
-                      <h2>查询条件 </h2>
-                    </header>
 
-                    <!-- widget div-->
-                    <div>
-                      <!-- widget edit box -->
-                      <div class="jarviswidget-editbox">
-                        <!-- This area used as dropdown edit box -->
+
+            <div class="col g-ml-50 g-ml-0--lg g-overflow-hidden">
+              <div class="g-pa-20">
+                <div class="media-md align-items-center g-mb-30">
+                  <div class="d-flex g-mb-15 g-mb-0--md">
+                    <h1 class="g-font-weight-400 g-font-size-28 g-color-black">名片夹</h1>
+                  </div>
+
+                  <div class="media d-md-flex align-items-center ml-auto">
+                    <div class="d-flex g-ml-15 g-ml-55--md">
+                      <div class="input-group g-pos-rel g-width-320--md">
+                        <input id="datatableSearch1" class="form-control g-font-size-default g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-rounded-20 g-pl-20 g-pr-50 g-py-10"
+                          type="text" placeholder="搜索">
+                        <button class="btn g-pos-abs g-top-0 g-right-0 g-z-index-2 g-width-60 h-100 g-bg-transparent g-font-size-16 g-color-primary g-color-secondary--hover rounded-0"
+                          type="submit">
+                          <i class="hs-admin-search g-absolute-centered"></i>
+                        </button>
                       </div>
-                      <!-- end widget edit box -->
+                    </div>
+                  </div>
+                </div>
 
-                      <!-- widget content -->
-                      <div class="widget-body no-padding">
-                        <form
-                          id="query-form"
-                          class="smart-form"
-                        >
-                          <fieldset>
-                            <div class="row">
-                              <section class="col col-3">
-                                <!-- <label class="label">搜索</label> -->
-                                <label class="input">
-                                  <i class="icon-prepend fa fa-comment"></i>
-                                  <input
-                                    type="text"
-                                    name="text"
-                                    placeholder="搜索人脉"
-                                    v-model="usersearch.keywords"
-                                  >
-                                </label>
-                              </section>
+                <div class="g-mb-40">
+                  <div class="table-responsive">
+                    <table class="js-datatable table u-table--v3 u-editable-table--v1 g-color-black" data-dt-info="#datatableInfo1"
+                      data-dt-search="#datatableSearch1" data-dt-entries="#datatableEntries1" data-dt-is-show-paging="true"
+                      data-dt-pagination="datatablePagination1" data-dt-page-length="10" data-dt-is-responsive="false"
+                      data-dt-pagination-classes="list-inline text-right mb-0" data-dt-pagination-items-classes="list-inline-item g-hidden-sm-down"
+                      data-dt-pagination-links-classes="u-pagination-v1__item u-pagination-v1-2 g-bg-secondary--active g-color-white--active g-brd-gray-light-v7 g-brd-secondary--hover g-brd-secondary--active g-rounded-4 g-py-8 g-px-15"
+                      data-dt-pagination-next-classes="list-inline-item" data-dt-pagination-next-link-classes="u-pagination-v1__item u-pagination-v1-2 g-brd-gray-light-v7 g-brd-secondary--hover g-rounded-4 g-py-8 g-px-12"
+                      data-dt-pagination-next-link-markup='<span class="g-line-height-1 g-valign-middle" aria-hidden="true"><i class="hs-admin-angle-right"></i></span><span class="sr-only">Next</span>'
+                      data-dt-pagination-prev-classes="list-inline-item" data-dt-pagination-prev-link-classes="u-pagination-v1__item u-pagination-v1-2 g-brd-gray-light-v7 g-brd-secondary--hover g-rounded-4 g-py-8 g-px-12"
+                      data-dt-pagination-prev-link-markup='<span class="g-line-height-1 g-valign-middle" aria-hidden="true"><i class="hs-admin-angle-left"></i></span><span class="sr-only">Prev</span>'>
+                      <thead>
+                        <tr style="background:#1cc9e4;">
+                          <th>
+                            <div class="media"> 
+                              <div class="d-flex align-self-center g-color-gray-light-v6">姓名</div>
 
+                              <div class="d-flex align-self-center ml-auto">
+                                <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-up"></i>
+                                  </a>
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-down"></i>
+                                  </a>
+                                </span>
+                              </div>
                             </div>
-                          </fieldset>
-                          <footer>
-                            <a
-                              class="btn btn-primary pull-left"
-                              href="javascript:void(0);"
-                              @click="searchClick()"
-                            >
-                              <i class="fa fa-search"></i> 搜索</a>
-                            <!-- <a class="btn btn-success pull-left" href="javascript:void(0);" @click="add_contractor()">
-													<i class="fa fa-plus"></i> 添加联系人</a> -->
-                            <a
-                              :href="appsettings.apiroot+'hr/contactor/export/'+token"
-                              class="btn btn-success pull-left"
-                              target="_self"
-                            >
-                              <i class="fa fa-save"></i>导出</a>
-                          </footer>
-                        </form>
-                      </div>
-                      <!-- end widget content -->
-                    </div>
-                    <!-- end widget div -->
-                  </div>
-                  <!-- end widget -->
-                </article>
-                <!-- END COL -->
-              </div>
-              <!-- END ROW -->
+                          </th>
+                          <th>
+                            <div class="media">
+                              <div class="d-flex align-self-center g-color-gray-light-v6">公司名称</div>
 
-              <!-- row -->
-              <div class="row">
-                <!-- NEW WIDGET START -->
-                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <!-- Widget ID (each widget will need unique ID)-->
-                  <div
-                    class="jarviswidget jarviswidget-color-blueDark"
-                    id="wid-id-1"
-                    data-widget-editbutton="false"
-                    data-widget-colorbutton="false"
-                    data-widget-custombutton="false"
-                  >
-                    <header>
-                      <span class="widget-icon">
-                        <i class="fa fa-pencil-square-o"></i>
-                      </span>
-                      <h2>我的联系人</h2>
-                    </header>
-                    <!-- datatable-->
-                    <div>
-                      <div class="jarviswidget-editbox">
-                      </div>
-                      <div class="widget-body no-padding">
-                        <table
-                          id="datatable_tabletools"
-                          class="nowrap table table-striped table-bordered table-hover"
-                          width="100%"
-                        >
-                          <thead>
-                            <tr>
-                              <th>操作</th>
-                              <th>头像</th>
-                              <th>姓名</th>
-                              <th>公司</th>
-                              <th>电话</th>
-                              <th>电子邮箱</th>
-                              <th>备注</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr
-                              class="row-show"
-                              v-for="(user,index) in userlist"
-                              :key="index"
-                            >
-                              <!-- 操作当前记录 -->
-                              <td>
-                                <div class="btn-group">
-                                  <a
-                                    class="btn btn-default btn-xs"
-                                    @click="edit_contractor(user)"
-                                  >编辑</a>
-                                  <a
-                                    class="btn btn-xs btn-danger"
-                                    @click="deleteAccount(user)"
-                                  >删除</a>
-                                  <!-- <a class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" href="javascript:void(0);">
-																<span class="caret"></span>
-															</a>
-															<div class="dropdown-menu" style="width:500px;padding:8px 10px;background-color: #fff;">
-																<span style="padding-right:20px;">操作:</span>
-																<a v-if="functionlist.indexOf('delete@user2_account')>=0" class="btn btn-xs btn-default" @click="deleteAccount(user)">删除</a>
-															</div> -->
+                              <div class="d-flex align-self-center ml-auto">
+                                <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-up"></i>
+                                  </a>
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-down"></i>
+                                  </a>
+                                </span>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                                <div class="media">
+                                  <div class="d-flex align-self-center g-color-gray-light-v6">头衔</div>
+        
+                                  <div class="d-flex align-self-center ml-auto">
+                                    <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+                                      <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                        href="#!">
+                                        <i class="hs-admin-angle-up"></i>
+                                      </a>
+                                      <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                        href="#!">
+                                        <i class="hs-admin-angle-down"></i>
+                                      </a>
+                                    </span>
+                                  </div>
                                 </div>
-                              </td>
-                              <!-- 数据展示:label用来展示 input用来编辑(配合上面“编辑当前记录”td使用) -->
-                              <td>
-                                <img
-                                  :src="appsettings.userimg+user.picture"
-                                  alt=""
-                                  width="20"
-                                >
-                              </td>
-                              <td>
-                                <label><a
-                                    :href="'/hr/profile.html?id='+user.contactor_oid"
-                                    target="_blank"
-                                  >{{user.private_name}}</a></label>
-                              </td>
-                              <td>
-                                <label><a
-                                    :href="appsettings.portal_root+'Company/OneCompany.aspx?id='+user.company_oid"
-                                    target="_blank"
-                                  >{{user.company_name}}</a></label>
-                              </td>
-                              <td>
-                                <label>{{user.user_mobile}}</label>
-                              </td>
-                              <td>
-                                <label>{{user.user_email}}</label>
-                              </td>
-                              <td>
-                                <label>{{user.remark}}</label>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <div class="dt-toolbar-footer">
-                          <div class="col-sm-6 col-xs-12 hidden-xs"></div>
-                          <div class="col-sm-6 col-xs-12"></div>
-                        </div>
-                      </div>
-                      <ElPager
-                        class="pull-left"
-                        :pageTotal="usersearch.pageTotal"
-                        @changePage="changePage"
-                      ></ElPager>
-                    </div>
-                    <!-- end datatable -->
+                              </th>
+                          <th>
+                            <div class="media">
+                              <div class="d-flex align-self-center g-color-gray-light-v6">手机</div>
+
+                              <div class="d-flex align-self-center ml-auto">
+                                <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-up"></i>
+                                  </a>
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-down"></i>
+                                  </a>
+                                </span>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="media">
+                              <div class="d-flex align-self-center g-color-gray-light-v6">邮箱</div>
+
+                              <div class="d-flex align-self-center ml-auto">
+                                <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-up"></i>
+                                  </a>
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-down"></i>
+                                  </a>
+                                </span>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="media">
+                              <div class="d-flex align-self-center g-nowrap g-color-gray-light-v6">日期</div>
+
+                              <div class="d-flex align-self-center ml-auto">
+                                <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-up"></i>
+                                  </a>
+                                  <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover"
+                                    href="#!">
+                                    <i class="hs-admin-angle-down"></i>
+                                  </a>
+                                </span>
+                              </div>
+                            </div>
+                          </th>
+                          <th>操作</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+
+                        <tr class="row-show"
+                                  v-for="(user,index) in userlist"
+                                  :key="index">
+                          <td class="js-select text-left g-first-child">
+                            <label class="media align-items-center u-check">
+                              <div class="d-flex g-ml-0">
+                                  <img class="g-width-40 g-height-40 rounded-circle g-mr-14" :src="appsettings.userimg+user.picture"
+                                      alt=""
+                                      width="20">
+                              </div>
+                              <div class="media-body text-left g-ml-15"><a :href="'/hr/profile.html?id='+user.contactor_oid"
+                                        target="_blank">{{user.private_name}}</a></div>
+                            </label>
+                          </td>
+                          <td><label><a
+                                        :href="appsettings.portal_root+'Company/OneCompany.aspx?id='+user.company_oid"
+                                        target="_blank"
+                                      >{{user.company_name}}</a></label></td>
+                          <td>技术总监</td>
+                          <td>{{user.user_mobile}}</td>
+                          <td>{{user.user_email}}</td>
+                          <td>2018/11/14 21:16:53</td>
+                          <td class="text-right">
+                            <div class="g-pos-rel g-top-3 d-inline-block">
+                              <a :id="forId(index,1)" class="u-link-v5 g-line-height-0 g-font-size-24 g-color-gray-light-v6 g-color-secondary--hover"
+                                href="javascript:void(0);" :aria-controls="forId(index,2)" aria-haspopup="true" aria-expanded="false"
+                                data-dropdown-event="click" :data-dropdown-target="forId(index,3)" data-dropdown-type="css-animation"
+                  data-dropdown-duration="300" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
+                                <i class="hs-admin-more-alt"></i>
+                              </a>
+                              <div :id="forId(index,2)" class="u-shadow-v31 g-pos-abs g-right-0 g-z-index-2 g-bg-white u-dropdown--css-animation u-dropdown--hidden u-dropdown--reverse-y"
+                                :aria-labelledby="forId(index,1)">
+                                <ul class="list-unstyled g-nowrap mb-0 6">
+                                  <li>
+                                    <a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14"
+                                      href="#!" id="show-edit1"  @click="edit_contractor(user)">
+                                      <i class="hs-admin-pencil g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
+                                      编辑
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14"
+                                      href="#!" id="show1"  @click="deleteAccount(user)">
+                                      <i class="hs-admin-trash g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
+                                      删除
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
                   </div>
-                  <!-- end widget -->
-                </article>
-                <!-- WIDGET END -->
+                </div>
+
+                
+                <dialog id="del-dialog">
+                    <p>您确定要删除吗？</p>
+                    <button id="del-close">确定</button>
+                    <button id="close">取消</button>
+                </dialog>
+                <dialog id="edit-dialog">
+                    <form method ="edit-dialog">
+                        <div class="row g-mb-20">
+                          <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                            <label class="mb-0" for="#userName">名字</label>
+                          </div>
+                          <div class="col-md-9 align-self-center">
+                            <div class="form-group g-pos-rel mb-0">
+                              <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                              </span>
+                              <input id="userName" name="userName" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                                type="text" required="required" data-msg="This field is mandatory" data-error-class="u-has-error-v3"
+                                data-success-class="has-success" aria-required="true">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row g-mb-20">
+                          <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                            <label class="mb-0" for="#comName">公司名称</label>
+                          </div>
+                          <div class="col-md-9 align-self-center">
+                            <div class="form-group g-pos-rel mb-0">
+                              <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                              </span>
+                              <input id="comName" name="comName" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                                type="text" required="required" data-msg="This field is mandatory" data-error-class="u-has-error-v3"
+                                data-success-class="has-success" aria-required="true">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row g-mb-20">
+                          <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                            <label class="mb-0" for="#actor">头衔</label>
+                          </div>
+                          <div class="col-md-9 align-self-center">
+                            <div class="form-group g-pos-rel mb-0">
+                              <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                              </span>
+                              <input id="actor" name="actor" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                                type="text" required="required" data-msg="This field is mandatory" data-error-class="u-has-error-v3"
+                                data-success-class="has-success" aria-required="true">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row g-mb-20">
+                          <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                            <label class="mb-0" for="#tel">手机</label>
+                          </div>
+                          <div class="col-md-9 align-self-center">
+                            <div class="form-group g-pos-rel mb-0">
+                              <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                              </span>
+                              <input id="tel" name="tel" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                                type="text" required="required" data-msg="This field is mandatory" data-error-class="u-has-error-v3"
+                                data-success-class="has-success" aria-required="true">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row g-mb-20">
+                          <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                            <label class="mb-0" for="#email">邮箱</label>
+                          </div>
+                          <div class="col-md-9 align-self-center">
+                            <div class="form-group g-pos-rel mb-0">
+                              <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                              </span>
+                              <input id="email" name="email" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                                type="text" required="required" data-msg="This field is mandatory" data-error-class="u-has-error-v3"
+                                data-success-class="has-success" aria-required="true">
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">提交</button>
+                          <div id="edit-close" class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">取消</div>
+                        </div>
+                    </form>
+                </dialog>
+              <ElPager
+                  class="pull-left"
+                  :pageTotal="usersearch.pageTotal"
+                  @changePage="changePage"
+                ></ElPager>
               </div>
-              <!-- end row -->
-            </section>
-            <!-- end widget grid -->
           </div>
-          <!-- END MAIN CONTENT -->
         </div>
       </div>
     </ElPageFrame>
@@ -431,6 +495,17 @@ export default {
     }, 0);
   },
   methods: {
+    // 编辑菜单的id要不相同
+    forId(index, flag) {
+      index = index + 1;
+      if (flag == 1) {
+        return "dropDown" + index + "Invoker";
+      } else if (flag == 2) {
+        return "dropDown" + index;
+      } else if (flag == 3) {
+        return "#dropDown" + index;
+      }
+    },
     searchClick: function() {
       this.usersearch.page_index = 1;
       // this.usersearch.page_size = 5;

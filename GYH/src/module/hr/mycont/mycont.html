@@ -142,6 +142,13 @@
 				}
 			});
 
+			// initialization of HSDropdown component
+			$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+				dropdownHideOnScroll: false,
+				dropdownType: 'css-animation',
+				dropdownAnimationIn: 'fadeIn',
+				dropdownAnimationOut: 'fadeOut'
+			});
 			// initialization of file upload
 			$.HSCore.components.HSFileUpload.init('.js-file-upload');
 		});

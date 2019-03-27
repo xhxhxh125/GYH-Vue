@@ -64,12 +64,17 @@
 		</div> -->
 
 		<div class="paging_simple_numbers">
-			<ul class="pagination">
-				<li class="paginate_button previous" :class="currentIndex==1?'disabled':''" @click="previousClick()">
-					<a href="javascript:(0)">上一页</a>
+			<ul class="pagination list-inline d-flex align-items-center justify-content-center g-my-60">
+				<li class="paginate_button previous list-inline-item g-mr-10" :class="currentIndex==1?'disabled':''" @click="previousClick()">
+					<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4" href="javascript:(0)">
+						<span aria-hidden="true">
+							<i class="hs-admin-angle-left"></i>
+						</span>
+						<span class="sr-only">Previous</span>
+					</a>
 				</li>
-				<li class="paginate_button previous" :class="currentIndex==1?'active':''" @click="numberClick(1)">
-					<a href="javascript:(0)">1</a>
+				<li class="paginate_button previous list-inline-item g-hidden-sm-down g-mr-10" @click="numberClick(1)">
+					<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4"  :class="currentIndex==1?'active':''" href="javascript:(0)">1</a>
 				</li>
 
 				<!-- <template v-if="(currentIndex==4)&&pageTotal==4">
@@ -85,37 +90,44 @@
 					</li>
 				</template> -->
 				<template v-if="pageTotal<=6 && pageTotal>0">
-					<li v-for="n in pageTotal-1" :key="n" v-if="n>1" class="paginate_button" :class="currentIndex==n?'active':''"
+					<li v-for="n in pageTotal-1" :key="n" v-if="n>1" class="paginate_button list-inline-item g-hidden-sm-down g-mr-10"
 					 @click="numberClick(n)">
-						<a href="javascript:(0)">{{n}}</a>
+						<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4" :class="currentIndex==n?'active':''"
+							href="javascript:(0)">{{n}}</a>
 					</li>
 				</template>
 
 				<template v-if="pageTotal>6 && (currentIndex>pageTotal-3)">
-					<li v-for="n in 2" :key="n" v-if="n>1" class="paginate_button" :class="currentIndex==n?'active':''" @click="numberClick(n)">
-						<a href="javascript:(0)">{{n}}</a>
+					<li v-for="n in 2" :key="n" v-if="n>1" class="paginate_button list-inline-item g-hidden-sm-down g-mr-10" @click="numberClick(n)">
+						<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4" :class="currentIndex==n?'active':''"
+							href="javascript:(0)">{{n}}</a>
 					</li>
 				</template>
 
 				<template v-if="pageTotal>6 && (currentIndex<5)">
-					<li v-for="n in 5" :key="n" v-if="n>1" class="paginate_button" :class="currentIndex==n?'active':''" @click="numberClick(n)">
-						<a href="javascript:(0)">{{n}}</a>
+					<li v-for="n in 5" :key="n" v-if="n>1" class="paginate_button list-inline-item g-hidden-sm-down g-mr-10" @click="numberClick(n)">
+						<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4" :class="currentIndex==n?'active':''"
+							href="javascript:(0)">{{n}}</a>
 					</li>
-					<li class="paginate_button">
-						<a href="javascript:(0)">...</a>
+					<li class="paginate_button list-inline-item g-hidden-sm-down g-mr-10">
+						<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4"
+							href="javascript:(0)">...</a>
 					</li>
 				</template>
 
 				<template v-if="pageTotal>6 && (currentIndex>=5)">
-					<li class="paginate_button">
-						<a href="javascript:(0)">...</a>
+					<li class="paginate_button list-inline-item g-hidden-sm-down g-mr-10">
+						<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4"
+							href="javascript:(0)">...</a>
 					</li>
-					<li v-for="n in currentIndex+1" :key="n" v-if="n>currentIndex-2 && n<currentIndex+2 && n<pageTotal" class="paginate_button"
-					 :class="currentIndex==n?'active':''" @click="numberClick(n)">
-						<a href="javascript:(0)">{{n}}</a>
+					<li v-for="n in currentIndex+1" :key="n" v-if="n>currentIndex-2 && n<currentIndex+2 && n<pageTotal" class="paginate_button list-inline-item g-hidden-sm-down g-mr-10"
+					@click="numberClick(n)">
+						<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4" :class="currentIndex==n?'active':''"
+							href="javascript:(0)">{{n}}</a>
 					</li>
-					<li class="paginate_button" v-if="currentIndex<pageTotal-2">
-						<a href="javascript:(0)">...</a>
+					<li class="paginate_button list-inline-item g-hidden-sm-down g-mr-10" v-if="currentIndex<pageTotal-2">
+						<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4"
+							href="javascript:(0)">...</a>
 					</li>
 				</template>
 
@@ -177,11 +189,18 @@
 					</li>
 				</template> -->
 
-				<li v-if="pageTotal>1" class="paginate_button " :class="currentIndex==pageTotal?'active':''" @click="numberClick(pageTotal)">
-					<a href="javascript:(0)">{{pageTotal}}</a>
+				<li v-if="pageTotal>1" class="paginate_button list-inline-item g-hidden-sm-down g-mr-10" @click="numberClick(pageTotal)">
+					<a class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4" :class="currentIndex==pageTotal?'active':''"
+							href="javascript:(0)">{{pageTotal}}</a>
 				</li>
-				<li class="paginate_button next" :class="currentIndex==pageTotal?'disabled':''" @click="nextClick()">
-					<a href="javascript:(0)">下一页</a>
+				<li class="paginate_button next list-inline-item" @click="nextClick()">
+					<a 
+					class="u-pagination-v1__item u-pagination-v1-2 g-bg-lightblue-v3--active g-color-gray-dark-v6 g-color-black--hover g-color-white--active g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-brd-lightblue-v3--active g-px-18 g-py-12 g-rounded-4" :class="currentIndex==pageTotal?'disabled':''"
+					href="javascript:(0)">
+						<span aria-hidden="true">
+							<i class="hs-admin-angle-right"></i>
+						</span>
+						<span class="sr-only">Next</span></a>
 				</li>
 			</ul>
 		</div>

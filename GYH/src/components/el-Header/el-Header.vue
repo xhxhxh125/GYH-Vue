@@ -127,32 +127,32 @@
 
 							<!-- Top User Menu -->
 							<ul id="profileMenu" class="g-pos-abs g-left-0 g-width-100x--lg g-nowrap g-font-size-14 g-py-20 g-mt-17 rounded"
-                  aria-labelledby="profileMenuInvoker">
-                  <li class="g-mb-10">
-                    <a class="media g-color-primary--hover g-py-5 g-px-20" href="#!">
-                      <span class="d-flex align-self-center g-mr-12">
-                        <i class="hs-admin-user"></i>
-                      </span>
-                      <span class="media-body align-self-center">个人信息</span>
-                    </a>
-                  </li>
-                  <li class="g-mb-10">
-                    <a class="media g-color-primary--hover g-py-5 g-px-20" href="#!">
-                      <span class="d-flex align-self-center g-mr-12">
-                        <i class="hs-admin-rocket"></i>
-                      </span>
-                      <span class="media-body align-self-center">公司信息</span>
-                    </a>
-                  </li>
-                  <li class="mb-0">
-                    <a class="media g-color-primary--hover g-py-5 g-px-20" href="#!">
-                      <span class="d-flex align-self-center g-mr-12">
-                        <i class="hs-admin-shift-right"></i>
-                      </span>
-                      <span class="media-body align-self-center">注销</span>
-                    </a>
-                  </li>
-                </ul>
+								aria-labelledby="profileMenuInvoker">
+								<li class="g-mb-10">
+									<a class="media g-color-primary--hover g-py-5 g-px-20" href="#!">
+									<span class="d-flex align-self-center g-mr-12">
+										<i class="hs-admin-user"></i>
+									</span>
+									<span class="media-body align-self-center">个人信息</span>
+									</a>
+								</li>
+								<li class="g-mb-10">
+									<a class="media g-color-primary--hover g-py-5 g-px-20" href="#!">
+									<span class="d-flex align-self-center g-mr-12">
+										<i class="hs-admin-rocket"></i>
+									</span>
+									<span class="media-body align-self-center">公司信息</span>
+									</a>
+								</li>
+								<li class="mb-0">
+									<a class="media g-color-primary--hover g-py-5 g-px-20" href="#!">
+									<span class="d-flex align-self-center g-mr-12">
+										<i class="hs-admin-shift-right"></i>
+									</span>
+									<span class="media-body align-self-center">注销</span>
+									</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
