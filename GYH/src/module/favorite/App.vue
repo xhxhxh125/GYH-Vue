@@ -1,201 +1,204 @@
 <template>
 	<div id="app">
-		<ElPageFrame ref="pf"></ElPageFrame>
-		<div id="main" role="main">
-			<div id="ribbon">
-				<span class="ribbon-button-alignment">
-					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom"
-					    data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
-					    data-html="true">
-						<i class="fa fa-refresh"></i>
-					</span>
-				</span>
-				<!-- breadcrumb -->
-				<ol class="breadcrumb">
-					<li><a :href="appsettings.portal_root">首页</a></li>
-					<li>个人中心</li>
-					<li>我的收藏</li>
-				</ol>
-				<!-- end breadcrumb -->
-			</div>
+		<ElPageFrame ref="pf">
+			<div slot="mainslot">
+				<div id="main" role="main">
+					<div id="ribbon">
+						<span class="ribbon-button-alignment">
+							<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom"
+								data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
+								data-html="true">
+								<i class="fa fa-refresh"></i>
+							</span>
+						</span>
+						<!-- breadcrumb -->
+						<ol class="breadcrumb">
+							<li><a :href="appsettings.portal_root">首页</a></li>
+							<li>个人中心</li>
+							<li>我的收藏</li>
+						</ol>
+						<!-- end breadcrumb -->
+					</div>
 
 
-			<div id="content">
+					<div id="content">
 
-				<div class="row">
-					<!-- NEW WIDGET START -->
-					<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<!-- Widget ID (each widget will need unique ID)-->
+						<div class="row">
+							<!-- NEW WIDGET START -->
+							<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<!-- Widget ID (each widget will need unique ID)-->
 
 
-						<!-- Widget ID (each widget will need unique ID)-->
-						<div class="jarviswidget well" id="wid-id-3" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-						    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
-							<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-				
-								-->
-							<header>
+								<!-- Widget ID (each widget will need unique ID)-->
+								<div class="jarviswidget well" id="wid-id-3" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+									data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+									<!-- widget options:
+										usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+						
+										data-widget-colorbutton="false"
+										data-widget-editbutton="false"
+										data-widget-togglebutton="false"
+										data-widget-deletebutton="false"
+										data-widget-fullscreenbutton="false"
+										data-widget-custombutton="false"
+										data-widget-collapsed="true"
+										data-widget-sortable="false"
+						
+										-->
+									<header>
 
-							</header>
+									</header>
 
-							<!-- widget div-->
-							<div>
+									<!-- widget div-->
+									<div>
 
-								<!-- widget edit box -->
-								<div class="jarviswidget-editbox">
-									<!-- This area used as dropdown edit box -->
+										<!-- widget edit box -->
+										<div class="jarviswidget-editbox">
+											<!-- This area used as dropdown edit box -->
 
-								</div>
-								<!-- end widget edit box -->
-
-								<!-- widget content -->
-								<div class="widget-body">
-
-									<p>
-										我的收藏列表
-									</p>
-									<hr class="simple">
-									<ul id="myTab1" class="nav nav-tabs bordered">
-										<li class="active">
-											<a href="#s1" data-toggle="tab">收藏的产品
-
-											</a>
-										</li>
-										<li>
-											<a href="#s2" data-toggle="tab">
-												收藏的服务</a>
-										</li>
-										<li>
-											<a href="#s3" data-toggle="tab">
-												收藏的公司</a>
-										</li>
-
-									</ul>
-
-									<div id="myTabContent1" class="tab-content padding-10">
-										<div class="tab-pane active" id="s1">
-											<p class="table-responsive custom-scroll">
-												<table id="datatable_tabletools" class="nowrap table table-bordered">
-													<thead>
-														<tr>
-															<th class="w100">ID</th>
-															<th>名称</th>
-															<th class="w200">收藏时间</th>
-															<th class="w100">操作</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr class="row-show" v-for="(pro,index) in products" :key="index">
-															<td>{{index+1}}</td>
-															<td>
-																<a target="_blank" :href="appsettings.portal_root+'/product/oneproduct.aspx?id='+pro.oid">
-																	{{pro.product_name}}
-																</a>
-															</td>
-
-															<td class="nw">{{pro.create_time}}</td>
-															<td>
-																<a class="btn btn-default btn-xs" @click="cancelFav(pro,index,'p')">取消收藏</a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</p>
 										</div>
+										<!-- end widget edit box -->
 
-										<div class="tab-pane" id="s2">
-											<p class="table-responsive custom-scroll">
-												<table id="datatable_tabletools" class="nowrap table table-bordered">
-													<thead>
-														<tr>
-															<th class="w100">ID</th>
-															<th>名称</th>
-															<th class="w200">收藏时间</th>
-															<th class="w100">操作</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr class="row-show" v-for="(pro,index) in services" :key="index">
-															<td>{{index+1}}</td>
-															<td>
-																<a target="_blank" :href="appsettings.portal_root+'/service/oneservice.aspx?id='+pro.oid">
-																	{{pro.service_name}}
-																</a>
-															</td>
+										<!-- widget content -->
+										<div class="widget-body">
 
-															<td class="nw">{{pro.create_time}}</td>
-															<td>
-																<a class="btn btn-default btn-xs" @click="cancelFav(pro,index,'s')">取消收藏</a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
+											<p>
+												我的收藏列表
 											</p>
+											<hr class="simple">
+											<ul id="myTab1" class="nav nav-tabs bordered">
+												<li class="active">
+													<a href="#s1" data-toggle="tab">收藏的产品
+
+													</a>
+												</li>
+												<li>
+													<a href="#s2" data-toggle="tab">
+														收藏的服务</a>
+												</li>
+												<li>
+													<a href="#s3" data-toggle="tab">
+														收藏的公司</a>
+												</li>
+
+											</ul>
+
+											<div id="myTabContent1" class="tab-content padding-10">
+												<div class="tab-pane active" id="s1">
+													<p class="table-responsive custom-scroll">
+														<table id="datatable_tabletools" class="nowrap table table-bordered">
+															<thead>
+																<tr>
+																	<th class="w100">ID</th>
+																	<th>名称</th>
+																	<th class="w200">收藏时间</th>
+																	<th class="w100">操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr class="row-show" v-for="(pro,index) in products" :key="index">
+																	<td>{{index+1}}</td>
+																	<td>
+																		<a target="_blank" :href="appsettings.portal_root+'/product/oneproduct.aspx?id='+pro.oid">
+																			{{pro.product_name}}
+																		</a>
+																	</td>
+
+																	<td class="nw">{{pro.create_time}}</td>
+																	<td>
+																		<a class="btn btn-default btn-xs" @click="cancelFav(pro,index,'p')">取消收藏</a>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</p>
+												</div>
+
+												<div class="tab-pane" id="s2">
+													<p class="table-responsive custom-scroll">
+														<table id="datatable_tabletools" class="nowrap table table-bordered">
+															<thead>
+																<tr>
+																	<th class="w100">ID</th>
+																	<th>名称</th>
+																	<th class="w200">收藏时间</th>
+																	<th class="w100">操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr class="row-show" v-for="(pro,index) in services" :key="index">
+																	<td>{{index+1}}</td>
+																	<td>
+																		<a target="_blank" :href="appsettings.portal_root+'/service/oneservice.aspx?id='+pro.oid">
+																			{{pro.service_name}}
+																		</a>
+																	</td>
+
+																	<td class="nw">{{pro.create_time}}</td>
+																	<td>
+																		<a class="btn btn-default btn-xs" @click="cancelFav(pro,index,'s')">取消收藏</a>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</p>
+												</div>
+
+
+												<div class="tab-pane" id="s3">
+													<p class="table-responsive custom-scroll">
+														<table id="datatable_tabletools" class="nowrap table table-bordered">
+															<thead>
+																<tr>
+																	<th class="w100">ID</th>
+																	<th>名称</th>
+																	<th class="w200">收藏时间</th>
+																	<th class="w100">操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr class="row-show" v-for="(pro,index) in companies" :key="index">
+																	<td>{{index+1}}</td>
+																	<td>
+																		<a target="_blank" :href="appsettings.portal_root+'/company/onecompany.aspx?id='+pro.oid">
+																			{{pro.company_name}}
+																		</a>
+																	</td>
+
+																	<td class="nw">{{pro.create_time}}</td>
+																	<!-- 操作当前记录 -->
+																	<td>
+																		<a class="btn btn-default btn-xs" @click="cancelFav(pro,index,'c')">取消收藏</a>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</p>
+												</div>
+
+											</div>
+
 										</div>
-
-
-										<div class="tab-pane" id="s3">
-											<p class="table-responsive custom-scroll">
-												<table id="datatable_tabletools" class="nowrap table table-bordered">
-													<thead>
-														<tr>
-															<th class="w100">ID</th>
-															<th>名称</th>
-															<th class="w200">收藏时间</th>
-															<th class="w100">操作</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr class="row-show" v-for="(pro,index) in companies" :key="index">
-															<td>{{index+1}}</td>
-															<td>
-																<a target="_blank" :href="appsettings.portal_root+'/company/onecompany.aspx?id='+pro.oid">
-																	{{pro.company_name}}
-																</a>
-															</td>
-
-															<td class="nw">{{pro.create_time}}</td>
-															<!-- 操作当前记录 -->
-															<td>
-																<a class="btn btn-default btn-xs" @click="cancelFav(pro,index,'c')">取消收藏</a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</p>
-										</div>
+										<!-- end widget content -->
 
 									</div>
+									<!-- end widget div -->
 
 								</div>
-								<!-- end widget content -->
+								<!-- end widget -->
 
-							</div>
-							<!-- end widget div -->
 
+
+
+
+								<!-- end widget -->
+							</article>
+							<!-- WIDGET END -->
 						</div>
-						<!-- end widget -->
-
-
-
-
-
-						<!-- end widget -->
-					</article>
-					<!-- WIDGET END -->
+					</div>
 				</div>
 			</div>
-		</div>
+		</ElPageFrame>
 		<ElToastAlert ref="toastAlert"></ElToastAlert>
 	</div>
 </template>
