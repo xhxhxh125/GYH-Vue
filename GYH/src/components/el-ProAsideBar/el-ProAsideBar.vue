@@ -63,7 +63,6 @@ export default {
   methods: {
     gotoAddress(index){
         this.activeIndex = index
-        alert(this.activeIndex)
       }
   }
 };

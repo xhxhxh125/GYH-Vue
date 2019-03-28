@@ -2184,7 +2184,12 @@ export default {
         // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
         resize: false,
         chunkSize: 4000880,
-        duplicate: true
+        duplicate: true,
+        accept: {
+          title: "Images",
+          extensions: "gif,jpg,jpeg,bmp,png",
+          mimeTypes: "image/*"
+        }
       });
 
       this.uploader.on("beforeFileQueued", function(file) {});
