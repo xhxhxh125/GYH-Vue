@@ -65,7 +65,7 @@
 
             </div>
 
-            <div class="col-md-9">
+            <div class="col-md-9" id="base_form">
               <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
                 <header>
                   <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">产品基本信息</h2>
@@ -74,13 +74,16 @@
                 <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
 
                 <div class="row g-mb-20">
+
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
                     <label class="mb-0">产品类别</label>
                   </div>
 
                   <div class="col-md-9 align-self-center row">
+
                     <div class="col-md-9 align-self-center">
                       <div class="row g-mx-minus-10">
+
                         <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
                           <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
                             <span
@@ -208,8 +211,7 @@
                               <option>2016</option>
                               <option>2017</option>
                             </select>
-                            <i
-                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                            <i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
                           </div>
                         </div>
 
@@ -283,26 +285,30 @@
                               class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
                           </div>
                         </div>
+
                       </div>
                     </div>
+
                     <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                      <button class="obtain" for="#currentPassword"><a href="#">新建案例</a></button>
+                      <button class="obtain btn btn-xl u-btn-secondary g-font-size-default g-px-40" @click="createNewProduct()">新建案例</button>
                     </div>
+
                   </div>
+                  
                 </div>
 
                 <div class="row g-mb-20">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0" for="#currentPassword">产品名称</label>
+                    <label class="mb-0">*产品名称</label>
                   </div>
                   <div class="col-md-9 align-self-center">
                     <div class="form-group g-pos-rel mb-0">
                       <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
                         <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
                       </span>
-                      <input id="email" name="email"
+                      <input type="text" id="name" name="text" v-model="productInfo.core.product_name"
                         class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        required="required" data-msg="This field is mandatory"
                         data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
                     </div>
                   </div>
@@ -310,16 +316,16 @@
 
                 <div class="row g-mb-20">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0" for="#currentPassword">产品系列</label>
+                    <label class="mb-0">产品系列</label>
                   </div>
                   <div class="col-md-9 align-self-center">
                     <div class="form-group g-pos-rel mb-0">
                       <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
                         <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
                       </span>
-                      <input id="email" name="email"
+                      <input type="text" v-model="productInfo.core.series"
                         class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        value="" required="required" data-msg="This field is mandatory"
                         data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
                     </div>
                   </div>
@@ -327,16 +333,16 @@
 
                 <div class="row g-mb-20">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0" for="#currentPassword">产品标签</label>
+                    <label class="mb-0">产品标签</label>
                   </div>
                   <div class="col-md-9 align-self-center">
                     <div class="form-group g-pos-rel mb-0">
                       <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
                         <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
                       </span>
-                      <input id="email" name="email"
+                      <input type="text" name="text" v-model="productInfo.core.tags" placeholder="多个标签之间以逗号隔开"
                         class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        value="" required="required" data-msg="This field is mandatory"
                         data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
                     </div>
                   </div>
@@ -344,16 +350,16 @@
 
                 <div class="row g-mb-20">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0" for="#currentPassword">产品工艺</label>
+                    <label class="mb-0">产品工艺</label>
                   </div>
                   <div class="col-md-9 align-self-center">
                     <div class="form-group g-pos-rel mb-0">
                       <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
                         <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
                       </span>
-                      <input id="email" name="email"
+                      <input type="text" v-model="productInfo.core.process"
                         class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        type="email" value="" required="required" data-msg="This field is mandatory"
+                         value="" required="required" data-msg="This field is mandatory"
                         data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
                     </div>
                   </div>
@@ -361,28 +367,30 @@
 
                 <div class="row g-mb-20">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0" for="#currentPassword">产品来源</label>
+                    <label class="mb-0">产品来源</label>
                   </div>
                   <div class="col-md-9 align-self-center">
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" checked=""
-                        type="radio">
+                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(0,$event)">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="0" type="radio"
+                      :checked="productInfo.core.product_source==0">
                       <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
                         <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
                       </div>
                       原厂
                     </label>
 
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" type="radio">
+                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(2,$event)">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="2" type="radio"
+                      :checked="productInfo.core.product_source==2">
                       <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
                         <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
                       </div>
                       代理
                     </label>
 
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" type="radio">
+                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(1,$event)">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="1" type="radio"
+                      :checked="productInfo.core.product_source==1">
                       <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
                         <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
                       </div>
@@ -393,102 +401,55 @@
 
                 <div class="row g-mb-20">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0" for="#currentPassword">适用行业</label>
+                    <label class="mb-0">适用行业</label>
                   </div>
                   <div class="col-md-9 align-self-center">
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40" v-for="(prof,index) in professions" :key="index">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
                       <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
                         <i class="fa" data-check-icon="&#xf00c"></i>
                       </div>
-                      设备加工
+                      {{prof.enum_name}}
                     </label>
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      设备加工
-                    </label>
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      设备加工
-                    </label>
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      设备加工
-                    </label>
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      设备加工
-                    </label>
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      设备加工
-                    </label>
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      设备加工2
-                    </label>
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      设备加工
-                    </label>
+
                   </div>
                 </div>
 
                 <div class="row g-mb-20">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0" for="#currentPassword">产品价钱</label>
+                    <label class="mb-0">产品价钱</label>
                   </div>
                   <div class="col-md-9 align-self-center">
                     <div class="form-group g-pos-rel mb-0">
-                      <input id="email" name="email"
-                        class="price h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        type="email" value="" required="required" data-msg="This field is mandatory"
+                      <input type="text" placeholder="最低价" v-model="productInfo.core.min_price"
+                        class="u-select--v2  h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
+                        value="" required="required" data-msg="This field is mandatory"
                         data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
                       <span class="g-ml-20 g-mr-20">-----</span>
-                      <input id="email" name="email"
-                        class="price h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        type="email" value="" required="required" data-msg="This field is mandatory"
+                      <input type="text" placeholder="最高价" v-model="productInfo.core.max_price"
+                        class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
+                        value="" required="required" data-msg="This field is mandatory"
                         data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                      <input id="email" name="email"
-                        class="price h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        placeholder="元">
+                      <input type="text" 
+                        class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
+                        placeholder="单位" v-model="productInfo.core.price_unit">
                     </div>
                   </div>
                 </div>
 
                 <div class="row g-mb-20">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0" for="#currentPassword">产品亮点</label>
+                    <label class="mb-0">产品亮点</label>
                   </div>
                   <div class="col-md-9 align-self-center">
                     <div class="form-group g-pos-rel mb-0">
                       <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
                         <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
                       </span>
-                      <input id="email" name="email"
+                      <input v-model="productInfo.core.highlight"
                         class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        type="email" value="" required="required" data-msg="This field is mandatory"
+                        value="" required="required" data-msg="This field is mandatory"
                         data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
                     </div>
                   </div>
@@ -497,14 +458,17 @@
                 <div class="g-mb-20">
                   <label class="g-mb-10" for="#bio">产品描述</label>
                   <div class="form-group mb-0">
-                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-mb-30">
+                    <!-- <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-mb-30">
                       <div class="js-text-editor" data-height="156" data-placeholder="在这里开始打字"></div>
+                    </div> -->
+                    <div class="textarea">
+                      <ElUEditor id="ueditor" ref="ueditor" :code="'2'"></ElUEditor>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">保存</button>
+                  <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40" :class="need_save_para?'btn-danger':'btn-primary'" @click="saveBasicInfo()">保存</button>
                 </div>
               </div>
             </div>
