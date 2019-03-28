@@ -11,59 +11,7 @@
               <h2 class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0">编辑产品</h2>
             </div>
             <hr class="g-my-15 g-my-15--md">
-            <div class="col-md-3 g-mb-30 g-mb-0--md">
-              <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-                <!-- Profile Sidebar -->
-                <section>
-                  <ul class="list-unstyled mb-0">
-                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15 active"
-                        href="../4-product/4-product-edit.html">
-                        <span
-                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">基本信息</span>
-                      </a>
-                    </li>
-                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
-                        href="../4-product/4-product-edit-parameter.html">
-                        <span
-                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">参数信息</span>
-                      </a>
-                    </li>
-                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
-                        href="../4-product/4-product-edit-video.html">
-                        <span
-                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">产品视频</span>
-                      </a>
-                    </li>
-                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
-                        href="../4-product/4-product-egit-img.html">
-                        <span
-                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">产品图库</span>
-                      </a>
-                    </li>
-                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
-                        href="../4-product/4-product-edit-file.html">
-                        <span
-                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">上传产品附件</span>
-                      </a>
-                    </li>
-                    <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
-                        href="../4-product/4-product-case.html">
-                        <span
-                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">案例维护</span>
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-                <!-- End Profile Sidebar -->
-              </div>
-
-            </div>
+            <ElProAsdiear @click="changeProAsideBarActive" ref="proAsideBar"></ElProAsdiear>
 
             <div class="col-md-9" id="base_form">
               <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
@@ -1123,6 +1071,7 @@
 import "common/httputils"; //引用js
 import htmlHelper from "common/htmlutils";
 import ElPageFrame from "components/el-PageFrame/el-PageFrame";
+import ElProAsdiear from 'components/el-ProAsideBar/el-ProAsideBar';
 
 import ElPager from "components/el-Pager/el-Pager";
 import ElBlockAlert from "components/el-BlockAlert/el-BlockAlert";
@@ -1277,7 +1226,8 @@ export default {
     ElToastAlert,
     ElProCategory,
     ElRegionInput,
-    ElCompanyIntellisense
+    ElCompanyIntellisense,
+    ElProAsdiear
   },
   created: function() {
     //获取产品类别
@@ -1419,6 +1369,9 @@ export default {
   },
 
   methods: {
+    changeProAsideBarActive(){
+      this.$refs.ElProAsdiear.gotoAddress(3)
+    },
     getParaDef: function() {
       var data = {};
       data.category_code = this.category_code;

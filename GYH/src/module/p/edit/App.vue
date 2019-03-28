@@ -1277,7 +1277,8 @@ export default {
     ElToastAlert,
     ElProCategory,
     ElRegionInput,
-    ElCompanyIntellisense
+    ElCompanyIntellisense,
+    ElProAsdiear
   },
   created: function() {
     //获取产品类别
@@ -1419,6 +1420,9 @@ export default {
   },
 
   methods: {
+    changeProAsideBarActive(){
+      this.$refs.ElProAsdiear.gotoAddress(0)
+    },
     getParaDef: function() {
       var data = {};
       data.category_code = this.category_code;
