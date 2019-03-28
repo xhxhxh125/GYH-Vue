@@ -7,8 +7,7 @@
           <li class="g-brd-top g-brd-gray-light-v7 mb-0" v-for="(item,index) in menu" :key="item" @click="gotoAddress(index)">
             <a class="d-flex align-items-center u-link-v5 g-parent g-py-15" :class="{'active' :activeIndex==index}"
               >
-              <span
-                class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">{{item.name}}</span>
+              <span class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">{{item.name}}</span>
             </a>
           </li>
         </ul>
@@ -32,7 +31,7 @@ export default {
           name:'基本信息'
         },
         {
-          href:'../4-product/4-product-edit-parameter.html',
+          href:'/p/edit_parameter.html',
           name:'参数信息'
         },
         {
@@ -48,7 +47,7 @@ export default {
           name:'上传产品附件'
         },
         {
-          href:'../4-product/4-product-case.html',
+          href:'/p/edit_case.html',
           name:'案例维护'
         }
       ],
