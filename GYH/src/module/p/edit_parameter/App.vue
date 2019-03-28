@@ -11,7 +11,7 @@
               <h2 class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0">编辑产品</h2>
             </div>
             <hr class="g-my-15 g-my-15--md">
-            <ElProAsdiear @click="changeProAsideBarActive" ref="proAsideBar"></ElProAsdiear>
+            <ElProAsdiear></ElProAsdiear>
 
             <div class="col-md-9" id="base_form">
               <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
@@ -1369,9 +1369,6 @@ export default {
   },
 
   methods: {
-    changeProAsideBarActive(){
-      this.$refs.ElProAsdiear.gotoAddress(1)
-    },
     getParaDef: function() {
       var data = {};
       data.category_code = this.category_code;

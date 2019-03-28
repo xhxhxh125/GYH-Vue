@@ -25,6 +25,7 @@ export default {
   props: ["a", "b"],
   data: function() {
     return {
+      props:['activeIndex'],
       menu: [
         {
           href:'/p/edit.html',
@@ -47,15 +48,14 @@ export default {
           name:'上传产品附件'
         },
         {
-          href:'/p/edit_case.html',
+          href:'/p/case.html',
           name:'案例维护'
         }
-      ],
-      activeIndex:0
+      ]
+      // activeIndex:''
     };
   },
   mounted: function() {
-    
   },
   created: function() {
   },
@@ -63,6 +63,7 @@ export default {
   methods: {
     gotoAddress(index){
         this.activeIndex = index
+        alert(this.activeIndex)
       }
   }
 };
