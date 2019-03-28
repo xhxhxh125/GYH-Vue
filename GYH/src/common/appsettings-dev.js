@@ -13,7 +13,7 @@ module.exports = {
     gyhpluginsPrefix: "/assets/gyh/plugins/",
     // apiroot: "http://localhost:48734/", 
     // apiroot_v2:"http://localhost:48734/",
-    apiroot: "http://www.to2025.cc:919/",
+    apiroot: "http://www.to2025.cc:703/",
     comfile_prefix: "https://tstdat.to2025.com/upload/cf/",
     proimg:"//tstdat.to2025.com/upload/pic/pp/",
     serimg:"//tstdat.to2025.com/upload/pic/sp/",
