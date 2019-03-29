@@ -2185,11 +2185,11 @@ export default {
         resize: false,
         chunkSize: 4000880,
         duplicate: true,
-        accept: {
-          title: "Images",
-          extensions: "gif,jpg,jpeg,bmp,png",
-          mimeTypes: "image/*"
-        }
+        // accept: {
+        //   title: "Images",
+        //   extensions: "gif,jpg,jpeg,bmp,png",
+        //   mimeTypes: "image/*"
+        // }
       });
 
       this.uploader.on("beforeFileQueued", function(file) {});

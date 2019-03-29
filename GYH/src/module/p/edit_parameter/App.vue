@@ -4,274 +4,27 @@
       <div slot="mainslot">
 
         <!-- 新插入的页面 -->
-        <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
-        <div class="g-pa-20">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0">编辑产品</h2>
-            </div>
-            <hr class="g-my-15 g-my-15--md">
-            <ElProAsdiear></ElProAsdiear>
+        <div class="col-md-9">
+          <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+            <header>
+              <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">产品参数信息</h2>
+            </header>
 
-            <div class="col-md-9" id="base_form">
-              <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-                <header>
-                  <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">产品基本信息</h2>
-                </header>
+            <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
+<ElProAsdiear></ElProAsdiear>
+            <div id="para_form" v-for="group in parametergroups" :key="group.group_code">
+              <div v-for="para in group.parameters" :key="para.column_id">
 
-                <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
-
-                <div class="row g-mb-20">
-
+                <div class="row g-mb-20" v-if="para.data_type==0 && para.is_enum_data!=1">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品类别</label>
-                  </div>
-
-                  <div class="col-md-9 align-self-center row">
-
-                    <div class="col-md-9 align-self-center">
-                      <div class="row g-mx-minus-10">
-
-                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                            <span
-                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                            </span>
-                            <select class="js-select u-select--v2-select w-100" required="required"
-                              style="display: none;">
-                              <option>1900</option>
-                              <option>1901</option>
-                              <option>1902</option>
-                              <option>1903</option>
-                              <option>1904</option>
-                              <option>1905</option>
-                              <option>1906</option>
-                              <option>1907</option>
-                              <option>1908</option>
-                              <option>1909</option>
-                              <option>1910</option>
-                              <option>1911</option>
-                              <option>1912</option>
-                              <option>1913</option>
-                              <option>1914</option>
-                              <option>1915</option>
-                              <option>1916</option>
-                              <option>1917</option>
-                              <option>1918</option>
-                              <option>1919</option>
-                              <option>1920</option>
-                              <option>1921</option>
-                              <option>1922</option>
-                              <option>1923</option>
-                              <option>1924</option>
-                              <option>1925</option>
-                              <option>1926</option>
-                              <option>1927</option>
-                              <option>1928</option>
-                              <option>1929</option>
-                              <option>1930</option>
-                              <option>1931</option>
-                              <option>1932</option>
-                              <option>1933</option>
-                              <option>1934</option>
-                              <option>1935</option>
-                              <option>1936</option>
-                              <option>1937</option>
-                              <option>1938</option>
-                              <option>1939</option>
-                              <option>1940</option>
-                              <option>1941</option>
-                              <option>1942</option>
-                              <option>1943</option>
-                              <option>1944</option>
-                              <option>1945</option>
-                              <option>1946</option>
-                              <option>1947</option>
-                              <option>1948</option>
-                              <option>1949</option>
-                              <option>1950</option>
-                              <option>1951</option>
-                              <option>1952</option>
-                              <option>1953</option>
-                              <option>1954</option>
-                              <option>1955</option>
-                              <option>1956</option>
-                              <option>1957</option>
-                              <option>1958</option>
-                              <option>1959</option>
-                              <option>1960</option>
-                              <option>1961</option>
-                              <option>1962</option>
-                              <option>1963</option>
-                              <option>1964</option>
-                              <option>1965</option>
-                              <option>1966</option>
-                              <option>1967</option>
-                              <option>1968</option>
-                              <option>1969</option>
-                              <option>1970</option>
-                              <option>1971</option>
-                              <option>1972</option>
-                              <option>1973</option>
-                              <option>1974</option>
-                              <option>1975</option>
-                              <option>1976</option>
-                              <option>1977</option>
-                              <option>1978</option>
-                              <option>1979</option>
-                              <option>1980</option>
-                              <option>1981</option>
-                              <option>1982</option>
-                              <option>1983</option>
-                              <option>1984</option>
-                              <option>1985</option>
-                              <option selected="selected">1986</option>
-                              <option>1987</option>
-                              <option>1988</option>
-                              <option>1989</option>
-                              <option>1990</option>
-                              <option>1991</option>
-                              <option>1992</option>
-                              <option>1993</option>
-                              <option>1994</option>
-                              <option>1995</option>
-                              <option>1996</option>
-                              <option>1997</option>
-                              <option>1998</option>
-                              <option>1999</option>
-                              <option>2000</option>
-                              <option>2001</option>
-                              <option>2002</option>
-                              <option>2003</option>
-                              <option>2004</option>
-                              <option>2005</option>
-                              <option>2006</option>
-                              <option>2007</option>
-                              <option>2008</option>
-                              <option>2009</option>
-                              <option>2010</option>
-                              <option>2011</option>
-                              <option>2012</option>
-                              <option>2013</option>
-                              <option>2014</option>
-                              <option>2015</option>
-                              <option>2016</option>
-                              <option>2017</option>
-                            </select>
-                            <i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
-                          </div>
-                        </div>
-
-                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                            <span
-                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                            </span>
-                            <select class="js-select u-select--v2-select w-100" required="required"
-                              style="display: none;">
-                              <option>一月</option>
-                              <option>二月</option>
-                              <option>三月</option>
-                              <option selected="selected">四月</option>
-                              <option>五月</option>
-                              <option>六月</option>
-                              <option>七月</option>
-                              <option>八月</option>
-                              <option>九月</option>
-                              <option>十月</option>
-                              <option>十一月</option>
-                              <option>十二月</option>
-                            </select>
-                            <i
-                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
-                          </div>
-                        </div>
-
-                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                            <span
-                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                            </span>
-                            <select class="js-select u-select--v2-select w-100" required="required"
-                              style="display: none;">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                              <option>6</option>
-                              <option>7</option>
-                              <option>8</option>
-                              <option>9</option>
-                              <option>10</option>
-                              <option>11</option>
-                              <option selected="selected">12</option>
-                              <option>13</option>
-                              <option>14</option>
-                              <option>15</option>
-                              <option>16</option>
-                              <option>17</option>
-                              <option>18</option>
-                              <option>19</option>
-                              <option>20</option>
-                              <option>21</option>
-                              <option>22</option>
-                              <option>23</option>
-                              <option>24</option>
-                              <option>25</option>
-                              <option>26</option>
-                              <option>27</option>
-                              <option>28</option>
-                              <option>29</option>
-                              <option>30</option>
-                              <option>31</option>
-                            </select>
-                            <i
-                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                      <button class="obtain btn btn-xl u-btn-secondary g-font-size-default g-px-40" @click="createNewProduct()">新建案例</button>
-                    </div>
-
-                  </div>
-                  
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">*产品名称</label>
+                    <label class="mb-0" for="#currentPassword">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                   </div>
                   <div class="col-md-9 align-self-center">
                     <div class="form-group g-pos-rel mb-0">
                       <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
                         <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
                       </span>
-                      <input type="text" id="name" name="text" v-model="productInfo.core.product_name"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品系列</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" v-model="productInfo.core.series"
+                      <input type="text" name="text" v-model="para.value"
                         class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
                         value="" required="required" data-msg="This field is mandatory"
                         data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -279,16 +32,16 @@
                   </div>
                 </div>
 
-                <div class="row g-mb-20">
+                <div class="row g-mb-20" v-if="para.data_type==1 && para.is_region_data!=1&& para.is_enum_data!=1">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品标签</label>
+                    <label class="mb-0" for="#currentPassword">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                   </div>
                   <div class="col-md-9 align-self-center">
                     <div class="form-group g-pos-rel mb-0">
                       <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                        <i v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0" class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary">{{para.unit}}</i>
                       </span>
-                      <input type="text" name="text" v-model="productInfo.core.tags" placeholder="多个标签之间以逗号隔开"
+                      <input type="text" name="num" v-model="para.value"
                         class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
                         value="" required="required" data-msg="This field is mandatory"
                         data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -296,89 +49,28 @@
                   </div>
                 </div>
 
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品工艺</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" v-model="productInfo.core.process"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                         value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                <div class="row g-mb-20" v-if="para.data_type==2">
+                  <label class="g-mb-10">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                  <div class="form-group mb-0">
+                    <div class="textarea">
+                      <textarea rows="5" width="100%" v-model="para.value"></textarea>
                     </div>
                   </div>
                 </div>
-
-                <div class="row g-mb-20">
+                
+                <div class="row g-mb-20" v-if="para.data_type==7 || para.is_region_data==1">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品来源</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(0,$event)">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="0" type="radio"
-                      :checked="productInfo.core.product_source==0">
-                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-                      </div>
-                      原厂
-                    </label>
-
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(2,$event)">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="2" type="radio"
-                      :checked="productInfo.core.product_source==2">
-                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-                      </div>
-                      代理
-                    </label>
-
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(1,$event)">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="1" type="radio"
-                      :checked="productInfo.core.product_source==1">
-                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-                      </div>
-                      二手
-                    </label>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">适用行业</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40" v-for="(prof,index) in professions" :key="index">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      {{prof.enum_name}}
-                    </label>
-
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品价钱</label>
+                    <label class="mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
                   </div>
                   <div class="col-md-9 align-self-center">
                     <div class="form-group g-pos-rel mb-0">
-                      <input type="text" placeholder="最低价" v-model="productInfo.core.min_price"
+                      <input type="text" v-model="para.mininput"
                         class="u-select--v2  h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                      <span class="g-ml-20 g-mr-20">-----</span>
-                      <input type="text" placeholder="最高价" v-model="productInfo.core.max_price"
+                        >
+                      <span class="g-ml-20 g-mr-20">---</span>
+                      <input type="text" v-model="para.maxinput"
                         class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                        >
                       <input type="text" 
                         class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
                         placeholder="单位" v-model="productInfo.core.price_unit">
@@ -386,70 +78,69 @@
                   </div>
                 </div>
 
-                <div class="row g-mb-20">
+                <div class="row g-mb-20" v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0"></div>
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品亮点</label>
+                    <label class="mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                  </div>
+
+                  <div class="col-md-9 align-self-center">
+                    <div class="row g-mx-minus-10">
+                      <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
+                        <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
+                          <span
+                            class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                            <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                          </span>
+                          <select class="js-select u-select--v2-select w-100">
+                            <option value=""></option>
+                            <option :selected="para.value==ch.enum_code" :value="ch.enum_code" v-for="ch in para.enum_list" :key="ch.enum_code">{{ch.enum_name}}</option>
+                            </select>
+                          <i
+                            class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-mb-20" v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                   </div>
                   <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input v-model="productInfo.core.highlight"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40" v-for="ch in para.enum_list" :key="ch.enum_code">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0"  type="checkbox" :checked="checkEnumValue(ch.enum_code,para)" name="checkbox-inline" @change="enumParaChanged(ch.enum_code,para,$event)">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      {{ch.enum_name}}
+                    </label>
                   </div>
                 </div>
 
-                <div class="g-mb-20">
-                  <label class="g-mb-10" for="#bio">产品描述</label>
-                  <div class="form-group mb-0">
-                    <!-- <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-mb-30">
-                      <div class="js-text-editor" data-height="156" data-placeholder="在这里开始打字"></div>
-                    </div> -->
-                    <div class="textarea">
-                      <ElUEditor id="ueditor" ref="ueditor" :code="'2'"></ElUEditor>
-                    </div>
+                <!-- <div class="row g-mb-20">
+                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                    <label class="mb-0">适用行业</label>
                   </div>
-                </div>
+                  <div class="col-md-9 align-self-center">
+                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="&#xf00c"></i>
+                      </div>
+                      设备加工
+                    </label>
+                  </div>
+                </div> -->
 
-                <div>
-                  <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40" :class="need_save_para?'btn-danger':'btn-primary'" @click="saveBasicInfo()">保存</button>
-                </div>
               </div>
+            </div>
+
+            <div>
+              <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">保存</button>
             </div>
           </div>
         </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -543,15 +234,21 @@
 
                                 <fieldset v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1" class="border col col-sm-12">
                                   <section>
-                                    <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                    <div class="inline-group">
-                                      <label class="checkbox" v-for="ch in para.enum_list" :key="ch.enum_code">
-                                        <input type="checkbox" :checked="checkEnumValue(ch.enum_code,para)" name="checkbox-inline" @change="enumParaChanged(ch.enum_code,para,$event)">
-                                        <i></i>{{ch.enum_name}}</label>
+                                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                                      <label class="label mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                    </div>
+                                    <div class="col-md-9 align-self-center">
+                                      <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40" v-for="ch in para.enum_list" :key="ch.enum_code">
+                                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" :checked="checkEnumValue(ch.enum_code,para)" name="checkbox-inline" @change="enumParaChanged(ch.enum_code,para,$event)">
+                                        <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                                          <i class="fa" data-check-icon="&#xf00c"></i>
+                                        </div>
+                                        {{ch.enum_name}}
+                                      </label>
                                     </div>
                                   </section>
                                 </fieldset>
-
+                              
                                 <section v-if="para.data_type==9" class="col col-3">
                                   <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <label class="input">
@@ -593,143 +290,7 @@
 
 
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" v-if="refModalData!=null && refModalData.para!=null">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-              &times;
-            </button>
-            <h4 class="modal-title">
-              {{refModalData.para.column_name}}
-            </h4>
-          </div>
-          <div class="modal-body no-padding">
-
-            <form id="ref-form" class="smart-form">
-              <fieldset>
-                <div class="row">
-                  <section class="col" v-for="(row,index) in refModalData.oldValues" :key="index" v-if="refModalData.selectedKeys.indexOf(row.key)>=0">
-                    <label class="checkbox">
-                      <input type="checkbox" checked @change="oldValChanged(row,$event)">
-                      <i></i>{{row.value}}
-                    </label>
-                  </section>
-
-                  <section class="col" v-for="(row,index) in refModalData.selectedRows" :key="index">
-                    <label class="checkbox">
-                      <input type="checkbox" checked @change="selectedValChanged(row,$event)">
-                      <i></i>{{row.display_text}}
-                    </label>
-                  </section>
-
-                </div>
-              </fieldset>
-
-              <fieldset v-if="refModalData!=undefined && refModalData!=null">
-                <div class="row">
-                  <section class="col col-sm-12">
-                    <label class="input">
-                      查询条件
-                    </label>
-                  </section>
-
-                  <div v-for="(cond,index) in refModalData.query_fields" :key="index">
-
-                    <section v-if="(cond.data_type==0 && cond.is_enum_data!=1) || cond.data_type==2" class="col col-3">
-                      <label class="input">
-                        <input type="text" name="text" :placeholder="cond.column_name" v-model="cond.value">
-                      </label>
-                    </section>
-
-                    <section v-if="(cond.data_type==1 && cond.is_enum_data!=1)||cond.data_type==7||(cond.is_region_data==1) " class="col col-6">
-                      <label class="label">{{cond.column_name}}</label>
-                      <label class="input col col-6 nopaddingl">
-                        <input type="text" :placeholder="cond.column_name" @change="changeMin(cond.column_id,$event)">
-                      </label>
-                      <label class="nopaddingl col to">-</label>
-                      <label class="input col col-6 nopaddingl">
-                        <input type="text" :placeholder="cond.column_name" @change="changeMax(cond.column_id,$event)">
-                      </label>
-                    </section>
-
-                    <section v-if="(cond.data_type==8||cond.is_enum_data==1) && cond.enum_type==0" class="col col-3">
-                      <label class="label">{{cond.column_name}}</label>
-                      <label class="select">
-                        <select name="country">
-                          <option value="0" selected="" disabled="">{{cond.column_name}}</option>
-                          <option v-for="ch in cond.choices" :value="ch.code" :key="ch.code">{{ch.name}}</option>
-                        </select>
-                        <i></i>
-                      </label>
-                    </section>
-                  </div>
-                </div>
-              </fieldset>
-              <footer>
-                <a class="btn btn-primary pull-left" href="javascript:void(0);" @click="queryRefPara()">
-                  <i class="fa fa-search"></i> 查询</a>
-              </footer>
-              <fieldset>
-                <div>
-                  <div>
-                    <div class="jarviswidget-editbox">
-                    </div>
-                    <div class="widget-body no-padding" v-if="refModalData!=null">
-                      <table class="table table-striped table-bordered table-hover" width="100%">
-                        <thead>
-                          <tr>
-                            <th style="width: 60px;">
-                              <label class="checkbox">
-                                <input type="checkbox" v-model="selectAll">
-                                <i></i>全选
-                              </label>
-                            </th>
-                            <th>ID</th>
-                            <th v-for="head in refModalData.headers" :key="head.id" v-if="head.name!='' && head.name!=null">{{head.name}}</th>
-                          </tr>
-                        </thead>
-                        <tbody v-if="refModalData!=null">
-                          <tr class="row-show" v-for="(row,index) in refModalData.rows" :key="index">
-                            <td>
-                              <label class="checkbox">
-                                <input type="checkbox" :checked="refModalData.selectedRows.indexOf(row)>=0 || refModalData.selectedKeys.indexOf(row.cols.find(x=>x.id=refModalData.key_column_id).value)>=0"
-                                  @change="selectRefPara(row,$event)">
-                                <i></i>
-                              </label>
-                            </td>
-                            <td>{{index+1}}</td>
-                            <td v-for="(para,pidx) in row.cols" :key="pidx" v-if="para.name!='' && para.name!=null">
-                              <label>{{para.value}}{{(para.value!="" && para.data_type==1) ?para.unit:""}}</label>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <!-- <ElPager :pageTotal="query_data.pageTotal" @changePage="changePage"></ElPager> -->
-                  </div>
-                </div>
-              </fieldset>
-
-              <footer>
-                <button type="button" class="btn btn-primary" @click="confirmRefPara()">
-                  确定
-                </button>
-                <button type="button" class="btn btn-default" data-dismiss="modal" @click="cancelRefPara()">
-                  取消
-                </button>
-
-              </footer>
-            </form>
-
-
-          </div>
-
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
+    
     <!-- /.modal -->
     <ElToastAlert ref="toastAlert"></ElToastAlert>
     <ElConfirmDialog @confirm="doConfirm()" ref="confirmDlg"></ElConfirmDialog>
@@ -932,6 +493,8 @@ export default {
       null,
       this.callback_getProfesions
     );
+    console.log(555)
+    console.log(this.parametergroups)
   },
   mounted: function() {
     var self = this;
