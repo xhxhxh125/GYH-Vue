@@ -19,11 +19,12 @@
               >
                 <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
                   <header>
-                    <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">产品图库</h2>
+                    <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">产品视频</h2>
                   </header>
 
                   <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
 
+                  <div @click="getIf">获取图片信息</div>
 
 
 
@@ -40,15 +41,16 @@
                         > -->
                         <div
                           class="cbp-item identity design col-md-3"
-                          v-for="(f,index) in productInfo.picture_list" :key="index"
+                          v-for="(f,index) in productInfo.attachment_list" :key="index"
                         >
                         
                           <div
                             class="u-block-hover g-parent"
+                            v-if="(f.file_type!='.mp4' && f.file_type != '.wma')"
                           >
                             <img
                               class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
-                              :src="(appsettings.proimg+f.oid+f.file_type)"
+                              :src="(appsettings.product_attachment+f.oid+f.file_type)"
                             >
                             <div
                               class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15"
@@ -59,7 +61,7 @@
                                 <li class="list-inline-item">
                                   <a
                                     class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
-                                    :href="(appsettings.proimg+f.oid+f.file_type)"
+                                    :href="(appsettings.product_attachment+f.oid+f.file_type)"
                                   >
                                     <i class="hs-admin-image u-line-icon-pro"></i>
                                   </a>
@@ -67,7 +69,7 @@
                                 <li class="list-inline-item">
                                   <a
                                     class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
-                                    @click="deleteProductPic(pic,index,'list')"
+                                    @click="deleteAttachment(f)"
                                   >
                                     <i class="hs-admin-trash u-line-icon-pro"></i>
                                   </a>
@@ -84,7 +86,7 @@
                       </div>
                       <!-- <input class="js-file-attachment" type="file" name="fileAttachment[]"> -->
                       <div
-                        @click="chooseLocalPicture()"
+                        @click="uploadAttachment()"
                         class="g-parent g-pos-rel g-height-230 g-bg-gray-light-v8--hover g-brd-around g-brd-style-dashed g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-rounded-4 g-transition-0_2 g-transition--ease-in g-pa-15 g-pa-30--md"
                       >
                         <div
@@ -2229,16 +2231,13 @@ export default {
       this.uploader.on("beforeFileQueued", function(file) {});
 
       this.uploader.on("fileQueued", function(file) {
-       self.uploader.options.formData.guid = Math.random();
+        self.uploader.options.formData.guid = Math.random();
         file.index = self.uploading_files.length;
         self.uploading_progresses.push("0");
-        self.uploader.options.formData.soid = self.id;
-        self.uploader.options.formData.target_type = "0";
-        self.uploader.options.formData.cache_key = "User_";
-        (self.uploader.options.formData.cid = self.company_oid),
-          (self.uploader.options.formData.token = window.localStorage.getItem(
-            "token"
-          ));
+        self.uploader.options.formData.pid = self.product_oid;
+        self.uploader.options.formData.token = window.localStorage.getItem(
+          "token"
+        );
         self.uploading_files.push(file);
       });
       this.uploader.on("uploadProgress", function(file, percentage) {

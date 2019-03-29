@@ -313,6 +313,131 @@
                   </div>
                 </div>
 
+                <form>
+                    <div class="form-group">
+                      <div class="align-self-center d-flex g-mb-15">
+                        <!-- Cube Portfolio Blocks - Item -->
+                        <!-- <div
+                          class="cbp-item identity design col-md-3"
+                          v-for="(pic,index) in attachments"
+                          :key="index"
+                        > -->
+                        <div
+                          class="cbp-item identity design col-md-3"
+                          v-for="(f,index) in productInfo.picture_list" :key="index"
+                        >
+                        
+                          <div
+                            class="u-block-hover g-parent"
+                          >
+                            <img
+                              class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
+                              :src="(appsettings.proimg+f.oid+f.file_type)"
+                            >
+                            <div
+                              class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15"
+                            >
+                              <ul
+                                class="align-items-end flex-column list-inline mt-auto ml-auto mb-0"
+                              >
+                                <li class="list-inline-item">
+                                  <a
+                                    class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                                    :href="(appsettings.proimg+f.oid+f.file_type)"
+                                  >
+                                    <i class="hs-admin-image u-line-icon-pro"></i>
+                                  </a>
+                                </li>
+                                <li class="list-inline-item">
+                                  <a
+                                    class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                                    @click="deleteProductPic(pic,index,'list')"
+                                  >
+                                    <i class="hs-admin-trash u-line-icon-pro"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="g-bg-white text-center g-pa-15">
+                            <h3 class="h6 g-color-black g-font-weight-700 mb-1">{{f.file_name}}</h3>
+                            <p class="g-font-size-13 mb-0">{{f.create_time}}</p>
+                          </div>
+                        </div>
+
+
+                        <div
+                          class="cbp-item identity design col-md-3"
+                          v-for="(f,index) in productInfo.update_pictures" :key="'update'+index"
+                        >
+                        
+                          <div
+                            class="u-block-hover g-parent"
+                          >
+                            <img
+                              class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
+                              :src="(appsettings.proimg+f.oid+f.file_type)"
+                            >
+                            <div
+                              class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15"
+                            >
+                              <ul
+                                class="align-items-end flex-column list-inline mt-auto ml-auto mb-0"
+                              >
+                                <li class="list-inline-item">
+                                  <a
+                                    class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                                    :href="(appsettings.proimg+f.oid+f.file_type)"
+                                  >
+                                    <i class="hs-admin-image u-line-icon-pro"></i>
+                                  </a>
+                                </li>
+                                <li class="list-inline-item">
+                                  <a
+                                    class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                                    @click="deleteProductPic(pic,index,'update')"
+                                  >
+                                    <i class="hs-admin-trash u-line-icon-pro"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="g-bg-white text-center g-pa-15">
+                            <h3 class="h6 g-color-black g-font-weight-700 mb-1">{{f.file_name}}</h3>
+                            <p class="g-font-size-13 mb-0">{{f.create_time}}</p>
+                          </div>
+                        </div>
+                        <!-- End Cube Portfolio Blocks - Item -->
+                      </div>
+                      <!-- <input class="js-file-attachment" type="file" name="fileAttachment[]"> -->
+                      <div
+                        @click="chooseLocalPicture()"
+                        class="g-parent g-pos-rel g-height-230 g-bg-gray-light-v8--hover g-brd-around g-brd-style-dashed g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-rounded-4 g-transition-0_2 g-transition--ease-in g-pa-15 g-pa-30--md"
+                      >
+                        <div
+                          class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md"
+                        >
+                          <div>
+                            <div
+                              class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md"
+                            >
+                              <i
+                                class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"
+                              ></i>
+                            </div>
+                          </div>
+                          <div class="text-center text-md-left g-ml-20--md">
+                            <h3
+                              class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10"
+                            >上传图片附件</h3>
+                            <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+
                 <div class="row g-mb-20">
                   <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
                     <label class="mb-0">产品系列</label>
