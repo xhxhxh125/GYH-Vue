@@ -1193,7 +1193,12 @@ export default {
       action_result: "",
 
       need_save_basic: false,
-      need_save_para: false
+      need_save_para: false,
+      elproInfo:{
+        oid:'',
+        category:'',
+        catInfo_name:''
+      }
     };
   },
   watch: {
@@ -1312,6 +1317,11 @@ export default {
       null,
       this.callback_getProfesions
     );
+    this.elproInfo = {
+      oid:this.product_oid,
+      category:this.category_code,
+      catInfo_name:($.getUrlParam("cnn") || "").replace("undefined", "")
+    }
   },
   mounted: function() {
     var self = this;

@@ -18,12 +18,13 @@
                       >
                         <i class="hs-admin-pencil g-absolute-centered g-font-size-16 g-color-white"></i>
                       </a>
-                      <img class="img-fluid rounded-circle" :src="userinfo.picture">
+                      <img
+                        class="img-fluid rounded-circle"
+                        :src="userinfo.picture"
+                      >
                     </div>
 
-                    <h3
-                      class="g-font-weight-300 g-font-size-20 g-color-black mb-0"
-                    >{{userinfo.nickname}}</h3>
+                    <h3 class="g-font-weight-300 g-font-size-20 g-color-black mb-0">{{userinfo.nickname}}</h3>
                   </section>
                   <!-- User Information -->
 
@@ -49,9 +50,12 @@
 
                   <!-- Profile Sidebar -->
                   <section>
-<ul class="list-unstyled mb-0">
+                    <ul class="list-unstyled mb-0">
                       <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                        <a class="d-flex align-items-center u-link-v5 g-parent g-py-15" href="/user/edit.html">
+                        <a
+                          class="d-flex align-items-center u-link-v5 g-parent g-py-15"
+                          href="/user/edit.html"
+                        >
                           <span class="g-font-size-18 g-color-gray-light-v6 g-color-primary--parent-hover g-color-primary--parent-active g-mr-15">
                             <i class="hs-admin-user"></i>
                           </span>
@@ -59,7 +63,10 @@
                         </a>
                       </li>
                       <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                        <a class="d-flex align-items-center u-link-v5 g-parent g-py-15" href="/user/edit_account.html">
+                        <a
+                          class="d-flex align-items-center u-link-v5 g-parent g-py-15"
+                          href="/user/edit_account.html"
+                        >
                           <span class="g-font-size-18 g-color-gray-light-v6 g-color-primary--parent-hover g-color-primary--parent-active g-mr-15">
                             <i class="hs-admin-write"></i>
                           </span>
@@ -67,7 +74,10 @@
                         </a>
                       </li>
                       <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                        <a class="d-flex align-items-center u-link-v5 g-parent g-py-15" href="/user/query.html">
+                        <a
+                          class="d-flex align-items-center u-link-v5 g-parent g-py-15"
+                          href="/user/query.html"
+                        >
                           <span class="g-font-size-18 g-color-gray-light-v6 g-color-primary--parent-hover g-color-primary--parent-active g-mr-15">
                             <i class="hs-admin-medall"></i>
                           </span>
@@ -75,7 +85,10 @@
                         </a>
                       </li>
                       <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                        <a class="d-flex align-items-center u-link-v5 g-parent g-py-15 active" :href="'/user/attachment.html?id='+userinfo.oid+'&t='+userinfo.user_type+'&coid='+userinfo.company_oid">
+                        <a
+                          class="d-flex align-items-center u-link-v5 g-parent g-py-15 active"
+                          :href="'/user/attachment.html?id='+userinfo.oid+'&t='+userinfo.user_type+'&coid='+userinfo.company_oid"
+                        >
                           <span class="g-font-size-18 g-color-gray-light-v6 g-color-primary--parent-hover g-color-primary--parent-active g-mr-15">
                             <i class="hs-admin-mobile"></i>
                           </span>
@@ -84,20 +97,15 @@
                       </li>
                     </ul>
 
-                    
                   </section>
                   <!-- End Profile Sidebar -->
                 </div>
               </div>
 
               <div class="col-md-9">
-                <div
-                  class="g-pos-rel h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-30--md"
-                >
+                <div class="g-pos-rel h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-30--md">
                   <header>
-                    <h2
-                      class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0"
-                    >照片</h2>
+                    <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">照片</h2>
                   </header>
 
                   <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-25--md">
@@ -119,12 +127,8 @@
                               class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
                               :src="(appsettings.comfile_prefix+pic.oid+pic.file_type)"
                             >
-                            <div
-                              class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15"
-                            >
-                              <ul
-                                class="align-items-end flex-column list-inline mt-auto ml-auto mb-0"
-                              >
+                            <div class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15">
+                              <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
                                 <li class="list-inline-item">
                                   <a
                                     class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
@@ -156,22 +160,14 @@
                         @click="onNewImageClick()"
                         class="g-parent g-pos-rel g-height-230 g-bg-gray-light-v8--hover g-brd-around g-brd-style-dashed g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-rounded-4 g-transition-0_2 g-transition--ease-in g-pa-15 g-pa-30--md"
                       >
-                        <div
-                          class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md"
-                        >
+                        <div class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md">
                           <div>
-                            <div
-                              class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md"
-                            >
-                              <i
-                                class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"
-                              ></i>
+                            <div class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md">
+                              <i class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"></i>
                             </div>
                           </div>
                           <div class="text-center text-md-left g-ml-20--md">
-                            <h3
-                              class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10"
-                            >上传图片附件</h3>
+                            <h3 class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10">上传图片附件</h3>
                             <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
                           </div>
                         </div>
@@ -179,17 +175,8 @@
                     </div>
                   </form>
 
-
-
-
-
-
-
-
                   <header>
-                    <h2
-                      class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0"
-                    >个人介绍视频</h2>
+                    <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">个人介绍视频</h2>
                   </header>
 
                   <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-25--md">
@@ -211,12 +198,8 @@
                               class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
                               :src="(appsettings.comfile_prefix+pic.oid+pic.file_type)"
                             >
-                            <div
-                              class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15"
-                            >
-                              <ul
-                                class="align-items-end flex-column list-inline mt-auto ml-auto mb-0"
-                              >
+                            <div class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15">
+                              <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
                                 <li class="list-inline-item">
                                   <a
                                     class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
@@ -248,22 +231,14 @@
                         @click="onNewVideoClick()"
                         class="g-parent g-pos-rel g-height-230 g-bg-gray-light-v8--hover g-brd-around g-brd-style-dashed g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-rounded-4 g-transition-0_2 g-transition--ease-in g-pa-15 g-pa-30--md"
                       >
-                        <div
-                          class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md"
-                        >
+                        <div class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md">
                           <div>
-                            <div
-                              class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md"
-                            >
-                              <i
-                                class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"
-                              ></i>
+                            <div class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md">
+                              <i class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"></i>
                             </div>
                           </div>
                           <div class="text-center text-md-left g-ml-20--md">
-                            <h3
-                              class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10"
-                            >上传个人介绍视频</h3>
+                            <h3 class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10">上传个人介绍视频</h3>
                             <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
                           </div>
                         </div>
@@ -287,7 +262,10 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header g-flex">
-                      <h4 class="modal-title" id="myModalLabel">修改用户头像</h4>
+                      <h4
+                        class="modal-title"
+                        id="myModalLabel"
+                      >修改用户头像</h4>
                       <button
                         type="button"
                         class="close"
@@ -314,8 +292,14 @@
       </div>
     </ElPageFrame>
     <ElToastAlert ref="toastAlert"></ElToastAlert>
-    <a id="selectimage" style="display:none;"></a>
-    <a id="selectvideo" style="display:none;"></a>
+    <a
+      id="selectimage"
+      style="display:none;"
+    ></a>
+    <a
+      id="selectvideo"
+      style="display:none;"
+    ></a>
   </div>
 </template>
 
@@ -354,14 +338,14 @@ export default {
     this.user_type = $.getUrlParam("t");
     this.company_oid = $.getUrlParam("coid");
 
-     var infobody = {
-        account_oid: id
-      };
-      $.post_json(
-        appsettings.apiroot + "account/info",
-        infobody,
-        this.userInfoRender
-      );
+    var infobody = {
+      account_oid: this.id
+    };
+    $.post_json(
+      appsettings.apiroot + "account/info",
+      infobody,
+      this.userInfoRender
+    );
 
     var body = {
       source_oid: this.id
@@ -395,17 +379,17 @@ export default {
         }
       }
     },
-      userInfoRender: function (res) {
-        if (res.status == 0) {
-          this.userinfo = res.data;
-        } else {
-          this.$refs.toastAlert.config = {
-            type: "error",
-            title: "错误",
-            msg: res.message
-          };
-        }
-      },
+    userInfoRender: function(res) {
+      if (res.status == 0) {
+        this.userinfo = res.data;
+      } else {
+        this.$refs.toastAlert.config = {
+          type: "error",
+          title: "错误",
+          msg: res.message
+        };
+      }
+    },
     attRender: function(res) {
       if (res.status == 0) {
         this.attachments = res.data;
@@ -518,7 +502,9 @@ export default {
         self.uploader.options.formData.target_type = "0";
         self.uploader.options.formData.cache_key = "User_";
         (self.uploader.options.formData.cid = self.company_oid),
-          (self.uploader.options.formData.token = window.localStorage.getItem("token"));
+          (self.uploader.options.formData.token = window.localStorage.getItem(
+            "token"
+          ));
         //如果是图片，则生成缩略图
         if (htmlHelper.isImg("." + file.ext)) {
           self.uploader.makeThumb(
@@ -548,8 +534,8 @@ export default {
         // var file_des = $("#" + file.id)
         // 	.find("span.state")
         // 	.attr("data-atttype");
-        console.log(file,54645);
-        
+        console.log(file, 54645);
+
         self.persistAttachmentCallback(file, JSON.parse(response));
       });
       this.uploader.on("uploadError", function(file) {
@@ -660,59 +646,46 @@ export default {
       }
     },
 
+    onAccountImageCropper: function(imgbase64) {
+      if (this.userinfo.oid == undefined || this.userinfo.oid.length == 0) {
+        this.$refs.pf.confirmShow({
+          title: "尚未创建账户",
+          msg: "请维护账户基本信息以创建账户",
+          only_alert: true
+        });
+      } else {
+        var body = {
+          account_oid: this.userinfo.oid,
+          base64: imgbase64.split(",")[1]
+        };
+        $.post_json(
+          appsettings.apiroot + "home/account/picture/update",
+          body,
+          this.uploadPictureRender
+        );
+      }
+    },
 
-
-
-
-
-
-
-
-
-
-
-
-
-    onAccountImageCropper: function (imgbase64) {
-        if (this.userinfo.oid == undefined || this.userinfo.oid.length == 0) {
+    uploadPictureRender: function(res) {
+      $("#accountpicture_modal").modal("hide");
+      if (res.status == 0) {
+        var that = this;
+        setTimeout(() => {
           this.$refs.pf.confirmShow({
-            title: "尚未创建账户",
-            msg: "请维护账户基本信息以创建账户",
+            title: "提交成功",
+            msg: "账户头像修改提交成功！",
             only_alert: true
           });
-        } else {
-          var body = {
-            account_oid: this.userinfo.oid,
-            base64: imgbase64.split(",")[1]
-          };
-          $.post_json(
-            appsettings.apiroot + "home/account/picture/update",
-            body,
-            this.uploadPictureRender
-          );
-        }
-      },
-
-      uploadPictureRender: function (res) {
-        $("#accountpicture_modal").modal("hide");
-        if (res.status == 0) {
-          var that = this;
-          setTimeout(() => {
-            this.$refs.pf.confirmShow({
-              title: "提交成功",
-              msg: "账户头像修改提交成功！",
-              only_alert: true
-            });
-            that.userinfo.picture = res.data + "?t=" + Math.random();
-          }, 1500);
-        } else {
-          this.$refs.toastAlert.config = {
-            type: "error",
-            title: "错误",
-            msg: res.message
-          };
-        }
-      },
+          that.userinfo.picture = res.data + "?t=" + Math.random();
+        }, 1500);
+      } else {
+        this.$refs.toastAlert.config = {
+          type: "error",
+          title: "错误",
+          msg: res.message
+        };
+      }
+    }
   }
 };
 </script>

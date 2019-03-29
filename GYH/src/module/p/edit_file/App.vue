@@ -5,462 +5,158 @@
 
         <!-- 新插入的页面 -->
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
-        <div class="g-pa-20">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0">编辑产品</h2>
-            </div>
-            <hr class="g-my-15 g-my-15--md">
-            <ElProAsdiear></ElProAsdiear>
+          <div class="g-pa-20">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0">编辑产品</h2>
+              </div>
+              <hr class="g-my-15 g-my-15--md">
+              <ElProAsdiear></ElProAsdiear>
 
-            <div class="col-md-9" id="base_form">
-              <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-                <header>
-                  <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">产品基本信息</h2>
-                </header>
+              <div
+                class="col-md-9"
+                id="base_form"
+              >
+                <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+                  <header>
+                    <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">产品附件</h2>
+                  </header>
 
-                <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
+                  <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
 
-                <div class="row g-mb-20">
 
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品类别</label>
-                  </div>
 
-                  <div class="col-md-9 align-self-center row">
-
-                    <div class="col-md-9 align-self-center">
-                      <div class="row g-mx-minus-10">
-
-                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                            <span
-                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                            </span>
-                            <select class="js-select u-select--v2-select w-100" required="required"
-                              style="display: none;">
-                              <option>1900</option>
-                              <option>1901</option>
-                              <option>1902</option>
-                              <option>1903</option>
-                              <option>1904</option>
-                              <option>1905</option>
-                              <option>1906</option>
-                              <option>1907</option>
-                              <option>1908</option>
-                              <option>1909</option>
-                              <option>1910</option>
-                              <option>1911</option>
-                              <option>1912</option>
-                              <option>1913</option>
-                              <option>1914</option>
-                              <option>1915</option>
-                              <option>1916</option>
-                              <option>1917</option>
-                              <option>1918</option>
-                              <option>1919</option>
-                              <option>1920</option>
-                              <option>1921</option>
-                              <option>1922</option>
-                              <option>1923</option>
-                              <option>1924</option>
-                              <option>1925</option>
-                              <option>1926</option>
-                              <option>1927</option>
-                              <option>1928</option>
-                              <option>1929</option>
-                              <option>1930</option>
-                              <option>1931</option>
-                              <option>1932</option>
-                              <option>1933</option>
-                              <option>1934</option>
-                              <option>1935</option>
-                              <option>1936</option>
-                              <option>1937</option>
-                              <option>1938</option>
-                              <option>1939</option>
-                              <option>1940</option>
-                              <option>1941</option>
-                              <option>1942</option>
-                              <option>1943</option>
-                              <option>1944</option>
-                              <option>1945</option>
-                              <option>1946</option>
-                              <option>1947</option>
-                              <option>1948</option>
-                              <option>1949</option>
-                              <option>1950</option>
-                              <option>1951</option>
-                              <option>1952</option>
-                              <option>1953</option>
-                              <option>1954</option>
-                              <option>1955</option>
-                              <option>1956</option>
-                              <option>1957</option>
-                              <option>1958</option>
-                              <option>1959</option>
-                              <option>1960</option>
-                              <option>1961</option>
-                              <option>1962</option>
-                              <option>1963</option>
-                              <option>1964</option>
-                              <option>1965</option>
-                              <option>1966</option>
-                              <option>1967</option>
-                              <option>1968</option>
-                              <option>1969</option>
-                              <option>1970</option>
-                              <option>1971</option>
-                              <option>1972</option>
-                              <option>1973</option>
-                              <option>1974</option>
-                              <option>1975</option>
-                              <option>1976</option>
-                              <option>1977</option>
-                              <option>1978</option>
-                              <option>1979</option>
-                              <option>1980</option>
-                              <option>1981</option>
-                              <option>1982</option>
-                              <option>1983</option>
-                              <option>1984</option>
-                              <option>1985</option>
-                              <option selected="selected">1986</option>
-                              <option>1987</option>
-                              <option>1988</option>
-                              <option>1989</option>
-                              <option>1990</option>
-                              <option>1991</option>
-                              <option>1992</option>
-                              <option>1993</option>
-                              <option>1994</option>
-                              <option>1995</option>
-                              <option>1996</option>
-                              <option>1997</option>
-                              <option>1998</option>
-                              <option>1999</option>
-                              <option>2000</option>
-                              <option>2001</option>
-                              <option>2002</option>
-                              <option>2003</option>
-                              <option>2004</option>
-                              <option>2005</option>
-                              <option>2006</option>
-                              <option>2007</option>
-                              <option>2008</option>
-                              <option>2009</option>
-                              <option>2010</option>
-                              <option>2011</option>
-                              <option>2012</option>
-                              <option>2013</option>
-                              <option>2014</option>
-                              <option>2015</option>
-                              <option>2016</option>
-                              <option>2017</option>
-                            </select>
-                            <i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                  <form>
+                    <div class="form-group">
+                      <div class="align-self-center d-flex g-mb-15">
+                        <!-- Cube Portfolio Blocks - Item -->
+                        <!-- <div
+                          class="cbp-item identity design col-md-3"
+                          v-for="(pic,index) in attachments"
+                          :key="index"
+                        > -->
+                        <div
+                          class="cbp-item identity design col-md-3"
+                          v-for="(f,index) in productInfo.attachment_list" :key="index"
+                        >
+                        
+                          <div
+                            class="u-block-hover g-parent"
+                            v-if="(f.file_type!='.mp4' && f.file_type != '.wma')"
+                          >
+                            <img
+                              class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
+                              :src="(appsettings.product_attachment+f.oid+f.file_type)"
+                            >
+                            <div
+                              class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15"
+                            >
+                              <ul
+                                class="align-items-end flex-column list-inline mt-auto ml-auto mb-0"
+                              >
+                                <li class="list-inline-item">
+                                  <a
+                                    class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                                    :href="(appsettings.product_attachment+f.oid+f.file_type)"
+                                  >
+                                    <i class="hs-admin-image u-line-icon-pro"></i>
+                                  </a>
+                                </li>
+                                <li class="list-inline-item">
+                                  <a
+                                    class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                                    @click="deleteAttachment(f)"
+                                  >
+                                    <i class="hs-admin-trash u-line-icon-pro"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="g-bg-white text-center g-pa-15">
+                            <h3 class="h6 g-color-black g-font-weight-700 mb-1">{{f.file_name}}</h3>
+                            <p class="g-font-size-13 mb-0">{{f.create_time}}</p>
                           </div>
                         </div>
-
-                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                            <span
-                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                            </span>
-                            <select class="js-select u-select--v2-select w-100" required="required"
-                              style="display: none;">
-                              <option>一月</option>
-                              <option>二月</option>
-                              <option>三月</option>
-                              <option selected="selected">四月</option>
-                              <option>五月</option>
-                              <option>六月</option>
-                              <option>七月</option>
-                              <option>八月</option>
-                              <option>九月</option>
-                              <option>十月</option>
-                              <option>十一月</option>
-                              <option>十二月</option>
-                            </select>
-                            <i
-                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                        <!-- End Cube Portfolio Blocks - Item -->
+                      </div>
+                      <!-- <input class="js-file-attachment" type="file" name="fileAttachment[]"> -->
+                      <div
+                        @click="uploadAttachment()"
+                        class="g-parent g-pos-rel g-height-230 g-bg-gray-light-v8--hover g-brd-around g-brd-style-dashed g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-rounded-4 g-transition-0_2 g-transition--ease-in g-pa-15 g-pa-30--md"
+                      >
+                        <div
+                          class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md"
+                        >
+                          <div>
+                            <div
+                              class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md"
+                            >
+                              <i
+                                class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"
+                              ></i>
+                            </div>
+                          </div>
+                          <div class="text-center text-md-left g-ml-20--md">
+                            <h3
+                              class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10"
+                            >上传图片附件</h3>
+                            <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
                           </div>
                         </div>
-
-                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                            <span
-                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                            </span>
-                            <select class="js-select u-select--v2-select w-100" required="required"
-                              style="display: none;">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                              <option>6</option>
-                              <option>7</option>
-                              <option>8</option>
-                              <option>9</option>
-                              <option>10</option>
-                              <option>11</option>
-                              <option selected="selected">12</option>
-                              <option>13</option>
-                              <option>14</option>
-                              <option>15</option>
-                              <option>16</option>
-                              <option>17</option>
-                              <option>18</option>
-                              <option>19</option>
-                              <option>20</option>
-                              <option>21</option>
-                              <option>22</option>
-                              <option>23</option>
-                              <option>24</option>
-                              <option>25</option>
-                              <option>26</option>
-                              <option>27</option>
-                              <option>28</option>
-                              <option>29</option>
-                              <option>30</option>
-                              <option>31</option>
-                            </select>
-                            <i
-                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
-                          </div>
-                        </div>
-
                       </div>
                     </div>
+                  </form>
 
-                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                      <button class="obtain btn btn-xl u-btn-secondary g-font-size-default g-px-40" @click="createNewProduct()">新建案例</button>
-                    </div>
 
-                  </div>
+
+
+
+
+
+
+
+
+
                   
-                </div>
 
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">*产品名称</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" id="name" name="text" v-model="productInfo.core.product_name"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品系列</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" v-model="productInfo.core.series"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品标签</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" name="text" v-model="productInfo.core.tags" placeholder="多个标签之间以逗号隔开"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品工艺</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" v-model="productInfo.core.process"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                         value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品来源</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(0,$event)">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="0" type="radio"
-                      :checked="productInfo.core.product_source==0">
-                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-                      </div>
-                      原厂
-                    </label>
-
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(2,$event)">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="2" type="radio"
-                      :checked="productInfo.core.product_source==2">
-                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-                      </div>
-                      代理
-                    </label>
-
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(1,$event)">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="1" type="radio"
-                      :checked="productInfo.core.product_source==1">
-                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-                      </div>
-                      二手
-                    </label>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">适用行业</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40" v-for="(prof,index) in professions" :key="index">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      {{prof.enum_name}}
-                    </label>
-
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品价钱</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <input type="text" placeholder="最低价" v-model="productInfo.core.min_price"
-                        class="u-select--v2  h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                      <span class="g-ml-20 g-mr-20">-----</span>
-                      <input type="text" placeholder="最高价" v-model="productInfo.core.max_price"
-                        class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                      <input type="text" 
-                        class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        placeholder="单位" v-model="productInfo.core.price_unit">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品亮点</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input v-model="productInfo.core.highlight"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="g-mb-20">
-                  <label class="g-mb-10" for="#bio">产品描述</label>
-                  <div class="form-group mb-0">
-                    <!-- <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-mb-30">
-                      <div class="js-text-editor" data-height="156" data-placeholder="在这里开始打字"></div>
-                    </div> -->
-                    <div class="textarea">
-                      <ElUEditor id="ueditor" ref="ueditor" :code="'2'"></ElUEditor>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40" :class="need_save_para?'btn-danger':'btn-primary'" @click="saveBasicInfo()">保存</button>
                 </div>
               </div>
+
+              <div
+                id="uploaderInput"
+                ref="uploaderInput1"
+                v-show="false"
+              ></div>
+              <input
+                id="uploaderPicture"
+                type="file"
+                ref="uploadPic"
+                v-show="false"
+                @change="uploadPicChanged()"
+              />
+
             </div>
           </div>
         </div>
-      </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div id="main" role="main">
+        <div
+          id="main"
+          role="main"
+        >
           <!-- RIBBON -->
           <div id="ribbon">
             <span class="ribbon-button-alignment">
-              <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom"
+              <span
+                id="refresh"
+                class="btn btn-ribbon"
+                data-action="resetWidgets"
+                data-title="refresh"
+                rel="tooltip"
+                data-placement="bottom"
                 data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
-                data-html="true">
+                data-html="true"
+              >
                 <i class="fa fa-refresh"></i>
               </span>
             </span>
@@ -478,14 +174,24 @@
           <!-- MAIN CONTENT -->
           <div id="content">
 
-
-            <section id="widget-grid" class="">
+            <section
+              id="widget-grid"
+              class=""
+            >
               <ElBlockAlert ref="alert"></ElBlockAlert>
               <div class="row">
                 <article class="col-sm-12 col-md-12">
-                  <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
-                    data-widget-sortable="false">
+                  <div
+                    class="jarviswidget  jarviswidget-sortable"
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="false"
+                    data-widget-sortable="false"
+                  >
                     <header>
                       <span class="widget-icon">
                         <i class="fa fa-edit"></i>
@@ -501,33 +207,52 @@
 
                       <!-- widget content -->
                       <div class="widget-body no-padding">
-                        <div id="base_form" class="smart-form">
+                        <div
+                          id="base_form"
+                          class="smart-form"
+                        >
 
                           <fieldset>
                             <div class="row">
                               <section class="col col-8">
-                                <ElProCategory :required="true" :category="category_code" @categoryChanged="categoryChanged"></ElProCategory>
+                                <ElProCategory
+                                  :required="true"
+                                  :category="category_code"
+                                  @categoryChanged="categoryChanged"
+                                ></ElProCategory>
                               </section>
                               <section class="col col-4">
                                 <label class="label">&nbsp;</label>
                                 <label class="input">
-                                  <a href="javascript:void(0);" @click="createNewProduct()" class="bope col-sm-6 btn btn-primary pull-left">
+                                  <a
+                                    href="javascript:void(0);"
+                                    @click="createNewProduct()"
+                                    class="bope col-sm-6 btn btn-primary pull-left"
+                                  >
                                     <i class="fa fa-plus"></i> 新建产品</a>
-                                  <a v-if="edit_mode=='edit' && functionlist.indexOf('copy@information_product_edit')>=0" href="javascript:void(0);" @click="copyProduct()"
-                                    class="bope col-sm-6 btn bg-color-orange txt-color-white pull-left">
+                                  <a
+                                    v-if="edit_mode=='edit' && functionlist.indexOf('copy@information_product_edit')>=0"
+                                    href="javascript:void(0);"
+                                    @click="copyProduct()"
+                                    class="bope col-sm-6 btn bg-color-orange txt-color-white pull-left"
+                                  >
                                     <i class="fa fa-files-o"></i> 复制本产品</a>
                                 </label>
                               </section>
                             </div>
                           </fieldset>
 
-
                           <fieldset>
                             <div class="row">
                               <section class="col col-sm-12">
                                 <label class="label">*产品名称</label>
                                 <label class="input">
-                                  <input type="text" id="name" name="text" v-model="productInfo.core.product_name">
+                                  <input
+                                    type="text"
+                                    id="name"
+                                    name="text"
+                                    v-model="productInfo.core.product_name"
+                                  >
                                 </label>
                               </section>
                             </div>
@@ -538,7 +263,12 @@
                               <section class="col col-sm-12">
                                 <label class="label">产品标签</label>
                                 <label class="input">
-                                  <input type="text" name="text" v-model="productInfo.core.tags" placeholder="多个标签之间以逗号隔开">
+                                  <input
+                                    type="text"
+                                    name="text"
+                                    v-model="productInfo.core.tags"
+                                    placeholder="多个标签之间以逗号隔开"
+                                  >
                                 </label>
                               </section>
                             </div>
@@ -550,19 +280,53 @@
                                 <label class="label">产品图片</label>
                                 <div class="textarea">
                                   <div class="superbox col-sm-12">
-                                    <div class="superbox-list imgbox" :class="selectedPic==pic?'active':''" v-for="(pic,index) in productInfo.picture_list" :key="index">
-                                      <img :src="appsettings.proimg+pic.oid+pic.file_type" :data-img="appsettings.proimg+pic.oid+pic.file_type" class="superbox-img">
-                                      <i class="fa fa-times ibtn" style="color: red;" @click="deleteProductPic(pic,index,'list')"></i>
+                                    <div
+                                      class="superbox-list imgbox"
+                                      :class="selectedPic==pic?'active':''"
+                                      v-for="(pic,index) in productInfo.picture_list"
+                                      :key="index"
+                                    >
+                                      <img
+                                        :src="appsettings.proimg+pic.oid+pic.file_type"
+                                        :data-img="appsettings.proimg+pic.oid+pic.file_type"
+                                        class="superbox-img"
+                                      >
+                                      <i
+                                        class="fa fa-times ibtn"
+                                        style="color: red;"
+                                        @click="deleteProductPic(pic,index,'list')"
+                                      ></i>
                                     </div>
 
-                                    <div class="superbox-list imgbox" v-for="(pic,index) in productInfo.update_pictures" :key="index" v-show="productInfo.update_pictures!=null">
-                                      <img :src="pic.base64" :data-img="pic.base64" class="superbox-img">
-                                      <i class="fa fa-times ibtn" style="color: red;" @click="deleteProductPic(pic,index,'update')"></i>
+                                    <div
+                                      class="superbox-list imgbox"
+                                      v-for="(pic,index) in productInfo.update_pictures"
+                                      :key="index"
+                                      v-show="productInfo.update_pictures!=null"
+                                    >
+                                      <img
+                                        :src="pic.base64"
+                                        :data-img="pic.base64"
+                                        class="superbox-img"
+                                      >
+                                      <i
+                                        class="fa fa-times ibtn"
+                                        style="color: red;"
+                                        @click="deleteProductPic(pic,index,'update')"
+                                      ></i>
                                     </div>
 
-                                    <div class="superbox-list" style="text-align:center;" @click="chooseLocalPicture()">
+                                    <div
+                                      class="superbox-list"
+                                      style="text-align:center;"
+                                      @click="chooseLocalPicture()"
+                                    >
                                       <!-- <img :src="appsettings.gyhImgPrefix+'add.png'" class="superbox-img" style="width: auto;" title="上传新的产品图片"> -->
-                                      <i class="fa  fa-plus-circle" style="color: #2196F3;font-size: 50px;cursor:pointer;" title="上传新的产品图片"></i>
+                                      <i
+                                        class="fa  fa-plus-circle"
+                                        style="color: #2196F3;font-size: 50px;cursor:pointer;"
+                                        title="上传新的产品图片"
+                                      ></i>
                                     </div>
                                     <!-- <div v-if="selectedPic!=null" class="superbox-show" :style="selectedPic!=null?' display: block;':' display: none;'">
                                       <img :src="selectedPic.base64!=undefined && selectedPic.base64!=null?selectedPic.base64:(appsettings.proimg+selectedPic.oid+selectedPic.file_type)" class="superbox-current-img">
@@ -589,14 +353,20 @@
                               <section class="col col-3">
                                 <label class="label">产品系列</label>
                                 <label class="input">
-                                  <input type="text" v-model="productInfo.core.series">
+                                  <input
+                                    type="text"
+                                    v-model="productInfo.core.series"
+                                  >
                                 </label>
                               </section>
 
                               <section class="col col-3">
                                 <label class="label">产品工艺</label>
                                 <label class="input">
-                                  <input type="text" v-model="productInfo.core.process">
+                                  <input
+                                    type="text"
+                                    v-model="productInfo.core.process"
+                                  >
                                 </label>
                               </section>
 
@@ -604,15 +374,33 @@
                                 <label class="label">产品来源</label>
                                 <div class="inline-group">
                                   <label class="radio">
-                                    <input type="radio" name="psource" value="0" :checked="productInfo.core.product_source==0" @change="changeRource(0,$event)">
+                                    <input
+                                      type="radio"
+                                      name="psource"
+                                      value="0"
+                                      :checked="productInfo.core.product_source==0"
+                                      @change="changeRource(0,$event)"
+                                    >
                                     <i></i>原厂</label>
 
                                   <label class="radio">
-                                    <input type="radio" name="psource" value="2" :checked="productInfo.core.product_source==2" @change="changeRource(2,$event)">
+                                    <input
+                                      type="radio"
+                                      name="psource"
+                                      value="2"
+                                      :checked="productInfo.core.product_source==2"
+                                      @change="changeRource(2,$event)"
+                                    >
                                     <i></i>代理</label>
 
                                   <label class="radio">
-                                    <input type="radio" name="psource" value="1" :checked="productInfo.core.product_source==1" @change="changeRource(1,$event)">
+                                    <input
+                                      type="radio"
+                                      name="psource"
+                                      value="1"
+                                      :checked="productInfo.core.product_source==1"
+                                      @change="changeRource(1,$event)"
+                                    >
                                     <i></i>二手</label>
                                 </div>
                               </section>
@@ -626,8 +414,17 @@
                                 <label class="label">适用行业</label>
                                 <div class="smart-form">
                                   <div class="inline-group">
-                                    <label class="checkbox col-sm-2" v-for="(prof,index) in professions" :key="index">
-                                      <input type="checkbox" :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
+                                    <label
+                                      class="checkbox col-sm-2"
+                                      v-for="(prof,index) in professions"
+                                      :key="index"
+                                    >
+                                      <input
+                                        type="checkbox"
+                                        :value="prof.enum_code"
+                                        :checked="checkProfession(prof)"
+                                        @change="profChanged(prof.enum_code,$event)"
+                                      >
                                       <i></i>{{prof.enum_name}}</label>
 
                                   </div>
@@ -638,17 +435,29 @@
                           <fieldset>
                             <div class="row">
                               <section class="col col-6">
-                                  <label class="label">产品价格</label>
-                                  <label class="input col col-4 nopaddingl rl">
-                                    <input type="text" placeholder="最低价" v-model="productInfo.core.min_price">
-                                  </label>
-                                  <label class="nopaddingl col to">—</label>
-                                  <label class="input col col-4 nopaddingl rr">
-                                    <input type="text" placeholder="最高价" v-model="productInfo.core.max_price">
-                                  </label>
-                                  <label class="input col col-4 rr">
-                                    <input type="text" placeholder="单位" v-model="productInfo.core.price_unit">
-                                  </label>
+                                <label class="label">产品价格</label>
+                                <label class="input col col-4 nopaddingl rl">
+                                  <input
+                                    type="text"
+                                    placeholder="最低价"
+                                    v-model="productInfo.core.min_price"
+                                  >
+                                </label>
+                                <label class="nopaddingl col to">—</label>
+                                <label class="input col col-4 nopaddingl rr">
+                                  <input
+                                    type="text"
+                                    placeholder="最高价"
+                                    v-model="productInfo.core.max_price"
+                                  >
+                                </label>
+                                <label class="input col col-4 rr">
+                                  <input
+                                    type="text"
+                                    placeholder="单位"
+                                    v-model="productInfo.core.price_unit"
+                                  >
+                                </label>
                               </section>
                             </div>
                           </fieldset>
@@ -657,7 +466,11 @@
                               <section class="col col-sm-12">
                                 <label class="label">产品亮点</label>
                                 <div class="textarea">
-                                  <textarea rows="10" width="100%" v-model="productInfo.core.highlight"></textarea>
+                                  <textarea
+                                    rows="10"
+                                    width="100%"
+                                    v-model="productInfo.core.highlight"
+                                  ></textarea>
                                 </div>
                               </section>
                             </div>
@@ -668,14 +481,23 @@
                               <section class="col col-sm-12">
                                 <label class="label">产品描述</label>
                                 <div class="textarea">
-                                  <ElUEditor id="ueditor" ref="ueditor" :code="'2'"></ElUEditor>
+                                  <ElUEditor
+                                    id="ueditor"
+                                    ref="ueditor"
+                                    :code="'2'"
+                                  ></ElUEditor>
                                 </div>
                               </section>
                             </div>
                           </fieldset>
 
                           <footer>
-                            <a @click="saveBasicInfo()" href="javascript:void(0);" :class="need_save_basic?'btn-danger':'btn-primary'" class="btn pull-left">
+                            <a
+                              @click="saveBasicInfo()"
+                              href="javascript:void(0);"
+                              :class="need_save_basic?'btn-danger':'btn-primary'"
+                              class="btn pull-left"
+                            >
                               <i class="fa fa-save"></i> 保存基本信息</a>
                           </footer>
 
@@ -686,9 +508,17 @@
                     <!-- end widget div -->
                   </div>
 
-                  <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
-                    data-widget-sortable="false">
+                  <div
+                    class="jarviswidget  jarviswidget-sortable"
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="false"
+                    data-widget-sortable="false"
+                  >
                     <header>
                       <span class="widget-icon">
                         <i class="fa fa-edit"></i>
@@ -700,85 +530,164 @@
                       </div>
 
                       <div class="widget-body no-padding">
-                        <div id="para_form" class="smart-form">
-                          <fieldset v-for="group in parametergroups" :key="group.group_code">
+                        <div
+                          id="para_form"
+                          class="smart-form"
+                        >
+                          <fieldset
+                            v-for="group in parametergroups"
+                            :key="group.group_code"
+                          >
                             <div class="row">
                               <section class="col col-3">
-                                <label class="label" style="font-size:15px">{{group.group_name}}</label>
+                                <label
+                                  class="label"
+                                  style="font-size:15px"
+                                >{{group.group_name}}</label>
                               </section>
                             </div>
 
                             <div class="row">
-                              <div v-for="para in group.parameters" :key="para.column_id">
+                              <div
+                                v-for="para in group.parameters"
+                                :key="para.column_id"
+                              >
 
-                                <section v-if="para.data_type==0 && para.is_enum_data!=1" class="col col-3">
+                                <section
+                                  v-if="para.data_type==0 && para.is_enum_data!=1"
+                                  class="col col-3"
+                                >
                                   <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <label class="input">
-                                    <input type="text" name="text" v-model="para.value">
+                                    <input
+                                      type="text"
+                                      name="text"
+                                      v-model="para.value"
+                                    >
                                   </label>
                                 </section>
 
-                                <section v-if="para.data_type==1 && para.is_region_data!=1&& para.is_enum_data!=1" class="col col-3">
+                                <section
+                                  v-if="para.data_type==1 && para.is_region_data!=1&& para.is_enum_data!=1"
+                                  class="col col-3"
+                                >
                                   <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <label class="input">
-                                    <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i>
-                                    <input type="text" name="num" v-model="para.value">
+                                    <i
+                                      class="icon-append fa unit"
+                                      v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0"
+                                    >{{para.unit}}</i>
+                                    <input
+                                      type="text"
+                                      name="num"
+                                      v-model="para.value"
+                                    >
                                   </label>
                                 </section>
 
-
-                                <section v-if="para.data_type==2" class="col col-sm-12">
+                                <section
+                                  v-if="para.data_type==2"
+                                  class="col col-sm-12"
+                                >
                                   <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <div class="textarea">
-                                    <textarea rows="5" width="100%" v-model="para.value"></textarea>
+                                    <textarea
+                                      rows="5"
+                                      width="100%"
+                                      v-model="para.value"
+                                    ></textarea>
                                   </div>
                                 </section>
 
-
-                                <section v-if="para.data_type==7 || para.is_region_data==1" class="col col-6">
+                                <section
+                                  v-if="para.data_type==7 || para.is_region_data==1"
+                                  class="col col-6"
+                                >
                                   <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
                                   <label class="input col col-6 nopaddingl rl">
 
-                                    <input type="text" v-model="para.mininput">
+                                    <input
+                                      type="text"
+                                      v-model="para.mininput"
+                                    >
                                   </label>
                                   <label class="nopaddingl col to">—</label>
                                   <label class="input col col-6 nopaddingl rr">
                                     <!-- <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i> -->
-                                    <input type="text" v-model="para.maxinput">
+                                    <input
+                                      type="text"
+                                      v-model="para.maxinput"
+                                    >
                                   </label>
 
                                   <!-- <ElRegionInput :min="para.mininput" :max="para.maxinput"  @change="changeRegionPara($event,para)" ></ElRegionInput> -->
                                 </section>
 
-                                <section v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0" class="col col-3">
+                                <section
+                                  v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0"
+                                  class="col col-3"
+                                >
                                   <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <label class="select">
-                                    <select name="country" v-model="para.value">
+                                    <select
+                                      name="country"
+                                      v-model="para.value"
+                                    >
                                       <option value=""></option>
-                                      <option :selected="para.value==ch.enum_code" :value="ch.enum_code" v-for="ch in para.enum_list" :key="ch.enum_code">{{ch.enum_name}}</option>
+                                      <option
+                                        :selected="para.value==ch.enum_code"
+                                        :value="ch.enum_code"
+                                        v-for="ch in para.enum_list"
+                                        :key="ch.enum_code"
+                                      >{{ch.enum_name}}</option>
                                     </select>
                                     <i></i>
                                   </label>
                                 </section>
 
-                                <fieldset v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1" class="border col col-sm-12">
+                                <fieldset
+                                  v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1"
+                                  class="border col col-sm-12"
+                                >
                                   <section>
                                     <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                     <div class="inline-group">
-                                      <label class="checkbox" v-for="ch in para.enum_list" :key="ch.enum_code">
-                                        <input type="checkbox" :checked="checkEnumValue(ch.enum_code,para)" name="checkbox-inline" @change="enumParaChanged(ch.enum_code,para,$event)">
+                                      <label
+                                        class="checkbox"
+                                        v-for="ch in para.enum_list"
+                                        :key="ch.enum_code"
+                                      >
+                                        <input
+                                          type="checkbox"
+                                          :checked="checkEnumValue(ch.enum_code,para)"
+                                          name="checkbox-inline"
+                                          @change="enumParaChanged(ch.enum_code,para,$event)"
+                                        >
                                         <i></i>{{ch.enum_name}}</label>
                                     </div>
                                   </section>
                                 </fieldset>
 
-                                <section v-if="para.data_type==9" class="col col-3">
+                                <section
+                                  v-if="para.data_type==9"
+                                  class="col col-3"
+                                >
                                   <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <label class="input">
                                     <section v-if="para.value!=null && para.value!=undefined && para.value.indexOf('{')>=0">
-                                      <a :href="v.href" target="_blank" class="btn pull-left" v-for="(v,ridx) in JSON.parse(para.value)" :key="ridx">{{ridx>0?",":""+v.value}}</a>
+                                      <a
+                                        :href="v.href"
+                                        target="_blank"
+                                        class="btn pull-left"
+                                        v-for="(v,ridx) in JSON.parse(para.value)"
+                                        :key="ridx"
+                                      >{{ridx>0?",":""+v.value}}</a>
                                     </section>
-                                    <a href="javascript:void(0);" class="btn pull-left btn-primary" @click="editRefParameter(para)">
+                                    <a
+                                      href="javascript:void(0);"
+                                      class="btn pull-left btn-primary"
+                                      @click="editRefParameter(para)"
+                                    >
                                       <i class="fa fa-edit"></i>编辑</a>
                                   </label>
                                 </section>
@@ -788,7 +697,12 @@
                           </fieldset>
 
                           <footer>
-                            <a href="javascript:void(0);" :class="need_save_para?'btn-danger':'btn-primary'" class="btn pull-left" @click="saveParas()">
+                            <a
+                              href="javascript:void(0);"
+                              :class="need_save_para?'btn-danger':'btn-primary'"
+                              class="btn pull-left"
+                              @click="saveParas()"
+                            >
                               <i class="fa fa-save"></i> 保存参数信息</a>
                           </footer>
 
@@ -799,12 +713,17 @@
                     <!-- end widget div -->
                   </div>
 
-
-
-
-                  <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
-                    data-widget-sortable="false">
+                  <div
+                    class="jarviswidget  jarviswidget-sortable"
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="false"
+                    data-widget-sortable="false"
+                  >
                     <header>
                       <span class="widget-icon">
                         <i class="fa fa-table"></i>
@@ -815,7 +734,11 @@
                     <!-- widget div-->
                     <div>
                       <div class="btn-upload">
-                        <a href="javascript:void(0);" @click="uploadAttachment()" class="btn btn-primary pull-left">
+                        <a
+                          href="javascript:void(0);"
+                          @click="uploadAttachment()"
+                          class="btn btn-primary pull-left"
+                        >
                           <i class="fa fa-upload"></i>上传附件</a>
                       </div>
 
@@ -827,7 +750,8 @@
                       <!-- end widget edit box -->
 
                       <!-- widget content -->
-                      <div class="widget-body no-padding">
+
+                      <!-- <div class="widget-body no-padding">
                         <table id="datatable_tabletools1" class="table table-striped table-bordered table-hover" width="100%">
                           <thead>
                             <tr>
@@ -856,10 +780,6 @@
                               <tr v-for="(uploading_file,index) in uploading_files" :key="index" v-if="uploading_file.ok!==true">
                                 <td>{{productInfo.attachment_list.length+index+1-uploading_ok_count}}</td>
                                 <td>
-                                  <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" :data-percent="uploading_progress" data-pie-size="20">
-                        <span class="percent font-xs">{{uploading_progress}}</span></div> -->
-                                  <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" data-percent="80" data-pie-size="20">
-                        <span class="percent font-xs">80</span></div> -->
                                   <span style="padding-left:100px;">{{uploading_file.name.replace('.'+uploading_file.ext,'')}}</span>
                                   <div class="progress">
                                     <div class="progress-bar bg-color-blue" :style="'width: '+uploading_progresses[uploading_file.index]+'%;'"></div>
@@ -869,28 +789,34 @@
                                 <td></td>
                                 <td></td>
                               </tr>
-
-
-
-
                           </tbody>
                         </table>
-                      </div>
+                      </div> -->
+
                       <!-- end widget content -->
                     </div>
                     <!-- end widget div -->
                   </div>
 
-
-
-                  <div class="jarviswidget jarviswidget-color-darken" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
+                  <div
+                    class="jarviswidget jarviswidget-color-darken"
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-custombutton="false"
+                  >
 
                     <div>
                       <div class="jarviswidget-editbox">
                       </div>
 
-                      <div class="widget-body no-padding" style="min-height:0;">
-                        <form id="query-form" class="smart-form">
+                      <div
+                        class="widget-body no-padding"
+                        style="min-height:0;"
+                      >
+                        <form
+                          id="query-form"
+                          class="smart-form"
+                        >
                           <footer>
                             <!-- <a target="_blank" :href="appsettings.portal_root+'product/oneproduct.aspx?id='+product_oid" class="btn btn-primary pull-left"
                               :disabled="product_oid==null">
@@ -898,8 +824,11 @@
 
                             <!-- <a href="javascript:void(0);" class="btn btn-warning pull-left" @click="publishProduct()" :disabled="product_oid==null">
                                 <i class="fa fa-check"></i> 发布产品</a> -->
-                            <button class="btn btn-warning pull-left"
-                              @click="editProjects()" :disabled="product_oid==null">
+                            <button
+                              class="btn btn-warning pull-left"
+                              @click="editProjects()"
+                              :disabled="product_oid==null"
+                            >
                               <i class="fa fa-envira"></i> 维护产品案例</button>
 
                           </footer>
@@ -910,7 +839,6 @@
                     <!-- end widget div -->
                   </div>
 
-
                 </article>
               </div>
             </section>
@@ -918,17 +846,25 @@
         </div>
       </div>
     </ElPageFrame>
-    <div id="uploaderInput" ref="uploaderInput1" v-show="false"></div>
-    <input id = "uploaderPicture" type="file" ref="uploadPic" v-show="false" @change="uploadPicChanged()" />
+
     <ElLoading ref="loading"></ElLoading>
 
-
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" v-if="refModalData!=null && refModalData.para!=null">
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      v-if="refModalData!=null && refModalData.para!=null"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
               &times;
             </button>
             <h4 class="modal-title">
@@ -937,19 +873,39 @@
           </div>
           <div class="modal-body no-padding">
 
-            <form id="ref-form" class="smart-form">
+            <form
+              id="ref-form"
+              class="smart-form"
+            >
               <fieldset>
                 <div class="row">
-                  <section class="col" v-for="(row,index) in refModalData.oldValues" :key="index" v-if="refModalData.selectedKeys.indexOf(row.key)>=0">
+                  <section
+                    class="col"
+                    v-for="(row,index) in refModalData.oldValues"
+                    :key="index"
+                    v-if="refModalData.selectedKeys.indexOf(row.key)>=0"
+                  >
                     <label class="checkbox">
-                      <input type="checkbox" checked @change="oldValChanged(row,$event)">
+                      <input
+                        type="checkbox"
+                        checked
+                        @change="oldValChanged(row,$event)"
+                      >
                       <i></i>{{row.value}}
                     </label>
                   </section>
 
-                  <section class="col" v-for="(row,index) in refModalData.selectedRows" :key="index">
+                  <section
+                    class="col"
+                    v-for="(row,index) in refModalData.selectedRows"
+                    :key="index"
+                  >
                     <label class="checkbox">
-                      <input type="checkbox" checked @change="selectedValChanged(row,$event)">
+                      <input
+                        type="checkbox"
+                        checked
+                        @change="selectedValChanged(row,$event)"
+                      >
                       <i></i>{{row.display_text}}
                     </label>
                   </section>
@@ -965,31 +921,64 @@
                     </label>
                   </section>
 
-                  <div v-for="(cond,index) in refModalData.query_fields" :key="index">
+                  <div
+                    v-for="(cond,index) in refModalData.query_fields"
+                    :key="index"
+                  >
 
-                    <section v-if="(cond.data_type==0 && cond.is_enum_data!=1) || cond.data_type==2" class="col col-3">
+                    <section
+                      v-if="(cond.data_type==0 && cond.is_enum_data!=1) || cond.data_type==2"
+                      class="col col-3"
+                    >
                       <label class="input">
-                        <input type="text" name="text" :placeholder="cond.column_name" v-model="cond.value">
+                        <input
+                          type="text"
+                          name="text"
+                          :placeholder="cond.column_name"
+                          v-model="cond.value"
+                        >
                       </label>
                     </section>
 
-                    <section v-if="(cond.data_type==1 && cond.is_enum_data!=1)||cond.data_type==7||(cond.is_region_data==1) " class="col col-6">
+                    <section
+                      v-if="(cond.data_type==1 && cond.is_enum_data!=1)||cond.data_type==7||(cond.is_region_data==1) "
+                      class="col col-6"
+                    >
                       <label class="label">{{cond.column_name}}</label>
                       <label class="input col col-6 nopaddingl">
-                        <input type="text" :placeholder="cond.column_name" @change="changeMin(cond.column_id,$event)">
+                        <input
+                          type="text"
+                          :placeholder="cond.column_name"
+                          @change="changeMin(cond.column_id,$event)"
+                        >
                       </label>
                       <label class="nopaddingl col to">-</label>
                       <label class="input col col-6 nopaddingl">
-                        <input type="text" :placeholder="cond.column_name" @change="changeMax(cond.column_id,$event)">
+                        <input
+                          type="text"
+                          :placeholder="cond.column_name"
+                          @change="changeMax(cond.column_id,$event)"
+                        >
                       </label>
                     </section>
 
-                    <section v-if="(cond.data_type==8||cond.is_enum_data==1) && cond.enum_type==0" class="col col-3">
+                    <section
+                      v-if="(cond.data_type==8||cond.is_enum_data==1) && cond.enum_type==0"
+                      class="col col-3"
+                    >
                       <label class="label">{{cond.column_name}}</label>
                       <label class="select">
                         <select name="country">
-                          <option value="0" selected="" disabled="">{{cond.column_name}}</option>
-                          <option v-for="ch in cond.choices" :value="ch.code" :key="ch.code">{{ch.name}}</option>
+                          <option
+                            value="0"
+                            selected=""
+                            disabled=""
+                          >{{cond.column_name}}</option>
+                          <option
+                            v-for="ch in cond.choices"
+                            :value="ch.code"
+                            :key="ch.code"
+                          >{{ch.name}}</option>
                         </select>
                         <i></i>
                       </label>
@@ -998,7 +987,11 @@
                 </div>
               </fieldset>
               <footer>
-                <a class="btn btn-primary pull-left" href="javascript:void(0);" @click="queryRefPara()">
+                <a
+                  class="btn btn-primary pull-left"
+                  href="javascript:void(0);"
+                  @click="queryRefPara()"
+                >
                   <i class="fa fa-search"></i> 查询</a>
               </footer>
               <fieldset>
@@ -1006,31 +999,55 @@
                   <div>
                     <div class="jarviswidget-editbox">
                     </div>
-                    <div class="widget-body no-padding" v-if="refModalData!=null">
-                      <table class="table table-striped table-bordered table-hover" width="100%">
+                    <div
+                      class="widget-body no-padding"
+                      v-if="refModalData!=null"
+                    >
+                      <table
+                        class="table table-striped table-bordered table-hover"
+                        width="100%"
+                      >
                         <thead>
                           <tr>
                             <th style="width: 60px;">
                               <label class="checkbox">
-                                <input type="checkbox" v-model="selectAll">
+                                <input
+                                  type="checkbox"
+                                  v-model="selectAll"
+                                >
                                 <i></i>全选
                               </label>
                             </th>
                             <th>ID</th>
-                            <th v-for="head in refModalData.headers" :key="head.id" v-if="head.name!='' && head.name!=null">{{head.name}}</th>
+                            <th
+                              v-for="head in refModalData.headers"
+                              :key="head.id"
+                              v-if="head.name!='' && head.name!=null"
+                            >{{head.name}}</th>
                           </tr>
                         </thead>
                         <tbody v-if="refModalData!=null">
-                          <tr class="row-show" v-for="(row,index) in refModalData.rows" :key="index">
+                          <tr
+                            class="row-show"
+                            v-for="(row,index) in refModalData.rows"
+                            :key="index"
+                          >
                             <td>
                               <label class="checkbox">
-                                <input type="checkbox" :checked="refModalData.selectedRows.indexOf(row)>=0 || refModalData.selectedKeys.indexOf(row.cols.find(x=>x.id=refModalData.key_column_id).value)>=0"
-                                  @change="selectRefPara(row,$event)">
+                                <input
+                                  type="checkbox"
+                                  :checked="refModalData.selectedRows.indexOf(row)>=0 || refModalData.selectedKeys.indexOf(row.cols.find(x=>x.id=refModalData.key_column_id).value)>=0"
+                                  @change="selectRefPara(row,$event)"
+                                >
                                 <i></i>
                               </label>
                             </td>
                             <td>{{index+1}}</td>
-                            <td v-for="(para,pidx) in row.cols" :key="pidx" v-if="para.name!='' && para.name!=null">
+                            <td
+                              v-for="(para,pidx) in row.cols"
+                              :key="pidx"
+                              v-if="para.name!='' && para.name!=null"
+                            >
                               <label>{{para.value}}{{(para.value!="" && para.data_type==1) ?para.unit:""}}</label>
                             </td>
                           </tr>
@@ -1043,16 +1060,24 @@
               </fieldset>
 
               <footer>
-                <button type="button" class="btn btn-primary" @click="confirmRefPara()">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  @click="confirmRefPara()"
+                >
                   确定
                 </button>
-                <button type="button" class="btn btn-default" data-dismiss="modal" @click="cancelRefPara()">
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                  @click="cancelRefPara()"
+                >
                   取消
                 </button>
 
               </footer>
             </form>
-
 
           </div>
 
@@ -1063,7 +1088,10 @@
     </div>
     <!-- /.modal -->
     <ElToastAlert ref="toastAlert"></ElToastAlert>
-    <ElConfirmDialog @confirm="doConfirm()" ref="confirmDlg"></ElConfirmDialog>
+    <ElConfirmDialog
+      @confirm="doConfirm()"
+      ref="confirmDlg"
+    ></ElConfirmDialog>
   </div>
 </template>
 
@@ -1071,7 +1099,7 @@
 import "common/httputils"; //引用js
 import htmlHelper from "common/htmlutils";
 import ElPageFrame from "components/el-PageFrame/el-PageFrame";
-import ElProAsdiear from 'components/el-ProAsideBar/el-ProAsideBar';
+import ElProAsdiear from "components/el-ProAsideBar/el-ProAsideBar";
 
 import ElPager from "components/el-Pager/el-Pager";
 import ElBlockAlert from "components/el-BlockAlert/el-BlockAlert";
@@ -1369,6 +1397,9 @@ export default {
   },
 
   methods: {
+    getIf (){
+      console.log(this.productInfo)
+    },
     getParaDef: function() {
       var data = {};
       data.category_code = this.category_code;
@@ -2044,8 +2075,8 @@ export default {
             : para.value != null &&
               para.value != undefined &&
               para.value.indexOf("[") >= 0
-              ? JSON.parse(para.value)
-              : [];
+            ? JSON.parse(para.value)
+            : [];
         for (var i = 0; i < this.refModalData.oldValues.length; i++) {
           this.refModalData.selectedKeys.push(
             this.refModalData.oldValues[i].key
@@ -2171,6 +2202,7 @@ export default {
         swf: appsettings.gyhpluginsPrefix + "webuploader/Uploader.swf",
         // 文件接收服务端。
         server: appsettings.apiroot + "home/product/attachment/upload",
+        // server: appsettings.apiroot + "utility/attachment/upload",
         chunked: true,
         threads: 1,
         auto: true,
@@ -2185,6 +2217,11 @@ export default {
         resize: false,
         chunkSize: 4000880,
         duplicate: true
+        // accept: {
+        //   title: "Images",
+        //   extensions: "gif,jpg,jpeg,bmp,png",
+        //   mimeTypes: "image/*"
+        // }
       });
 
       this.uploader.on("beforeFileQueued", function(file) {});
@@ -2222,7 +2259,8 @@ export default {
 
       this.uploader.on("uploadSuccess", function(file, response) {
         response = JSON.parse(response);
-
+        console.log(response,435435);
+        
         if (response != null) {
           if (response.status == 0) {
             var index = file.index;

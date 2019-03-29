@@ -815,7 +815,6 @@ export default {
   computed: {},
   created: function() {
     this.queryClick()
-    // this.queryClick()
     //类别名称
     //类别code
     // this.catInfo.code = $.getUrlParam("c");
@@ -1114,7 +1113,7 @@ export default {
     },
     callback_queryClick: function(result) {
       if (result != null && result.status == 0) {
-        console.log(result.data);
+        console.log(result.data,2123);
         this.result_products = result.data.products;
         this.query_data.pageTotal = result.data.page.total_page_count;
         this.query_data.page_index = result.data.page.page_index;
@@ -1126,6 +1125,18 @@ export default {
           };
           this.$refs.pf.show = true;
         }
+
+        this.$nextTick(function(){
+          // initialization of HSDropdown component
+          $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+              dropdownHideOnScroll: false,
+              dropdownType: 'css-animation',
+              dropdownAnimationIn: 'fadeIn',
+              dropdownAnimationOut: 'fadeOut'
+
+          });
+        }) 
+
       } else {
         this.$refs.pf.config = {
           type: "error",
