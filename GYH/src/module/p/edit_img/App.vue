@@ -21,405 +21,93 @@
 
                 <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
 
-                <div class="row g-mb-20">
 
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品类别</label>
-                  </div>
 
-                  <div class="col-md-9 align-self-center row">
 
-                    <div class="col-md-9 align-self-center">
-                      <div class="row g-mx-minus-10">
 
-                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                            <span
-                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                            </span>
-                            <select class="js-select u-select--v2-select w-100" required="required"
-                              style="display: none;">
-                              <option>1900</option>
-                              <option>1901</option>
-                              <option>1902</option>
-                              <option>1903</option>
-                              <option>1904</option>
-                              <option>1905</option>
-                              <option>1906</option>
-                              <option>1907</option>
-                              <option>1908</option>
-                              <option>1909</option>
-                              <option>1910</option>
-                              <option>1911</option>
-                              <option>1912</option>
-                              <option>1913</option>
-                              <option>1914</option>
-                              <option>1915</option>
-                              <option>1916</option>
-                              <option>1917</option>
-                              <option>1918</option>
-                              <option>1919</option>
-                              <option>1920</option>
-                              <option>1921</option>
-                              <option>1922</option>
-                              <option>1923</option>
-                              <option>1924</option>
-                              <option>1925</option>
-                              <option>1926</option>
-                              <option>1927</option>
-                              <option>1928</option>
-                              <option>1929</option>
-                              <option>1930</option>
-                              <option>1931</option>
-                              <option>1932</option>
-                              <option>1933</option>
-                              <option>1934</option>
-                              <option>1935</option>
-                              <option>1936</option>
-                              <option>1937</option>
-                              <option>1938</option>
-                              <option>1939</option>
-                              <option>1940</option>
-                              <option>1941</option>
-                              <option>1942</option>
-                              <option>1943</option>
-                              <option>1944</option>
-                              <option>1945</option>
-                              <option>1946</option>
-                              <option>1947</option>
-                              <option>1948</option>
-                              <option>1949</option>
-                              <option>1950</option>
-                              <option>1951</option>
-                              <option>1952</option>
-                              <option>1953</option>
-                              <option>1954</option>
-                              <option>1955</option>
-                              <option>1956</option>
-                              <option>1957</option>
-                              <option>1958</option>
-                              <option>1959</option>
-                              <option>1960</option>
-                              <option>1961</option>
-                              <option>1962</option>
-                              <option>1963</option>
-                              <option>1964</option>
-                              <option>1965</option>
-                              <option>1966</option>
-                              <option>1967</option>
-                              <option>1968</option>
-                              <option>1969</option>
-                              <option>1970</option>
-                              <option>1971</option>
-                              <option>1972</option>
-                              <option>1973</option>
-                              <option>1974</option>
-                              <option>1975</option>
-                              <option>1976</option>
-                              <option>1977</option>
-                              <option>1978</option>
-                              <option>1979</option>
-                              <option>1980</option>
-                              <option>1981</option>
-                              <option>1982</option>
-                              <option>1983</option>
-                              <option>1984</option>
-                              <option>1985</option>
-                              <option selected="selected">1986</option>
-                              <option>1987</option>
-                              <option>1988</option>
-                              <option>1989</option>
-                              <option>1990</option>
-                              <option>1991</option>
-                              <option>1992</option>
-                              <option>1993</option>
-                              <option>1994</option>
-                              <option>1995</option>
-                              <option>1996</option>
-                              <option>1997</option>
-                              <option>1998</option>
-                              <option>1999</option>
-                              <option>2000</option>
-                              <option>2001</option>
-                              <option>2002</option>
-                              <option>2003</option>
-                              <option>2004</option>
-                              <option>2005</option>
-                              <option>2006</option>
-                              <option>2007</option>
-                              <option>2008</option>
-                              <option>2009</option>
-                              <option>2010</option>
-                              <option>2011</option>
-                              <option>2012</option>
-                              <option>2013</option>
-                              <option>2014</option>
-                              <option>2015</option>
-                              <option>2016</option>
-                              <option>2017</option>
-                            </select>
-                            <i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
-                          </div>
-                        </div>
+                <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
+                    data-widget-sortable="false">
+                    <header>
+                      <span class="widget-icon">
+                        <i class="fa fa-table"></i>
+                      </span>
+                      <h2>上传产品附件</h2>
+                    </header>
+                    
+                    
+                    <!-- widget div-->
+                    <div>
+                      <div class="btn-upload">
+                        <a href="javascript:void(0);" @click="uploadAttachment()" class="btn btn-primary pull-left">
+                          <i class="fa fa-upload"></i>上传附件</a>
+                      </div>
 
-                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                            <span
-                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                            </span>
-                            <select class="js-select u-select--v2-select w-100" required="required"
-                              style="display: none;">
-                              <option>一月</option>
-                              <option>二月</option>
-                              <option>三月</option>
-                              <option selected="selected">四月</option>
-                              <option>五月</option>
-                              <option>六月</option>
-                              <option>七月</option>
-                              <option>八月</option>
-                              <option>九月</option>
-                              <option>十月</option>
-                              <option>十一月</option>
-                              <option>十二月</option>
-                            </select>
-                            <i
-                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
-                          </div>
-                        </div>
-
-                        <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                          <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                            <span
-                              class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                            </span>
-                            <select class="js-select u-select--v2-select w-100" required="required"
-                              style="display: none;">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                              <option>6</option>
-                              <option>7</option>
-                              <option>8</option>
-                              <option>9</option>
-                              <option>10</option>
-                              <option>11</option>
-                              <option selected="selected">12</option>
-                              <option>13</option>
-                              <option>14</option>
-                              <option>15</option>
-                              <option>16</option>
-                              <option>17</option>
-                              <option>18</option>
-                              <option>19</option>
-                              <option>20</option>
-                              <option>21</option>
-                              <option>22</option>
-                              <option>23</option>
-                              <option>24</option>
-                              <option>25</option>
-                              <option>26</option>
-                              <option>27</option>
-                              <option>28</option>
-                              <option>29</option>
-                              <option>30</option>
-                              <option>31</option>
-                            </select>
-                            <i
-                              class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
-                          </div>
-                        </div>
+                      <!-- widget edit box -->
+                      <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
 
                       </div>
-                    </div>
+                      <!-- end widget edit box -->
 
-                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                      <button class="obtain btn btn-xl u-btn-secondary g-font-size-default g-px-40" @click="createNewProduct()">新建案例</button>
-                    </div>
-
-                  </div>
-                  
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">*产品名称</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" id="name" name="text" v-model="productInfo.core.product_name"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品系列</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" v-model="productInfo.core.series"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品标签</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" name="text" v-model="productInfo.core.tags" placeholder="多个标签之间以逗号隔开"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品工艺</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input type="text" v-model="productInfo.core.process"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                         value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品来源</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(0,$event)">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="0" type="radio"
-                      :checked="productInfo.core.product_source==0">
-                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+                      <!-- widget content -->
+                      <div class="widget-body no-padding">
+                        <table id="datatable_tabletools1" class="table table-striped table-bordered table-hover" width="100%">
+                          <thead>
+                            <tr>
+                              <th data-hide="phone">ID</th>
+                              <th data-class="expand">文件名称</th>
+                              <th>文件类型</th>
+                              <th data-hide="phone">上传时间</th>
+                              <th data-hide="phone,tablet">操作</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <tr v-for="(f,index) in productInfo.attachment_list" :key="index">
+                                <td>{{index+1}}</td>
+                                <td>
+                                  {{f.file_name}}
+                                </td>
+                                <td>{{f.file_type!=null?f.file_type.toUpperCase().replace(".",""):""}}</td>
+                                <td>{{f.create_time}}</td>
+                                <td>
+                                  <a href="javascript:void(0);" class="btn btn-danger btn-xs" @click="deleteAtttachment(f,index)">
+                                    删除 </a>
+                                </td>
+                              </tr>
+                              <tr v-for="(uploading_file,index) in uploading_files" :key="index" v-if="uploading_file.ok!==true">
+                                <td>{{productInfo.attachment_list.length+index+1-uploading_ok_count}}</td>
+                                <td>
+                                  <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" :data-percent="uploading_progress" data-pie-size="20">
+                                          <span class="percent font-xs">{{uploading_progress}}</span></div> -->
+                                  <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" data-percent="80" data-pie-size="20">
+                                          <span class="percent font-xs">80</span></div> -->
+                                  <span style="padding-left:100px;">{{uploading_file.name.replace('.'+uploading_file.ext,'')}}</span>
+                                  <div class="progress">
+                                    <div class="progress-bar bg-color-blue" :style="'width: '+uploading_progresses[uploading_file.index]+'%;'"></div>
+                                  </div>
+                                </td>
+                                <td>{{uploading_file.ext!=null?uploading_file.ext.toUpperCase():""}}</td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                          </tbody>
+                        </table>
                       </div>
-                      原厂
-                    </label>
-
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(2,$event)">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="2" type="radio"
-                      :checked="productInfo.core.product_source==2">
-                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-                      </div>
-                      代理
-                    </label>
-
-                    <label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25" @change="changeRource(1,$event)">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="psource" value="1" type="radio"
-                      :checked="productInfo.core.product_source==1">
-                      <div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-                        <i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-                      </div>
-                      二手
-                    </label>
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">适用行业</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40" v-for="(prof,index) in professions" :key="index">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon="&#xf00c"></i>
-                      </div>
-                      {{prof.enum_name}}
-                    </label>
-
-                  </div>
-                </div>
-
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品价钱</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <input type="text" placeholder="最低价" v-model="productInfo.core.min_price"
-                        class="u-select--v2  h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                      <span class="g-ml-20 g-mr-20">-----</span>
-                      <input type="text" placeholder="最高价" v-model="productInfo.core.max_price"
-                        class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                      <input type="text" 
-                        class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                        placeholder="单位" v-model="productInfo.core.price_unit">
+                      <!-- end widget content -->
                     </div>
+                    <!-- end widget div -->
                   </div>
-                </div>
 
-                <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">产品亮点</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <div class="form-group g-pos-rel mb-0">
-                      <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                        <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                      </span>
-                      <input v-model="productInfo.core.highlight"
-                        class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                        value="" required="required" data-msg="This field is mandatory"
-                        data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-                    </div>
-                  </div>
-                </div>
 
-                <div class="g-mb-20">
-                  <label class="g-mb-10" for="#bio">产品描述</label>
-                  <div class="form-group mb-0">
-                    <!-- <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-mb-30">
-                      <div class="js-text-editor" data-height="156" data-placeholder="在这里开始打字"></div>
-                    </div> -->
-                    <div class="textarea">
-                      <ElUEditor id="ueditor" ref="ueditor" :code="'2'"></ElUEditor>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40" :class="need_save_para?'btn-danger':'btn-primary'" @click="saveBasicInfo()">保存</button>
-                </div>
               </div>
             </div>
+
+
+            <div id="uploaderInput" ref="uploaderInput1" v-show="false"></div>
+            <input id = "uploaderPicture" type="file" ref="uploadPic" v-show="false" @change="uploadPicChanged()" />
+
           </div>
         </div>
       </div>
@@ -918,8 +606,7 @@
         </div>
       </div>
     </ElPageFrame>
-    <div id="uploaderInput" ref="uploaderInput1" v-show="false"></div>
-    <input id = "uploaderPicture" type="file" ref="uploadPic" v-show="false" @change="uploadPicChanged()" />
+    
     <ElLoading ref="loading"></ElLoading>
 
 
@@ -2185,11 +1872,11 @@ export default {
         resize: false,
         chunkSize: 4000880,
         duplicate: true,
-        // accept: {
-        //   title: "Images",
-        //   extensions: "gif,jpg,jpeg,bmp,png",
-        //   mimeTypes: "image/*"
-        // }
+        accept: {
+          title: "Images",
+          extensions: "gif,jpg,jpeg,bmp,png",
+          mimeTypes: "image/*"
+        }
       });
 
       this.uploader.on("beforeFileQueued", function(file) {});

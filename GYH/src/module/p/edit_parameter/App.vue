@@ -11,7 +11,7 @@
             </header>
 
             <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
-<ElProAsdiear></ElProAsdiear>
+            <ElProAsdiear></ElProAsdiear>
             <div id="para_form" v-for="group in parametergroups" :key="group.group_code">
               <div v-for="para in group.parameters" :key="para.column_id">
 
@@ -139,6 +139,7 @@
             <div>
               <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">保存</button>
             </div>
+            
           </div>
         </div>
 
@@ -282,7 +283,6 @@
             </section>
           </div>
         </div>
-      </div>
     </ElPageFrame>
     <div id="uploaderInput" ref="uploaderInput1" v-show="false"></div>
     <input id = "uploaderPicture" type="file" ref="uploadPic" v-show="false" @change="uploadPicChanged()" />

@@ -179,6 +179,13 @@
                     </div>
                   </form>
 
+
+
+
+
+
+
+
                   <header>
                     <h2
                       class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0"
@@ -511,9 +518,7 @@ export default {
         self.uploader.options.formData.target_type = "0";
         self.uploader.options.formData.cache_key = "User_";
         (self.uploader.options.formData.cid = self.company_oid),
-          (self.uploader.options.formData.token = window.localStorage.getItem(
-            "token"
-          ));
+          (self.uploader.options.formData.token = window.localStorage.getItem("token"));
         //如果是图片，则生成缩略图
         if (htmlHelper.isImg("." + file.ext)) {
           self.uploader.makeThumb(
@@ -543,6 +548,8 @@ export default {
         // var file_des = $("#" + file.id)
         // 	.find("span.state")
         // 	.attr("data-atttype");
+        console.log(file,54645);
+        
         self.persistAttachmentCallback(file, JSON.parse(response));
       });
       this.uploader.on("uploadError", function(file) {

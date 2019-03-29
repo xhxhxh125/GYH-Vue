@@ -4,7 +4,7 @@
       <!-- Profile Sidebar -->
       <section>
         <ul class="list-unstyled mb-0">
-          <li class="g-brd-top g-brd-gray-light-v7 mb-0" v-for="(item,index) in menu" :key="item" @click="gotoAddress(index)">
+          <li class="g-brd-top g-brd-gray-light-v7 mb-0" v-for="(item,index) in menu" :key="index" @click="gotoAddress(index)">
             <a class="d-flex align-items-center u-link-v5 g-parent g-py-15" :class="{'active' :activeIndex==index}"
              :href="item.href" >
               <span class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">{{item.name}}</span>
