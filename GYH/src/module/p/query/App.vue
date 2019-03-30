@@ -1102,7 +1102,6 @@ export default {
       }
     },
     queryClick: function() {
-      console.log(222);
       this.query_data.page_index = 1;
       this.query_data.category_code = this.seriesInfo.code || this.catInfo.code;
       $.post_json(
@@ -1113,7 +1112,6 @@ export default {
     },
     callback_queryClick: function(result) {
       if (result != null && result.status == 0) {
-        console.log(result.data,2123);
         this.result_products = result.data.products;
         this.query_data.pageTotal = result.data.page.total_page_count;
         this.query_data.page_index = result.data.page.page_index;

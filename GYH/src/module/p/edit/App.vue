@@ -11,7 +11,7 @@
               <h2 class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0">编辑产品</h2>
             </div>
             <hr class="g-my-15 g-my-15--md">
-            <ElProAsdiear></ElProAsdiear>
+            <ElProAsdiear :elProInfo='elProInfo' :activeIndex='0'></ElProAsdiear>
             
 
             <div class="col-md-9" id="base_form">
@@ -1048,7 +1048,12 @@ export default {
       action_result: "",
 
       need_save_basic: false,
-      need_save_para: false
+      need_save_para: false,
+      elProInfo: {
+        oid:'',
+        category:'',
+        catInfoName:''
+      }
     };
   },
   watch: {
@@ -1168,6 +1173,11 @@ export default {
       null,
       this.callback_getProfesions
     );
+      this.elProInfo = {
+      oid: $.getUrlParam("id"),
+      category:$.getUrlParam("c") || "",
+      catInfoName:$.getUrlParam("cnn") || ""
+      }
   },
   mounted: function() {
     var self = this;

@@ -194,7 +194,7 @@ export default {
       }
     }
   },
-  methods: {
+  methods: { 
     createNewProduct(){
       this.$emit('createNewProduct')
     },

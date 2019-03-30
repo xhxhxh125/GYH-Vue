@@ -4,9 +4,9 @@
       <!-- Profile Sidebar -->
       <section>
         <ul class="list-unstyled mb-0">
-          <li class="g-brd-top g-brd-gray-light-v7 mb-0" v-for="(item,index) in menu" :key="index" @click="gotoAddress(index)">
+          <li class="g-brd-top g-brd-gray-light-v7 mb-0" v-for="(item,index) in menu" :key="index">
             <a class="d-flex align-items-center u-link-v5 g-parent g-py-15" :class="{'active' :activeIndex==index}"
-             :href="item.href" >
+             :href="item.href+'?id='+elProInfo.oid+'&c='+elProInfo.category+'&cnn='+elProInfo.catInfoName" >
               <span class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">{{item.name}}</span>
             </a>
           </li>
@@ -22,10 +22,9 @@
 
 export default {
   name: "el-aside",
-  props: ["a", "b"],
+  props: ['activeIndex','elProInfo'],
   data: function() {
     return {
-      props:['activeIndex'],
       menu: [
         {
           href:'/p/edit.html',
@@ -52,18 +51,25 @@ export default {
           name:'案例维护'
         }
       ]
-      // activeIndex:''
     };
   },
   mounted: function() {
+
+  },
+  watch: {
+    elProInfo:function (val) { 
+      
+     }
   },
   created: function() {
+    // console.log(this.elProInfo,123);
+    
   },
 
   methods: {
-    gotoAddress(index){
-        this.activeIndex = index
-      }
+    // gotoAddress(index){
+    //     this.activeIndex = index
+    //   }
   }
 };
 </script>
