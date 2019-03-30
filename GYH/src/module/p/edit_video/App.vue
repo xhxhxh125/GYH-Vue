@@ -65,7 +65,7 @@
                                 <li class="list-inline-item">
                                   <a
                                     class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
-                                    @click="deleteAttachment(f)"
+                                    @click="deleteAtttachment(f,index)"
                                   >
                                     <i class="hs-admin-trash u-line-icon-pro"></i>
                                   </a>

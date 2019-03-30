@@ -57,7 +57,7 @@
                                 <li class="list-inline-item">
                                   <a
                                     class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
-                                    :href="(appsettings.product_attachment+f.oid+f.file_type)"
+                                    :href="(appsettings.prsoduct_attachment+f.oid+f.file_type)"
                                   >
                                     <i class="hs-admin-image u-line-icon-pro"></i>
                                   </a>
@@ -65,7 +65,7 @@
                                 <li class="list-inline-item">
                                   <a
                                     class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
-                                    @click="deleteAttachment(f)"
+                                    @click="deleteAtttachment(f,index)"
                                   >
                                     <i class="hs-admin-trash u-line-icon-pro"></i>
                                   </a>
