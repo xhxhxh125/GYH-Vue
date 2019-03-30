@@ -351,7 +351,7 @@
                                 <li class="list-inline-item">
                                   <a
                                     class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
-                                    @click="deleteProductPic(pic,index,'list')"
+                                    @click="deleteProductPic(f,index,'list')"
                                   >
                                     <i class="hs-admin-trash u-line-icon-pro"></i>
                                   </a>
@@ -395,7 +395,7 @@
                                 <li class="list-inline-item">
                                   <a
                                     class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
-                                    @click="deleteProductPic(pic,index,'update')"
+                                    @click="deleteProductPic(f,index,'update')"
                                   >
                                     <i class="hs-admin-trash u-line-icon-pro"></i>
                                   </a>
