@@ -2,6 +2,119 @@
   <div id="app">
     <ElPageFrame ref="pf">
       <div slot="mainslot">
+
+		  <!-- 新插入的部分 -->
+			<div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
+          <div class="g-pa-20">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0">案件管理</h2>
+              </div>
+              <hr class="g-my-15 g-my-15--md">
+              <ElProAsdiear
+                :elProInfo='elProInfo'
+                :activeIndex='5'
+              ></ElProAsdiear>
+
+              <div class="col-md-9">
+                  <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+                    
+                    <div class="media g-mb-30">
+                        <div class="d-flex align-self-center">
+                          <h1 class="g-font-weight-300 g-font-size-28 g-color-black mb-0">案件管理</h1>
+                        </div>
+                        <div class="media-body align-self-center g-ml-10 g-ml-0--md">
+                          <div class="input-group g-pos-rel g-max-width-380 float-right">
+                            <input class="form-control h-100 g-font-size-default g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-rounded-20 g-pl-20 g-pr-50 g-py-10"
+                              type="text" placeholder="搜索">
+                            <button class="btn g-pos-abs g-top-0 g-right-0 g-z-index-2 g-width-60 h-100 g-bg-transparent g-font-size-16 g-color-primary g-color-secondary--hover rounded-0"
+                              type="submit">
+                              <i class="hs-admin-search g-absolute-centered"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="">
+                          <a class="js-fancybox btn btn-xl u-btn-secondary g-width-160--md g-font-size-default g-ml-10" href="#!"
+                            @click="createNew()">新增案例
+                          </a>
+                        </div>
+                      </div>
+                    <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
+    
+                    <div class="table-responsive g-mb-40">
+                        <table class="js-datatable table u-table--v3 u-editable-table--v1 g-color-black" data-dt-info="#datatableInfo1"
+                          data-dt-search="#datatableSearch1" data-dt-entries="#datatableEntries1" data-dt-is-show-paging="true"
+                          data-dt-pagination="datatablePagination1" data-dt-page-length="5" data-dt-is-responsive="false"
+                          data-dt-pagination-classes="list-inline text-right mb-0" data-dt-pagination-items-classes="list-inline-item g-hidden-sm-down"
+                          data-dt-pagination-links-classes="u-pagination-v1__item u-pagination-v1-2 g-bg-secondary--active g-color-white--active g-brd-gray-light-v7 g-brd-secondary--hover g-brd-secondary--active g-rounded-4 g-py-8 g-px-15"
+                          data-dt-pagination-next-classes="list-inline-item" data-dt-pagination-next-link-classes="u-pagination-v1__item u-pagination-v1-2 g-brd-gray-light-v7 g-brd-secondary--hover g-rounded-4 g-py-8 g-px-12"
+                          data-dt-pagination-next-link-markup='<span class="g-line-height-1 g-valign-middle" aria-hidden="true"><i class="hs-admin-angle-right"></i></span><span class="sr-only">Next</span>'
+                          data-dt-pagination-prev-classes="list-inline-item" data-dt-pagination-prev-link-classes="u-pagination-v1__item u-pagination-v1-2 g-brd-gray-light-v7 g-brd-secondary--hover g-rounded-4 g-py-8 g-px-12"
+                          data-dt-pagination-prev-link-markup='<span class="g-line-height-1 g-valign-middle" aria-hidden="true"><i class="hs-admin-angle-left"></i></span><span class="sr-only">Prev</span>'>
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>案例名称</th>
+                              <th>适用行业</th>
+                              <th>适用工艺</th>
+                              <th>关键词</th>
+                              <th>亮点</th>
+                              <th>状态</th>
+                              <th>创建时间</th>
+                              <th>更新时间</th>
+                              <th>操作</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for="(pro,index) in projects"
+                            :key="index">
+                              <td>{{index+1}}</td>
+                              <td>{{pro.project_name}}</td>
+                              <td>{{pro.profession_name}}</td>
+                              <td>{{pro.process}}</td>
+                              <td>{{pro.key_tag}}</td>
+                              <td>{{pro.description}}</td>
+                              <td>
+                                <span
+                                v-if="pro.status==0"
+                              >正常</span>
+                              <span
+                                v-if="pro.status==1"
+                              >草稿</span>
+                              <span
+                                v-if="pro.status==2"
+                              >待审核</span>
+                              <span
+                                v-if="pro.status==-1"
+                              >已删除</span>
+                              <span
+                                v-if="pro.status==-2"
+                              >已冻结</span>
+                              </td>
+                              <td>{{pro.create_time}}</td>
+                              <td>{{pro.update_time}}</td>
+                              <td>
+                                <a class="g-pa-5" style="background:#e9e9e9;" href="../4-product/4-product-case-edit.html" target="view_window">修改</a>
+                                <a class="g-pa-5" style="background:#F44336;color: #ffffff;">删除</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+          
+                      <div class="media align-items-center g-mb-45">
+                        <nav id="datatablePagination1" class="d-flex ml-auto" aria-label="Page Navigation"></nav>
+                      </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
         <div id="ribbon">
           <span class="ribbon-button-alignment">
             <span
@@ -269,6 +382,7 @@ import "common/httputils"; //引用js
 import htmlHelper from "common/htmlutils";
 import ElPageFrame from "components/el-PageFrame/el-PageFrame";
 import ElBlockAlert from "components/el-BlockAlert/el-BlockAlert";
+import ElProAsdiear from "components/el-ProAsideBar/el-ProAsideBar";
 
 import ElPager from "components/el-Pager/el-Pager";
 import ElToastAlert from "components/el-ToastAlert/el-ToastAlert";
@@ -289,13 +403,19 @@ export default {
       query_data: {
         status: ""
       },
-      functionlist: []
+      functionlist: [],
+      elProInfo: {
+        oid: "",
+        category: "",
+        catInfoName: ""
+      }
     };
   },
   components: {
     ElPageFrame,
     ElPager,
-    ElToastAlert
+    ElToastAlert,
+    ElProAsdiear
   },
   computed: {
     subject_type_name: function() {
@@ -328,6 +448,11 @@ export default {
       this.getServiceCoreInfo();
     }
     this.getProjects();
+    this.elProInfo = {
+      oid: $.getUrlParam("id"),
+      category: $.getUrlParam("c") || "",
+      catInfoName: $.getUrlParam("cnn") || ""
+    };
   },
   mounted: function() {},
   methods: {

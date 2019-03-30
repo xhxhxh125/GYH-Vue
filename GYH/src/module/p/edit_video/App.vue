@@ -2229,7 +2229,7 @@ export default {
         duplicate: true,
         accept: {
           title: "Video",
-          extensions: "mp4.wma",
+          extensions: "mp4,wma",
           mimeTypes: "video/*"
         }
       });
