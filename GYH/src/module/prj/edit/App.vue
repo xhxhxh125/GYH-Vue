@@ -1,392 +1,411 @@
 <template>
   <div id="app">
-    <ElPageFrame></ElPageFrame>
+    <ElPageFrame>
+      <div slot="mainslot">
 
-    <div id="main" role="main">
-      <!-- RIBBON -->
-      <div id="ribbon">
-        <span class="ribbon-button-alignment">
-          <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom"
-            data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
-            data-html="true">
-            <i class="fa fa-refresh"></i>
-          </span>
-        </span>
-        <!-- breadcrumb -->
-        <ol class="breadcrumb">
-          <li><a :href="appsettings.portal_root">首页</a></li>
-          <li>个人中心</li>
-          <li>{{subject_type_name}}管理</li>
-          <li>{{edit_mode=="edit"?'编辑':'新增'}}案例</li>
-        </ol>
-        <!-- end breadcrumb -->
-      </div>
-      <!-- END RIBBON -->
-
-      <!-- MAIN CONTENT -->
-      <div id="content">
-
-
-        <section id="widget-grid" class="">
-          <ElBlockAlert ref="alert"></ElBlockAlert>
-          <div class="row">
-            <article class="col-sm-12 col-md-12">
-              <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-                data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
-                data-widget-sortable="false">
-                <header>
-                  <span class="widget-icon">
-                    <i class="fa fa-edit"></i>
-                  </span>
-                  <h2>案例基本信息 </h2>
-                </header>
-                <div>
-                  <!-- widget edit box -->
-                  <div class="jarviswidget-editbox">
-                    <!-- This area used as dropdown edit box -->
-                  </div>
-                  <!-- end widget edit box -->
-
-                  <!-- widget content -->
-                  <div class="widget-body no-padding">
-                    <form id="query-form" class="smart-form">
-
-                      <fieldset>
-                        <div class="row">
-
-
-                          <section class="col col-sm-12">
-                            <label class="label">{{subject_type_name}}名称</label>
-                            <label class="input">
-                              <input type="text" name="text" disabled :value="subjectCoreInfo.subject_name">
-                            </label>
-                          </section>
-
-                        </div>
-                      </fieldset>
-
-
-
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">*案例名称</label>
-                            <label class="input">
-                              <input type="text" name="text" v-model="projectInfo.core.project_name">
-                            </label>
-                          </section>
-                        </div>
-                      </fieldset>
-
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">关键词</label>
-                            <label class="input">
-                              <input type="text" v-model="projectInfo.core.key_tag">
-                            </label>
-                          </section>
-                        </div>
-                      </fieldset>
-
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">适用工艺</label>
-                            <label class="input">
-                              <input type="text" v-model="projectInfo.core.process">
-                            </label>
-                          </section>
-                        </div>
-                      </fieldset>
-
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">适用行业</label>
-                            <div class="smart-form">
-                              <div class="inline-group">
-                                <label class="checkbox col-sm-2" v-for="(prof,index) in professions" :key="index">
-                                  <input type="checkbox" :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
-                                  <i></i>{{prof.enum_name}}</label>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
-                      </fieldset>
-
-
-
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">案例描述</label>
-                            <div class="textarea">
-                              <textarea v-model="projectInfo.core.description" rows="10"></textarea>
-                            </div>
-                          </section>
-                        </div>
-                      </fieldset>
-
-                      <footer>
-                        <a @click="saveBasicInfo()" href="javascript:void(0);" :class="basicInfoSuc?'btn-success':'btn-primary'"
-                          class="btn  pull-left">
-                          <i class="fa fa-save"></i> 保存基本信息</a>
-                      </footer>
-
-                    </form>
-                  </div>
-                  <!-- end widget content -->
-                </div>
-                <!-- end widget div -->
-              </div>
-
-              <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-                data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
-                data-widget-sortable="false">
-                <header>
-                  <span class="widget-icon">
-                    <i class="fa fa-edit"></i>
-                  </span>
-                  <h2>案例参数信息 </h2>
-                </header>
-                <div>
-                  <div class="jarviswidget-editbox">
-                  </div>
-
-                  <div class="widget-body no-padding">
-                    <form id="para-form" class="smart-form">
-                      <fieldset>
-                        <div class="row">
-                          <div v-for="para in parameters" :key="para.column_id">
-
-                            <section v-if="para.data_type==0 && para.is_enum_data!=1" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <label class="input">
-                                <input type="text" name="text" v-model="para.value">
-                              </label>
-                            </section>
-
-                            <section v-if="para.data_type==1 && para.is_region_data!=1 && para.is_enum_data!=1" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <label class="input">
-                                <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i>
-                                <input type="text" name="num" v-model="para.value">
-                              </label>
-                            </section>
-
-
-                            <section v-if="para.data_type==2" class="col col-sm-12">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <div class="textarea">
-                                <textarea rows="5" width="100%" v-model="para.value"></textarea>
-                              </div>
-                            </section>
-
-                            <section v-if="para.data_type==3" class="col col-sm-12">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <div class="input">
-                                <input type="text" v-model="para.value">
-                              </div>
-                            </section>
-
-                            <section v-if="para.data_type==4" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <div class="input">
-                                <!-- <ElDateTimeInput :type="'date'" @valueChanged="paraValueChanged(para,$event)"></ElDateTimeInput> -->
-                                <input type="text" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" @focus="paraChanged(para,$event)">
-                              </div>
-                            </section>
-
-                            <section v-if="para.data_type==5" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <div class="input">
-                                <input type="text" onclick="WdatePicker({dateFmt:'HH:mm:ss'})" @focus="paraChanged(para,$event)">
-                              </div>
-                            </section>
-
-                            <section v-if="para.data_type==6" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <div class="input">
-                                <input type="text" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" @focus="paraChanged(para,$event)">
-                              </div>
-                            </section>
-
-
-
-                            <section v-if="para.data_type==7 || para.is_region_data==1" class="col col-6">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
-                              <label class="input col col-6 nopaddingl rl">
-
-                                <input type="text" v-model="para.mininput">
-                              </label>
-                              <label class="nopaddingl col to">—</label>
-                              <label class="input col col-6 nopaddingl rr">
-                                <input type="text" v-model="para.maxinput">
-                              </label>
-                            </section>
-
-                            <fieldset v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0" class="border col col-sm-12">
-                              <section>
-                                <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                <div class="inline-group">
-                                  <label class="radio" v-for="ch in para.enum_list" :key="ch.enum_code">
-                                    <input type="radio" @change="radioParaChanged(ch.enum_code,para,$event)" :value="ch.enum_code" :name="'radio_'+para.column_id">
-                                    <i></i>{{ch.enum_name}}</label>
-                                </div>
-                              </section>
-                            </fieldset>
-
-                            <fieldset v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1" class="border col col-sm-12">
-                              <section>
-                                <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                <div class="inline-group">
-                                  <label class="checkbox" v-for="ch in para.enum_list" :key="ch.enum_code">
-                                    <input type="checkbox" :checked="checkEnumValue(ch.enum_code,para)" name="checkbox-inline" @change="enumParaChanged(ch.enum_code,para,$event)">
-                                    <i></i>{{ch.enum_name}}</label>
-                                </div>
-                              </section>
-                            </fieldset>
-
-                            <section v-if="para.data_type==9" class="col col-3">
-                              <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                              <label class="input">
-                                <section v-if="para.display_value!=null && para.display_value!=undefined && para.display_value.indexOf('{')>=0">
-                                  <a :href="v.href" target="_blank" class="btn pull-left" v-for="(v,ridx) in JSON.parse(para.display_value)" :key="ridx">{{(ridx>0?",":"")+v.value}}</a>
-                                </section>
-                                <a href="javascript:void(0);" class="btn pull-left btn-primary" @click="editRefParameter(para)">
-                                  <i class="fa fa-edit"></i>编辑</a>
-                              </label>
-                            </section>
-
-                          </div>
-                        </div>
-                      </fieldset>
-
-                      <footer>
-                        <button :disabled="can_save_para!=true" type="button" class="btn pull-left btn-primary"
-                          @click="saveParas()">
-                          <i class="fa fa-save"></i> 保存参数信息</button>
-                      </footer>
-
-                    </form>
-                  </div>
-                  <!-- end widget content -->
-                </div>
-                <!-- end widget div -->
-              </div>
+        <!-- 新插入的页面 -->
+        
 
 
 
 
-              <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
-                data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
-                data-widget-sortable="false">
-                <header>
-                  <span class="widget-icon">
-                    <i class="fa fa-table"></i>
-                  </span>
-                  <h2>上传案例附件</h2>
-                </header>
-
-                <!-- widget div-->
-                <div>
-                  <div class="btn-upload">
-                    <button :disabled="can_save_para!=true" type="button" @click="uploadAttachment()" class="btn btn-primary pull-left">
-                      <i class="fa fa-upload"></i>上传附件</button>
-                  </div>
-
-                  <!-- widget edit box -->
-                  <div class="jarviswidget-editbox">
-                    <!-- This area used as dropdown edit box -->
-
-                  </div>
-                  <!-- end widget edit box -->
-
-                  <!-- widget content -->
-                  <div class="widget-body no-padding">
-                    <table id="datatable_tabletools1" class="table table-striped table-bordered table-hover" width="100%">
-                      <thead>
-                        <tr>
-                          <th data-hide="phone">ID</th>
-                          <th data-class="expand">文件名称</th>
-                          <th>文件类型</th>
-                          <th data-hide="phone">上传时间</th>
-                          <th data-hide="phone,tablet">操作</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <tr v-for="(f,index) in projectInfo.attachment_list" :key="index">
-                            <td>{{index+1}}</td>
-                            <td>
-                              {{f.file_name}}
-                            </td>
-                            <td>{{f.file_type!=null?f.file_type.toUpperCase().replace(".",""):""}}</td>
-                            <td>{{f.create_time}}</td>
-                            <td>
-                              <a href="javascript:void(0);" class="btn btn-danger btn-xs" @click="deleteAtttachment(f,index)">
-                                删除 </a>
-                            </td>
-                          </tr>
-
-                          <tr v-for="(uploading_file,index) in uploading_files" :key="index" v-if="uploading_file.ok!==true">
-                            <td>{{projectInfo.attachment_list.length+index+1}}</td>
-                            <td>
-                              <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" :data-percent="uploading_progresses[uploading_file.guid]" data-pie-size="20">
-										<span class="percent font-xs">{{uploading_progresses[uploading_file.guid]}}</span></div> -->
-                              <span style="padding-left:100px;">{{uploading_file.name.replace('.'+uploading_file.ext,'')}}</span>
-                              <div class="progress">
-                                <div class="progress-bar bg-color-blue" :style="'width: '+uploading_progresses[uploading_file.index]+'%;'"></div>
-                              </div>
-                            </td>
-                            <td>{{uploading_file.ext!=null?uploading_file.ext.toUpperCase():""}}</td>
-                            <td></td>
-                            <td></td>
-                          </tr>
 
 
 
 
-                      </tbody>
-                    </table>
-                  </div>
-                  <!-- end widget content -->
-                </div>
-                <!-- end widget div -->
-              </div>
 
 
 
-              <!-- <div class="jarviswidget jarviswidget-color-darken" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
-									
-									<div>
-										<div class="jarviswidget-editbox">
-										</div>
-
-										<div class="widget-body no-padding" style="min-height:0;">
-											<form id="query-form" class="smart-form">
-												<footer>			
-													<a target="_blank" :href="(subject_type=='p'?'/p/one_p.html?id=':'/s/one_s.html?id=')+subject_oid" class="btn btn-primary pull-left" :disabled="subject_oid==null">
-														<i class="fa fa-check"></i> 预览案例</a>
-
-													<a href="javascript:void(0);" class="btn btn-warning pull-left" @click="publishProject()">
-														<i class="fa fa-check"></i> 发布案例</a>
-												</footer>
-											</form>
-										</div>
-										 end widget content 
-									</div>
-									end widget div 
-							</div> -->
 
 
-            </article>
+        <div id="main" role="main">
+          <!-- RIBBON -->
+          <div id="ribbon">
+            <span class="ribbon-button-alignment">
+              <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom"
+                data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
+                data-html="true">
+                <i class="fa fa-refresh"></i>
+              </span>
+            </span>
+            <!-- breadcrumb -->
+            <ol class="breadcrumb">
+              <li><a :href="appsettings.portal_root">首页</a></li>
+              <li>个人中心</li>
+              <li>{{subject_type_name}}管理</li>
+              <li>{{edit_mode=="edit"?'编辑':'新增'}}案例</li>
+            </ol>
+            <!-- end breadcrumb -->
           </div>
-        </section>
-      </div>
-    </div>
+          <!-- END RIBBON -->
 
+          <!-- MAIN CONTENT -->
+          <div id="content">
+
+
+            <section id="widget-grid" class="">
+              <ElBlockAlert ref="alert"></ElBlockAlert>
+              <div class="row">
+                <article class="col-sm-12 col-md-12">
+                  <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
+                    data-widget-sortable="false">
+                    <header>
+                      <span class="widget-icon">
+                        <i class="fa fa-edit"></i>
+                      </span>
+                      <h2>案例基本信息 </h2>
+                    </header>
+                    <div>
+                      <!-- widget edit box -->
+                      <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+                      </div>
+                      <!-- end widget edit box -->
+
+                      <!-- widget content -->
+                      <div class="widget-body no-padding">
+                        <form id="query-form" class="smart-form">
+
+                          <fieldset>
+                            <div class="row">
+
+
+                              <section class="col col-sm-12">
+                                <label class="label">{{subject_type_name}}名称</label>
+                                <label class="input">
+                                  <input type="text" name="text" disabled :value="subjectCoreInfo.subject_name">
+                                </label>
+                              </section>
+
+                            </div>
+                          </fieldset>
+
+
+
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">*案例名称</label>
+                                <label class="input">
+                                  <input type="text" name="text" v-model="projectInfo.core.project_name">
+                                </label>
+                              </section>
+                            </div>
+                          </fieldset>
+
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">关键词</label>
+                                <label class="input">
+                                  <input type="text" v-model="projectInfo.core.key_tag">
+                                </label>
+                              </section>
+                            </div>
+                          </fieldset>
+
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">适用工艺</label>
+                                <label class="input">
+                                  <input type="text" v-model="projectInfo.core.process">
+                                </label>
+                              </section>
+                            </div>
+                          </fieldset>
+
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">适用行业</label>
+                                <div class="smart-form">
+                                  <div class="inline-group">
+                                    <label class="checkbox col-sm-2" v-for="(prof,index) in professions" :key="index">
+                                      <input type="checkbox" :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
+                                      <i></i>{{prof.enum_name}}</label>
+                                  </div>
+                                </div>
+                              </section>
+                            </div>
+                          </fieldset>
+
+
+
+                          <fieldset>
+                            <div class="row">
+                              <section class="col col-sm-12">
+                                <label class="label">案例描述</label>
+                                <div class="textarea">
+                                  <textarea v-model="projectInfo.core.description" rows="10"></textarea>
+                                </div>
+                              </section>
+                            </div>
+                          </fieldset>
+
+                          <footer>
+                            <a @click="saveBasicInfo()" href="javascript:void(0);" :class="basicInfoSuc?'btn-success':'btn-primary'"
+                              class="btn  pull-left">
+                              <i class="fa fa-save"></i> 保存基本信息</a>
+                          </footer>
+
+                        </form>
+                      </div>
+                      <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                  </div>
+
+                  <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
+                    data-widget-sortable="false">
+                    <header>
+                      <span class="widget-icon">
+                        <i class="fa fa-edit"></i>
+                      </span>
+                      <h2>案例参数信息 </h2>
+                    </header>
+                    <div>
+                      <div class="jarviswidget-editbox">
+                      </div>
+
+                      <div class="widget-body no-padding">
+                        <form id="para-form" class="smart-form">
+                          <fieldset>
+                            <div class="row">
+                              <div v-for="para in parameters" :key="para.column_id">
+
+                                <section v-if="para.data_type==0 && para.is_enum_data!=1" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="input">
+                                    <input type="text" name="text" v-model="para.value">
+                                  </label>
+                                </section>
+
+                                <section v-if="para.data_type==1 && para.is_region_data!=1 && para.is_enum_data!=1" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="input">
+                                    <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i>
+                                    <input type="text" name="num" v-model="para.value">
+                                  </label>
+                                </section>
+
+
+                                <section v-if="para.data_type==2" class="col col-sm-12">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <div class="textarea">
+                                    <textarea rows="5" width="100%" v-model="para.value"></textarea>
+                                  </div>
+                                </section>
+
+                                <section v-if="para.data_type==3" class="col col-sm-12">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <div class="input">
+                                    <input type="text" v-model="para.value">
+                                  </div>
+                                </section>
+
+                                <section v-if="para.data_type==4" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <div class="input">
+                                    <!-- <ElDateTimeInput :type="'date'" @valueChanged="paraValueChanged(para,$event)"></ElDateTimeInput> -->
+                                    <input type="text" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" @focus="paraChanged(para,$event)">
+                                  </div>
+                                </section>
+
+                                <section v-if="para.data_type==5" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <div class="input">
+                                    <input type="text" onclick="WdatePicker({dateFmt:'HH:mm:ss'})" @focus="paraChanged(para,$event)">
+                                  </div>
+                                </section>
+
+                                <section v-if="para.data_type==6" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <div class="input">
+                                    <input type="text" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" @focus="paraChanged(para,$event)">
+                                  </div>
+                                </section>
+
+
+
+                                <section v-if="para.data_type==7 || para.is_region_data==1" class="col col-6">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
+                                  <label class="input col col-6 nopaddingl rl">
+
+                                    <input type="text" v-model="para.mininput">
+                                  </label>
+                                  <label class="nopaddingl col to">—</label>
+                                  <label class="input col col-6 nopaddingl rr">
+                                    <input type="text" v-model="para.maxinput">
+                                  </label>
+                                </section>
+
+                                <fieldset v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0" class="border col col-sm-12">
+                                  <section>
+                                    <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                    <div class="inline-group">
+                                      <label class="radio" v-for="ch in para.enum_list" :key="ch.enum_code">
+                                        <input type="radio" @change="radioParaChanged(ch.enum_code,para,$event)" :value="ch.enum_code" :name="'radio_'+para.column_id">
+                                        <i></i>{{ch.enum_name}}</label>
+                                    </div>
+                                  </section>
+                                </fieldset>
+
+                                <fieldset v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1" class="border col col-sm-12">
+                                  <section>
+                                    <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                    <div class="inline-group">
+                                      <label class="checkbox" v-for="ch in para.enum_list" :key="ch.enum_code">
+                                        <input type="checkbox" :checked="checkEnumValue(ch.enum_code,para)" name="checkbox-inline" @change="enumParaChanged(ch.enum_code,para,$event)">
+                                        <i></i>{{ch.enum_name}}</label>
+                                    </div>
+                                  </section>
+                                </fieldset>
+
+                                <section v-if="para.data_type==9" class="col col-3">
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="input">
+                                    <section v-if="para.display_value!=null && para.display_value!=undefined && para.display_value.indexOf('{')>=0">
+                                      <a :href="v.href" target="_blank" class="btn pull-left" v-for="(v,ridx) in JSON.parse(para.display_value)" :key="ridx">{{(ridx>0?",":"")+v.value}}</a>
+                                    </section>
+                                    <a href="javascript:void(0);" class="btn pull-left btn-primary" @click="editRefParameter(para)">
+                                      <i class="fa fa-edit"></i>编辑</a>
+                                  </label>
+                                </section>
+
+                              </div>
+                            </div>
+                          </fieldset>
+
+                          <footer>
+                            <button :disabled="can_save_para!=true" type="button" class="btn pull-left btn-primary"
+                              @click="saveParas()">
+                              <i class="fa fa-save"></i> 保存参数信息</button>
+                          </footer>
+
+                        </form>
+                      </div>
+                      <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                  </div>
+
+
+
+
+                  <div class="jarviswidget  jarviswidget-sortable" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                    data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-collapsed="false"
+                    data-widget-sortable="false">
+                    <header>
+                      <span class="widget-icon">
+                        <i class="fa fa-table"></i>
+                      </span>
+                      <h2>上传案例附件</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                      <div class="btn-upload">
+                        <button :disabled="can_save_para!=true" type="button" @click="uploadAttachment()" class="btn btn-primary pull-left">
+                          <i class="fa fa-upload"></i>上传附件</button>
+                      </div>
+
+                      <!-- widget edit box -->
+                      <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+
+                      </div>
+                      <!-- end widget edit box -->
+
+                      <!-- widget content -->
+                      <div class="widget-body no-padding">
+                        <table id="datatable_tabletools1" class="table table-striped table-bordered table-hover" width="100%">
+                          <thead>
+                            <tr>
+                              <th data-hide="phone">ID</th>
+                              <th data-class="expand">文件名称</th>
+                              <th>文件类型</th>
+                              <th data-hide="phone">上传时间</th>
+                              <th data-hide="phone,tablet">操作</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <tr v-for="(f,index) in projectInfo.attachment_list" :key="index">
+                                <td>{{index+1}}</td>
+                                <td>
+                                  {{f.file_name}}
+                                </td>
+                                <td>{{f.file_type!=null?f.file_type.toUpperCase().replace(".",""):""}}</td>
+                                <td>{{f.create_time}}</td>
+                                <td>
+                                  <a href="javascript:void(0);" class="btn btn-danger btn-xs" @click="deleteAtttachment(f,index)">
+                                    删除 </a>
+                                </td>
+                              </tr>
+
+                              <tr v-for="(uploading_file,index) in uploading_files" :key="index" v-if="uploading_file.ok!==true">
+                                <td>{{projectInfo.attachment_list.length+index+1}}</td>
+                                <td>
+                                  <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" :data-percent="uploading_progresses[uploading_file.guid]" data-pie-size="20">
+                        <span class="percent font-xs">{{uploading_progresses[uploading_file.guid]}}</span></div> -->
+                                  <span style="padding-left:100px;">{{uploading_file.name.replace('.'+uploading_file.ext,'')}}</span>
+                                  <div class="progress">
+                                    <div class="progress-bar bg-color-blue" :style="'width: '+uploading_progresses[uploading_file.index]+'%;'"></div>
+                                  </div>
+                                </td>
+                                <td>{{uploading_file.ext!=null?uploading_file.ext.toUpperCase():""}}</td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+
+
+
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                  </div>
+
+
+
+                  <!-- <div class="jarviswidget jarviswidget-color-darken" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
+                      
+                      <div>
+                        <div class="jarviswidget-editbox">
+                        </div>
+
+                        <div class="widget-body no-padding" style="min-height:0;">
+                          <form id="query-form" class="smart-form">
+                            <footer>			
+                              <a target="_blank" :href="(subject_type=='p'?'/p/one_p.html?id=':'/s/one_s.html?id=')+subject_oid" class="btn btn-primary pull-left" :disabled="subject_oid==null">
+                                <i class="fa fa-check"></i> 预览案例</a>
+
+                              <a href="javascript:void(0);" class="btn btn-warning pull-left" @click="publishProject()">
+                                <i class="fa fa-check"></i> 发布案例</a>
+                            </footer>
+                          </form>
+                        </div>
+                        end widget content 
+                      </div>
+                      end widget div 
+                  </div> -->
+
+
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+
+
+      </div>
+    </ElPageFrame>
     <div id="uploaderInput" ref="uploaderInput1" v-show="false"></div>
     <input type="file" ref="uploadPic" v-show="false" @change="uploadPicChanged()" />
     <ElLoading ref="loading"></ElLoading>

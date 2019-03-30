@@ -47,7 +47,7 @@ export default {
           name:'上传产品附件'
         },
         {
-          href:'/p/case.html',
+          href:'/prj/query.html',
           name:'案例维护'
         }
       ]
