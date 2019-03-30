@@ -3,15 +3,15 @@
     <ElPageFrame ref="pf">
       <div slot="mainslot">
         <!-- 新插入的页面 -->
-        
+
         <!-- main -->
         <div class="col g-ml-50 g-ml-0--lg g-overflow-hidden">
           <div class="g-pa-40">
-
-
             <div class="media">
               <div class="d-flex align-self-center">
-                <h1 class="g-font-weight-300 g-font-size-28 g-color-black mb-0">产品维护</h1>
+                <h1 class="g-font-weight-300 g-font-size-28 g-color-black mb-0">
+                  产品维护
+                </h1>
               </div>
 
               <div class="media-body align-self-center text-right">
@@ -19,267 +19,368 @@
                   class="btn btn-xl u-btn-secondary g-width-160--md g-font-size-default g-ml-10"
                   href="#!"
                   @click="createNew()"
-                >添加新产品</a>
+                  >添加新产品</a
+                >
               </div>
             </div>
 
+            <hr class="d-flex g-brd-gray-light-v7 g-my-30" />
 
-          <hr class="d-flex g-brd-gray-light-v7 g-my-30">
+            <div class="media g-mb-30">
+              <div class="d-flex align-self-center align-items-center">
+                <span class="g-hidden-sm-down g-color-gray-dark-v6 g-mr-12"
+                  >状态:</span
+                >
 
-
-          <div class="media g-mb-30">
-
-
-            <div class="d-flex align-self-center align-items-center">
-              <span class="g-hidden-sm-down g-color-gray-dark-v6 g-mr-12">状态:</span>
+                <div class="u-select--v1 g-pr-20" data-toggle="dropdown">
+                  <div
+                    class="btn-group bootstrap-select js-select u-select--v1-select w-100"
+                  >
+                    <button
+                      type="button"
+                      class="btn dropdown-toggle btn-default"
+                      data-toggle="dropdown"
+                      role="button"
+                      title="Archive"
+                      aria-expanded="false"
+                    >
+                      <span class="bs-caret">
+                        <span class="caret"></span>
+                      </span>
+                    </button>
+                    <div
+                      class="dropdown-menu open"
+                      role="combobox"
+                      style="max-height: 647.188px; overflow: hidden; min-height: 3px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(30px, 16px, 0px);"
+                      x-placement="bottom-start"
+                    >
+                      <ul
+                        class="dropdown-menu inner"
+                        role="listbox"
+                        aria-expanded="false"
+                        style="max-height: 645.188px; overflow-y: auto; min-height: 1px;"
+                      >
+                        <li data-original-index="0" class="">
+                          <a
+                            tabindex="0"
+                            class=""
+                            data-tokens="null"
+                            role="option"
+                            aria-disabled="false"
+                            aria-selected="false"
+                            ><span class="d-flex align-items-center"
+                              ><span
+                                class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightblue-v3 g-mr-8--sm"
+                              ></span
+                              ><span
+                                class="g-hidden-sm-down g-line-height-1_2 g-color-black"
+                                >正在审核</span
+                              ></span
+                            ><span
+                              class="glyphicon glyphicon-ok check-mark"
+                            ></span
+                          ></a>
+                        </li>
+                        <li data-original-index="1" class="">
+                          <a
+                            tabindex="0"
+                            class=""
+                            data-tokens="null"
+                            role="option"
+                            aria-disabled="false"
+                            aria-selected="false"
+                            ><span class="d-flex align-items-center"
+                              ><span
+                                class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-teal-v2 g-mr-8--sm"
+                              ></span
+                              ><span
+                                class="g-hidden-sm-down g-line-height-1_2 g-color-black"
+                                >已审核</span
+                              ></span
+                            ><span
+                              class="glyphicon glyphicon-ok check-mark"
+                            ></span
+                          ></a>
+                        </li>
+                        <li data-original-index="2" class="">
+                          <a
+                            tabindex="0"
+                            class=""
+                            data-tokens="null"
+                            role="option"
+                            aria-disabled="false"
+                            aria-selected="false"
+                            ><span class="d-flex align-items-center"
+                              ><span
+                                class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightred-v2 g-mr-8--sm"
+                              ></span
+                              ><span
+                                class="g-hidden-sm-down g-line-height-1_2 g-color-black"
+                                >已完成</span
+                              ></span
+                            ><span
+                              class="glyphicon glyphicon-ok check-mark"
+                            ></span
+                          ></a>
+                        </li>
+                        <li data-original-index="3" class="selected">
+                          <a
+                            tabindex="0"
+                            class=""
+                            data-tokens="null"
+                            role="option"
+                            aria-disabled="false"
+                            aria-selected="true"
+                            ><span class="d-flex align-items-center"
+                              ><span
+                                class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-gray-light-v6 g-mr-8--sm"
+                              ></span
+                              ><span
+                                class="g-hidden-sm-down g-line-height-1_2 g-color-black"
+                                >未完成</span
+                              ></span
+                            ><span
+                              class="glyphicon glyphicon-ok check-mark"
+                            ></span
+                          ></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <select
+                      class="js-select u-select--v1-select w-100"
+                      style="display: none;"
+                      tabindex="-98"
+                    >
+                      <option
+                        data-content='<span class="d-flex align-items-center"><span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightblue-v3 g-mr-8--sm"></span><span class="g-hidden-sm-down g-line-height-1_2 g-color-black">正在审核</span></span>'
+                      >
+                        正在审核</option
+                      >
+                      <option
+                        data-content='<span class="d-flex align-items-center"><span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-teal-v2 g-mr-8--sm"></span><span class="g-hidden-sm-down g-line-height-1_2 g-color-black">已审核</span></span>'
+                      >
+                        已审核</option
+                      >
+                      <option
+                        data-content='<span class="d-flex align-items-center"><span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightred-v2 g-mr-8--sm"></span><span class="g-hidden-sm-down g-line-height-1_2 g-color-black">已完成</span></span>'
+                      >
+                        已完成</option
+                      >
+                      <option
+                        data-content='<span class="d-flex align-items-center"><span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-gray-light-v6 g-mr-8--sm"></span><span class="g-hidden-sm-down g-line-height-1_2 g-color-black">未完成</span></span>'
+                      >
+                        未完成</option
+                      >
+                    </select>
+                  </div>
+                  <i
+                    class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto"
+                  ></i>
+                </div>
+              </div>
 
               <div
-                class="u-select--v1 g-pr-20"
-                data-toggle="dropdown"
+                class="d-flex align-self-center align-items-center g-ml-10 g-ml-20--md g-ml-40--lg"
               >
-                <div class="btn-group bootstrap-select js-select u-select--v1-select w-100">
+                <span class="g-hidden-sm-down g-color-gray-dark-v6 g-mr-12"
+                  >类别:</span
+                >
+
+                <div class="u-select--v1 g-pr-20" data-toggle="dropdown">
+                  <div
+                    class="btn-group bootstrap-select js-select u-select--v1-select w-100"
+                  >
+                    <button
+                      type="button"
+                      class="btn dropdown-toggle btn-default"
+                      data-toggle="dropdown"
+                      role="button"
+                      title="胡尔达伍兹"
+                      aria-expanded="false"
+                    >
+                      <span class="bs-caret"><span class="caret"></span></span>
+                    </button>
+                    <div
+                      class="dropdown-menu open"
+                      role="combobox"
+                      style="max-height: 635.313px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(30px, 40px, 0px);"
+                      x-placement="bottom-start"
+                    >
+                      <ul
+                        class="dropdown-menu inner"
+                        role="listbox"
+                        aria-expanded="false"
+                        style="max-height: 633.313px; overflow-y: auto; min-height: 0px;"
+                      >
+                        <li data-original-index="0" class="">
+                          <a
+                            tabindex="0"
+                            class=""
+                            data-tokens="null"
+                            role="option"
+                            aria-disabled="false"
+                            aria-selected="false"
+                            ><span class="d-flex align-items-center"
+                              ><img
+                                class="g-width-40 g-height-40 rounded-circle g-mr-12--sm"
+                                src="../../../assets/common/img/130x130/img1.jpg"
+                                alt="Image Description"
+                              /><span
+                                class="g-hidden-sm-down g-line-height-1 g-color-black"
+                                >乔丹卡罗尔</span
+                              ></span
+                            ><span
+                              class="glyphicon glyphicon-ok check-mark"
+                            ></span
+                          ></a>
+                        </li>
+                        <li data-original-index="1" class="">
+                          <a
+                            tabindex="0"
+                            class=""
+                            data-tokens="null"
+                            role="option"
+                            aria-disabled="false"
+                            aria-selected="false"
+                            ><span class="d-flex align-items-center"
+                              ><img
+                                class="g-width-40 g-height-40 rounded-circle g-mr-12--sm"
+                                src="../../../assets/common/img/130x130/img1.jpg"
+                                alt="Image Description"
+                              /><span
+                                class="g-hidden-sm-down g-line-height-1 g-color-black"
+                                >约翰·多伊</span
+                              ></span
+                            ><span
+                              class="glyphicon glyphicon-ok check-mark"
+                            ></span
+                          ></a>
+                        </li>
+                        <li data-original-index="2" class="selected">
+                          <a
+                            tabindex="0"
+                            class=""
+                            data-tokens="null"
+                            role="option"
+                            aria-disabled="false"
+                            aria-selected="true"
+                            ><span class="d-flex align-items-center"
+                              ><img
+                                class="g-width-40 g-height-40 rounded-circle g-mr-12--sm"
+                                src="../../../assets/common/img/130x130/img1.jpg"
+                                alt="Image Description"
+                              /><span
+                                class="g-hidden-sm-down g-line-height-1 g-color-black"
+                                >胡尔达伍兹</span
+                              ></span
+                            ><span
+                              class="glyphicon glyphicon-ok check-mark"
+                            ></span
+                          ></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <select
+                      class="js-select u-select--v1-select w-100"
+                      style="display: none;"
+                      tabindex="-98"
+                    >
+                      <option
+                        data-content='<span class="d-flex align-items-center"><img class="g-width-40 g-height-40 rounded-circle g-mr-12--sm" src="../../../assets/common/img/130x130/img1.jpg" alt="Image Description"><span class="g-hidden-sm-down g-line-height-1 g-color-black">乔丹卡罗尔</span></span>'
+                      >
+                        乔丹卡罗尔</option
+                      >
+                      <option
+                        data-content='<span class="d-flex align-items-center"><img class="g-width-40 g-height-40 rounded-circle g-mr-12--sm" src="../../../assets/common/img/130x130/img1.jpg" alt="Image Description"><span class="g-hidden-sm-down g-line-height-1 g-color-black">约翰·多伊</span></span>'
+                      >
+                        约翰·多伊</option
+                      >
+                      <option
+                        data-content='<span class="d-flex align-items-center"><img class="g-width-40 g-height-40 rounded-circle g-mr-12--sm" src="../../../assets/common/img/130x130/img1.jpg" alt="Image Description"><span class="g-hidden-sm-down g-line-height-1 g-color-black">胡尔达伍兹</span></span>'
+                      >
+                        胡尔达伍兹</option
+                      >
+                    </select>
+                  </div>
+                  <i
+                    class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto"
+                  ></i>
+                </div>
+              </div>
+
+              <div class="media-body align-self-center g-ml-10 g-ml-0--md">
+                <div class="input-group g-pos-rel g-max-width-380 float-right">
+                  <input
+                    class="form-control h-100 g-font-size-default g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-rounded-20 g-pl-20 g-pr-50 g-py-10"
+                    type="text"
+                    placeholder="搜索"
+                    v-model="query_data.product_name"
+                  />
                   <button
-                    type="button"
-                    class="btn dropdown-toggle btn-default"
-                    data-toggle="dropdown"
-                    role="button"
-                    title="Archive"
-                    aria-expanded="false"
+                    class="btn g-pos-abs g-top-0 g-right-0 g-z-index-2 g-width-60 h-100 g-bg-transparent g-font-size-16 g-color-primary g-color-secondary--hover rounded-0"
+                    type="submit"
+                    @click="queryClick()"
                   >
-                    <span class="bs-caret">
-                      <span class="caret"></span>
-                    </span>
+                    <i class="hs-admin-search g-absolute-centered"></i>
                   </button>
-                  <div
-                    class="dropdown-menu open"
-                    role="combobox"
-                    style="max-height: 647.188px; overflow: hidden; min-height: 3px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(30px, 16px, 0px);"
-                    x-placement="bottom-start"
-                  >
-                    <ul
-                      class="dropdown-menu inner"
-                      role="listbox"
-                      aria-expanded="false"
-                      style="max-height: 645.188px; overflow-y: auto; min-height: 1px;"
-                    >
-                      <li
-                        data-original-index="0"
-                        class=""
-                      ><a
-                          tabindex="0"
-                          class=""
-                          data-tokens="null"
-                          role="option"
-                          aria-disabled="false"
-                          aria-selected="false"
-                        ><span class="d-flex align-items-center"><span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightblue-v3 g-mr-8--sm"></span><span class="g-hidden-sm-down g-line-height-1_2 g-color-black">正在审核</span></span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                      <li
-                        data-original-index="1"
-                        class=""
-                      ><a
-                          tabindex="0"
-                          class=""
-                          data-tokens="null"
-                          role="option"
-                          aria-disabled="false"
-                          aria-selected="false"
-                        ><span class="d-flex align-items-center"><span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-teal-v2 g-mr-8--sm"></span><span class="g-hidden-sm-down g-line-height-1_2 g-color-black">已审核</span></span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                      <li
-                        data-original-index="2"
-                        class=""
-                      ><a
-                          tabindex="0"
-                          class=""
-                          data-tokens="null"
-                          role="option"
-                          aria-disabled="false"
-                          aria-selected="false"
-                        ><span class="d-flex align-items-center"><span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightred-v2 g-mr-8--sm"></span><span class="g-hidden-sm-down g-line-height-1_2 g-color-black">已完成</span></span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                      <li
-                        data-original-index="3"
-                        class="selected"
-                      ><a
-                          tabindex="0"
-                          class=""
-                          data-tokens="null"
-                          role="option"
-                          aria-disabled="false"
-                          aria-selected="true"
-                        ><span class="d-flex align-items-center"><span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-gray-light-v6 g-mr-8--sm"></span><span class="g-hidden-sm-down g-line-height-1_2 g-color-black">未完成</span></span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                    </ul>
-                  </div><select
-                    class="js-select u-select--v1-select w-100"
-                    style="display: none;"
-                    tabindex="-98"
-                  >
-                    <option data-content="<span class=&quot;d-flex align-items-center&quot;><span class=&quot;u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightblue-v3 g-mr-8--sm&quot;></span><span class=&quot;g-hidden-sm-down g-line-height-1_2 g-color-black&quot;>正在审核</span></span>">
-                      正在审核</option>
-                    <option data-content="<span class=&quot;d-flex align-items-center&quot;><span class=&quot;u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-teal-v2 g-mr-8--sm&quot;></span><span class=&quot;g-hidden-sm-down g-line-height-1_2 g-color-black&quot;>已审核</span></span>">
-                      已审核</option>
-                    <option data-content="<span class=&quot;d-flex align-items-center&quot;><span class=&quot;u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightred-v2 g-mr-8--sm&quot;></span><span class=&quot;g-hidden-sm-down g-line-height-1_2 g-color-black&quot;>已完成</span></span>">
-                      已完成</option>
-                    <option data-content="<span class=&quot;d-flex align-items-center&quot;><span class=&quot;u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-gray-light-v6 g-mr-8--sm&quot;></span><span class=&quot;g-hidden-sm-down g-line-height-1_2 g-color-black&quot;>未完成</span></span>">
-                      未完成</option>
-                  </select>
                 </div>
-                <i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto"></i>
               </div>
             </div>
 
-            <div class="d-flex align-self-center align-items-center g-ml-10 g-ml-20--md g-ml-40--lg">
-              <span class="g-hidden-sm-down g-color-gray-dark-v6 g-mr-12">类别:</span>
-
-              <div
-                class="u-select--v1 g-pr-20"
-                data-toggle="dropdown"
-              >
-                <div class="btn-group bootstrap-select js-select u-select--v1-select w-100"><button
-                    type="button"
-                    class="btn dropdown-toggle btn-default"
-                    data-toggle="dropdown"
-                    role="button"
-                    title="胡尔达伍兹"
-                    aria-expanded="false"
-                  ><span class="bs-caret"><span class="caret"></span></span></button>
-                  <div
-                    class="dropdown-menu open"
-                    role="combobox"
-                    style="max-height: 635.313px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(30px, 40px, 0px);"
-                    x-placement="bottom-start"
-                  >
-                    <ul
-                      class="dropdown-menu inner"
-                      role="listbox"
-                      aria-expanded="false"
-                      style="max-height: 633.313px; overflow-y: auto; min-height: 0px;"
-                    >
-                      <li
-                        data-original-index="0"
-                        class=""
-                      ><a
-                          tabindex="0"
-                          class=""
-                          data-tokens="null"
-                          role="option"
-                          aria-disabled="false"
-                          aria-selected="false"
-                        ><span class="d-flex align-items-center"><img
-                              class="g-width-40 g-height-40 rounded-circle g-mr-12--sm"
-                              src="../../../assets/common/img/130x130/img1.jpg"
-                              alt="Image Description"
-                            ><span class="g-hidden-sm-down g-line-height-1 g-color-black">乔丹卡罗尔</span></span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                      <li
-                        data-original-index="1"
-                        class=""
-                      ><a
-                          tabindex="0"
-                          class=""
-                          data-tokens="null"
-                          role="option"
-                          aria-disabled="false"
-                          aria-selected="false"
-                        ><span class="d-flex align-items-center"><img
-                              class="g-width-40 g-height-40 rounded-circle g-mr-12--sm"
-                              src="../../../assets/common/img/130x130/img1.jpg"
-                              alt="Image Description"
-                            ><span class="g-hidden-sm-down g-line-height-1 g-color-black">约翰·多伊</span></span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                      <li
-                        data-original-index="2"
-                        class="selected"
-                      ><a
-                          tabindex="0"
-                          class=""
-                          data-tokens="null"
-                          role="option"
-                          aria-disabled="false"
-                          aria-selected="true"
-                        ><span class="d-flex align-items-center"><img
-                              class="g-width-40 g-height-40 rounded-circle g-mr-12--sm"
-                              src="../../../assets/common/img/130x130/img1.jpg"
-                              alt="Image Description"
-                            ><span class="g-hidden-sm-down g-line-height-1 g-color-black">胡尔达伍兹</span></span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                    </ul>
-                  </div><select
-                    class="js-select u-select--v1-select w-100"
-                    style="display: none;"
-                    tabindex="-98"
-                  >
-                    <option data-content="<span class=&quot;d-flex align-items-center&quot;><img class=&quot;g-width-40 g-height-40 rounded-circle g-mr-12--sm&quot; src=&quot;../../../assets/common/img/130x130/img1.jpg&quot; alt=&quot;Image Description&quot;><span class=&quot;g-hidden-sm-down g-line-height-1 g-color-black&quot;>乔丹卡罗尔</span></span>">
-                      乔丹卡罗尔</option>
-                    <option data-content="<span class=&quot;d-flex align-items-center&quot;><img class=&quot;g-width-40 g-height-40 rounded-circle g-mr-12--sm&quot; src=&quot;../../../assets/common/img/130x130/img1.jpg&quot; alt=&quot;Image Description&quot;><span class=&quot;g-hidden-sm-down g-line-height-1 g-color-black&quot;>约翰·多伊</span></span>">
-                      约翰·多伊</option>
-                    <option data-content="<span class=&quot;d-flex align-items-center&quot;><img class=&quot;g-width-40 g-height-40 rounded-circle g-mr-12--sm&quot; src=&quot;../../../assets/common/img/130x130/img1.jpg&quot; alt=&quot;Image Description&quot;><span class=&quot;g-hidden-sm-down g-line-height-1 g-color-black&quot;>胡尔达伍兹</span></span>">
-                      胡尔达伍兹</option>
-                  </select>
-                </div>
-                <i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto"></i>
-              </div>
-            </div>
-
-            <div class="media-body align-self-center g-ml-10 g-ml-0--md">
-              <div class="input-group g-pos-rel g-max-width-380 float-right">
-                <input
-                  class="form-control h-100 g-font-size-default g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-rounded-20 g-pl-20 g-pr-50 g-py-10"
-                  type="text"
-                  placeholder="搜索"
-                  v-model="query_data.product_name"
-                >
-                <button
-                  class="btn g-pos-abs g-top-0 g-right-0 g-z-index-2 g-width-60 h-100 g-bg-transparent g-font-size-16 g-color-primary g-color-secondary--hover rounded-0"
-                  type="submit"
-                  @click="queryClick()"
-                >
-                  <i class="hs-admin-search g-absolute-centered"></i>
-                </button>
-              </div>
-            </div>
-
-          </div>
-
-
-
-          <!-- 列表 -->
+            <!-- 列表 -->
             <div class="row">
-
               <div
                 class="col-md-6 col-lg-4 g-mb-30"
-                v-for="(pro,index) in result_products"
+                v-for="(pro, index) in result_products"
                 :key="index"
               >
                 <div class="card h-100 g-brd-gray-light-v7 rounded">
-                  <header class="card-header g-bg-transparent g-brd-bottom-none g-pa-20 g-pa-30--sm">
+                  <header
+                    class="card-header g-bg-transparent g-brd-bottom-none g-pa-20 g-pa-30--sm"
+                  >
                     <div class="media g-mb-15">
-                      <div class="d-flex align-self-center">这是系列这是系列</div>
+                      <div class="d-flex align-self-center">
+                        这是系列这是系列
+                      </div>
 
                       <div class="media-body d-flex justify-content-end">
                         <div class="g-pos-rel g-z-index-2">
                           <a
-                            :id="forId(index,1)"
+                            :id="forId(index, 1)"
                             class="u-link-v5 g-line-height-0 g-font-size-24 g-color-gray-light-v6 g-color-secondary--hover"
                             href="#!"
-                            :aria-controls="forId(index,2)"
+                            :aria-controls="forId(index, 2)"
                             aria-haspopup="true"
                             aria-expanded="false"
                             data-dropdown-event="click"
-                            :data-dropdown-target="forId(index,3)"
+                            :data-dropdown-target="forId(index, 3)"
                             data-dropdown-type="jquery-slide"
                           >
                             <i class="hs-admin-more-alt g-ml-20"></i>
                           </a>
 
                           <div
-                            :id="forId(index,2)"
+                            :id="forId(index, 2)"
                             class="u-shadow-v31 g-pos-abs g-right-0 g-z-index-2 g-bg-white u-dropdown--css-animation u-dropdown--hidden u-dropdown--reverse-y u-dropdown--jquery-slide"
-                            :aria-labelledby="forId(index,1)"
+                            :aria-labelledby="forId(index, 1)"
                             style="display: none;"
                           >
                             <ul class="list-unstyled g-nowrap mb-0">
                               <li>
                                 <a
                                   class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14"
-                                  :href="'/p/edit.html?id='+pro.oid+'&c='+pro.category+'&cnn='+catInfo.name"
+                                  :href="
+                                    '/p/edit.html?id=' +
+                                      pro.oid +
+                                      '&c=' +
+                                      pro.category +
+                                      '&cnn=' +
+                                      catInfo.name
+                                  "
                                 >
-                                  <i class="hs-admin-pencil g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
+                                  <i
+                                    class="hs-admin-pencil g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"
+                                  ></i>
                                   编辑
                                 </a>
                               </li>
@@ -287,9 +388,11 @@
                                 <a
                                   class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14"
                                   href="#!"
-                                  @click="deleteProduct(pro,index)"
+                                  @click="deleteProduct(pro, index)"
                                 >
-                                  <i class="hs-admin-trash g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
+                                  <i
+                                    class="hs-admin-trash g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"
+                                  ></i>
                                   删除
                                 </a>
                               </li>
@@ -297,40 +400,51 @@
                           </div>
                         </div>
                       </div>
-
                     </div>
 
-                    <h3 class="g-font-weight-300 g-font-size-20 g-color-black g-mb-15">{{pro.product_name}}</h3>
+                    <h3
+                      class="g-font-weight-300 g-font-size-20 g-color-black g-mb-15"
+                    >
+                      {{ pro.product_name }}
+                    </h3>
                     <span
-                      v-if="pro.status==0"
+                      v-if="pro.status == 0"
                       class="u-tags-v1 text-center g-brd-around  g-width-130 g-brd-around g-rounded-50 g-py-4 g-px-15 g-brd-teal-v2 g-bg-teal-v2 g-font-weight-400 g-color-white g-rounded-50 g-px-10"
-                    >正常</span>
+                      >正常</span
+                    >
                     <span
-                      v-if="pro.status==1"
+                      v-if="pro.status == 1"
                       class="u-tags-v1 text-center g-brd-around  g-width-130 g-brd-around g-rounded-50 g-py-4 g-px-15 g-font-weight-400 g-color-white g-rounded-50 g-px-10"
                       style="background:#2196F3;"
-                    >待审核</span>
+                      >待审核</span
+                    >
                     <span
-                      v-if="pro.status==-1"
+                      v-if="pro.status == -1"
                       class="u-tags-v1 text-center g-brd-around  g-width-130 g-brd-around g-rounded-50 g-py-4 g-px-15 g-font-weight-400 g-rounded-50 g-px-10"
                       style="background:#e9e9e9;color: black"
-                    >已删除</span>
+                      >已删除</span
+                    >
                     <span
-                      v-if="pro.status==-2"
+                      v-if="pro.status == -2"
                       class="u-tags-v1 text-center g-brd-around  g-width-130 g-brd-around g-rounded-50 g-py-4 g-px-15 g-font-weight-400 g-color-white g-rounded-50 g-px-10"
                       style="background:red;"
-                    >审核不通过</span>
+                      >审核不通过</span
+                    >
                   </header>
 
-                  <hr class="d-flex g-brd-gray-light-v7 g-mx-20 g-mx-30--sm my-0">
+                  <hr
+                    class="d-flex g-brd-gray-light-v7 g-mx-20 g-mx-30--sm my-0"
+                  />
 
-                  <div class="card-block d-flex justify-content-between g-px-20 g-px-30--sm g-py-15 g-py-20--sm">
+                  <div
+                    class="card-block d-flex justify-content-between g-px-20 g-px-30--sm g-py-15 g-py-20--sm"
+                  >
                     <div>
                       <img
                         class="g-width-100 g-height-100"
                         src="../../../assets/common/img/130x130/img1.jpg"
                         alt="Image Description"
-                      >
+                      />
                     </div>
 
                     <div>
@@ -338,7 +452,7 @@
                         class="g-width-100 g-height-100"
                         src="../../../assets/common/img/130x130/img1.jpg"
                         alt="Image Description"
-                      >
+                      />
                     </div>
 
                     <div>
@@ -346,34 +460,48 @@
                         class="g-width-100 g-height-100"
                         src="../../../assets/common/img/130x130/img1.jpg"
                         alt="Image Description"
-                      >
+                      />
                     </div>
                   </div>
 
-                  <hr class="d-flex g-brd-gray-light-v7 g-mx-20 g-mx-30--sm my-0">
+                  <hr
+                    class="d-flex g-brd-gray-light-v7 g-mx-20 g-mx-30--sm my-0"
+                  />
 
-                  <div class="card-block g-px-20 g-px-30--sm g-py-15 g-py-20--sm">
+                  <div
+                    class="card-block g-px-20 g-px-30--sm g-py-15 g-py-20--sm"
+                  >
                     <div class="row g-mb-25">
                       <div class="col-md-6 g-mb-25 g-mb-0--md">
-                        <h5 class="g-font-size-default g-color-gray-dark-v6 g-mb-5">创建日期</h5>
-                        <p class="g-color-black mb-0">{{pro.create_time}}</p>
+                        <h5
+                          class="g-font-size-default g-color-gray-dark-v6 g-mb-5"
+                        >
+                          创建日期
+                        </h5>
+                        <p class="g-color-black mb-0">{{ pro.create_time }}</p>
                       </div>
 
                       <div class="col-md-6">
-                        <h5 class="g-font-size-default g-color-gray-dark-v6 g-mb-5">案例数</h5>
+                        <h5
+                          class="g-font-size-default g-color-gray-dark-v6 g-mb-5"
+                        >
+                          案例数
+                        </h5>
                         <p class="g-color-black mb-0">11</p>
                       </div>
                     </div>
 
                     <div class="g-mb-25">
-                      <h5 class="g-font-size-default g-color-gray-dark-v6 g-mb-5">最新访问日期</h5>
-                      <p class="g-color-black mb-0">{{pro.update_time}}</p>
+                      <h5
+                        class="g-font-size-default g-color-gray-dark-v6 g-mb-5"
+                      >
+                        最新访问日期
+                      </h5>
+                      <p class="g-color-black mb-0">{{ pro.update_time }}</p>
                     </div>
-
                   </div>
                 </div>
               </div>
-
             </div>
 
             <!-- 分页 -->
@@ -385,7 +513,9 @@
 
             <div class="media g-mb-30">
               <div class="d-flex align-self-center">
-                <h1 class="g-font-weight-300 g-font-size-28 g-color-black mb-0">产品管理</h1>
+                <h1 class="g-font-weight-300 g-font-size-28 g-color-black mb-0">
+                  产品管理
+                </h1>
               </div>
               <div class="media-body align-self-center g-ml-10 g-ml-0--md">
                 <div class="input-group g-pos-rel g-max-width-380 float-right">
@@ -394,7 +524,7 @@
                     type="text"
                     placeholder="搜索"
                     v-model="query_data.product_name"
-                  >
+                  />
                   <button
                     class="btn g-pos-abs g-top-0 g-right-0 g-z-index-2 g-width-60 h-100 g-bg-transparent g-font-size-16 g-color-primary g-color-secondary--hover rounded-0"
                     type="submit"
@@ -412,13 +542,15 @@
                   data-speed="350"
                   data-options='{"touch" : false}'
                   @click="createNew()"
-                >新增产品
+                  >新增产品
                 </a>
               </div>
             </div>
 
             <div class="table-responsive g-mb-40">
-              <table class="js-datatable table u-table--v3 u-editable-table--v1 g-color-black">
+              <table
+                class="js-datatable table u-table--v3 u-editable-table--v1 g-color-black"
+              >
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -432,66 +564,86 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr
-                    v-for="(pro,index) in result_products"
-                    :key="index"
-                  >
-                    <td>{{index+1}}</td>
-                    <td>{{pro.product_name}}</td>
-                    <td>{{pro.market_level}}</td>
-                    <td>{{pro.create_time}}</td>
-                    <td>{{pro.update_time}}</td>
-                    <td>{{pro.info_factor}}</td>
+                  <tr v-for="(pro, index) in result_products" :key="index">
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ pro.product_name }}</td>
+                    <td>{{ pro.market_level }}</td>
+                    <td>{{ pro.create_time }}</td>
+                    <td>{{ pro.update_time }}</td>
+                    <td>{{ pro.info_factor }}</td>
                     <td>
                       <span
-                        v-if="pro.status==0"
+                        v-if="pro.status == 0"
                         class="u-tags-v1 text-center g-brd-around g-brd-teal-v2 g-bg-teal-v2 g-font-weight-400 g-color-white g-rounded-50 g-px-10"
-                      >正常</span>
+                        >正常</span
+                      >
                       <span
-                        v-if="pro.status==1"
+                        v-if="pro.status == 1"
                         class="u-tags-v1 text-center g-brd-around g-font-weight-400 g-color-white g-rounded-50 g-px-10"
                         style="background:#2196F3;"
-                      >待审核</span>
+                        >待审核</span
+                      >
                       <span
-                        v-if="pro.status==-1"
+                        v-if="pro.status == -1"
                         class="u-tags-v1 text-center g-brd-around g-font-weight-400 g-rounded-50 g-px-10"
                         style="background:#e9e9e9;color: black"
-                      >已删除</span>
+                        >已删除</span
+                      >
                       <span
-                        v-if="pro.status==-2"
+                        v-if="pro.status == -2"
                         class="u-tags-v1 text-center g-brd-around g-font-weight-400 g-color-white g-rounded-50 g-px-10"
                         style="background:red;"
-                      >审核不通过</span>
+                        >审核不通过</span
+                      >
                     </td>
                     <td>
                       <a
                         class="u-tags-v1 text-center g-brd-around g-font-size-default g-rounded-50 g-px-5"
                         style="background:#e9e9e9;color: black"
                         target="_blank"
-                        :href="'/p/edit.html?id='+pro.oid+'&c='+pro.category+'&cnn='+catInfo.name"
-                      >修改</a>
+                        :href="
+                          '/p/edit.html?id=' +
+                            pro.oid +
+                            '&c=' +
+                            pro.category +
+                            '&cnn=' +
+                            catInfo.name
+                        "
+                        >修改</a
+                      >
                       <a
                         class="u-tags-v1 text-center g-brd-around g-font-size-default g-color-white g-rounded-50 g-px-5"
                         style="background:#F44336;"
-                        @click="deleteProduct(pro,index)"
-                      >删除</a>
+                        @click="deleteProduct(pro, index)"
+                        >删除</a
+                      >
                       <a
                         class="u-tags-v1 text-center g-brd-around g-font-size-default g-color-white g-rounded-50 g-px-5"
                         style="background:#2196f3;"
                         @click="setNewProduct(pro)"
-                        :class="{btnwarning:pro.is_new==1}"
-                      >{{pro.is_new>0?"取消":"设为"}}新品</a>
+                        :class="{ btnwarning: pro.is_new == 1 }"
+                        >{{ pro.is_new > 0 ? "取消" : "设为" }}新品</a
+                      >
                       <a
                         class="u-tags-v1 text-center g-brd-around g-font-size-default g-color-white g-rounded-50 g-px-5"
                         style="background:#2196f3;"
-                        @click="setMarketLevel(pro,index)"
-                      >新品排序</a>
+                        @click="setMarketLevel(pro, index)"
+                        >新品排序</a
+                      >
                       <a
                         class="u-tags-v1 text-center g-brd-around g-font-size-default g-color-white g-rounded-50 g-px-5"
                         style="background:#FF9800;"
                         target="_blank"
-                        :href="'/prj/query.html?t=p&id='+pro.oid+'&c='+pro.category+'&n='+encodeURIComponent(pro.product_name)"
-                      >维护案例</a>
+                        :href="
+                          '/prj/query.html?t=p&id=' +
+                            pro.oid +
+                            '&c=' +
+                            pro.category +
+                            '&n=' +
+                            encodeURIComponent(pro.product_name)
+                        "
+                        >维护案例</a
+                      >
                     </td>
                   </tr>
                 </tbody>
@@ -505,7 +657,6 @@
                 aria-label="Page Navigation"
               ></nav>
             </div>
-
           </div>
         </div>
       </div>
@@ -513,7 +664,7 @@
 
     <div
       class="modal fade"
-      v-if="functionlist.indexOf('copy_project@information_product')>=0"
+      v-if="functionlist.indexOf('copy_project@information_product') >= 0"
       id="myModal"
       tabindex="-1"
       role="dialog"
@@ -523,7 +674,7 @@
       <div class="modal-dialog">
         <div
           class="modal-content"
-          v-if="copyProjectInfo.source_product!=null"
+          v-if="copyProjectInfo.source_product != null"
         >
           <div class="modal-header">
             <button
@@ -535,7 +686,9 @@
               &times;
             </button>
             <h2 class="modal-title">复制案例给同类型产品</h2>
-            <h4 class="modal-title">来源产品: {{copyProjectInfo.source_product.product_name}}</h4>
+            <h4 class="modal-title">
+              来源产品: {{ copyProjectInfo.source_product.product_name }}
+            </h4>
           </div>
           <div class="modal-body">
             <div
@@ -553,28 +706,26 @@
                 <span class="widget-icon">
                   <i class="fa fa-align-justify"></i>
                 </span>
-                <h2>同类型产品列表 </h2>
-
+                <h2>同类型产品列表</h2>
               </header>
               <div>
-
                 <!-- widget content -->
                 <div class="widget-body noborder">
                   <div class="row smart-form">
                     <div class="col col-sm-12">
                       <label
                         class="checkbox"
-                        v-for="(pro,index) in sameCatProducts"
+                        v-for="(pro, index) in sameCatProducts"
                         :key="index"
                       >
                         <input
                           type="checkbox"
                           :value="pro.oid"
-                          @change="proChanged(pro,$event)"
+                          @change="proChanged(pro, $event)"
                           name="checkbox"
-                        >
-                        <i></i>{{pro.product_name}}</label>
-
+                        />
+                        <i></i>{{ pro.product_name }}</label
+                      >
                     </div>
                   </div>
                 </div>
@@ -582,11 +733,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-default"
-              data-dismiss="modal"
-            >
+            <button type="button" class="btn btn-default" data-dismiss="modal">
               取消
             </button>
             <button
@@ -605,12 +752,7 @@
     <!-- /.modal -->
 
     <!-- 新品排序级别modal -->
-    <div
-      class="modal fade"
-      id="marketModal"
-      tabindex="-1"
-      role="dialog"
-    >
+    <div class="modal fade" id="marketModal" tabindex="-1" role="dialog">
       <div class="modal-dialog sm">
         <div class="modal-content">
           <div class="modal-header">
@@ -623,31 +765,28 @@
               &times;
             </button>
             <h4 class="modal-title">
-              【{{currentProduct.product_name}}】设置新品排序
+              【{{ currentProduct.product_name }}】设置新品排序
             </h4>
           </div>
           <div class="modal-body no-padding">
-
-            <div
-              id="ref-form"
-              class="smart-form"
-            >
+            <div id="ref-form" class="smart-form">
               <fieldset>
                 <div class="row">
-
                   <div>
                     <section class="col col-sm-12">
-                      <label class="label sm">说明:等级从1到100, 等级越高, 排序越靠前;0表示取消新品排序.</label>
+                      <label class="label sm"
+                        >说明:等级从1到100, 等级越高,
+                        排序越靠前;0表示取消新品排序.</label
+                      >
                       <label class="input">
                         <input
                           type="text"
                           placeholder="请输入新品排序"
                           name="text"
                           v-model="currentProduct.market_level"
-                        >
+                        />
                       </label>
                     </section>
-
                   </div>
                 </div>
               </fieldset>
@@ -657,15 +796,16 @@
                   href="javascript:void(0);"
                   data-dismiss="modal"
                 >
-                  取消</a>
+                  取消</a
+                >
                 <a
                   class="btn btn-success pull-left"
                   href="javascript:void(0);"
                   @click="confirmMarketLevel()"
                 >
-                  确定</a>
+                  确定</a
+                >
               </footer>
-
             </div>
           </div>
         </div>
@@ -675,12 +815,7 @@
     </div>
 
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="rejectModal"
-      tabindex="-1"
-      role="dialog"
-    >
+    <div class="modal fade" id="rejectModal" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -697,12 +832,7 @@
             </h4>
           </div>
           <div class="modal-body no-padding">
-
-            <div
-              id="reject-form"
-              class="smart-form"
-            >
-
+            <div id="reject-form" class="smart-form">
               <fieldset>
                 <section>
                   <label class="label"></label>
@@ -735,20 +865,15 @@
                 >
                   取消
                 </button>
-
               </footer>
             </div>
-
           </div>
-
         </div>
         <!-- /.modal-content -->
       </div>
       <!-- /.modal-dialog -->
     </div>
-
   </div>
-
 </template>
 
 <script>
@@ -814,7 +939,7 @@ export default {
   },
   computed: {},
   created: function() {
-    this.queryClick()
+    this.queryClick();
     //类别名称
     //类别code
     // this.catInfo.code = $.getUrlParam("c");
@@ -1124,17 +1249,15 @@ export default {
           this.$refs.pf.show = true;
         }
 
-        this.$nextTick(function(){
+        this.$nextTick(function() {
           // initialization of HSDropdown component
-          $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-              dropdownHideOnScroll: false,
-              dropdownType: 'css-animation',
-              dropdownAnimationIn: 'fadeIn',
-              dropdownAnimationOut: 'fadeOut'
-
+          $.HSCore.components.HSDropdown.init($("[data-dropdown-target]"), {
+            dropdownHideOnScroll: false,
+            dropdownType: "css-animation",
+            dropdownAnimationIn: "fadeIn",
+            dropdownAnimationOut: "fadeOut"
           });
-        }) 
-
+        });
       } else {
         this.$refs.pf.config = {
           type: "error",

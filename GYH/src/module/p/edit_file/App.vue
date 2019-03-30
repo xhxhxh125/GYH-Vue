@@ -28,7 +28,7 @@
 
                   <form>
                     <div class="form-group">
-                      <div class="align-self-center d-flex g-mb-15">
+                      <div class="align-self-center d-flex g-mb-15" style="flex-wrap:wrap;">
                         <!-- Cube Portfolio Blocks - Item -->
                         <!-- <div
                           class="cbp-item identity design col-md-3"
