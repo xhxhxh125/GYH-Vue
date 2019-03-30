@@ -1,5 +1,5 @@
 <template>
-    <div class="smart-form row">
+    <!-- <div class="smart-form row">
         
 
             <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
@@ -88,6 +88,53 @@
             </label>
         </section>
 
+    </div> -->
+    <div class="row g-mb-20">
+
+        <section class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+          <label class="mb-0">{{required?"*":""}}产品类别</label>
+        </section>
+        <div class="col-md-9 align-self-center row">
+          <section class="col-md-9 align-self-center">
+            <div class="row g-mx-minus-10">
+              <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
+                <!-- <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0"> -->
+                <label class="select w-100">
+                  <select  @change="firstCatChanged($event)" id="firstprocat" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12">
+                    <option :selected="selected_1st_cat==cat.code" :value="cat.code" v-for="(cat,index) in firstcats" :key="index">{{cat.name}}</option>
+                  </select>
+                  <i></i> 
+                </label>
+              </div>
+
+
+              <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
+                <label class="select w-100">
+                  <select @change="secondCatChanged($event)" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12">
+                    <option value=""></option>
+                    <option :selected="selected_2nd_cat==cat.code" :value="cat.code" v-for="(cat,index) in secondcats" :key="index">{{cat.name}}</option>
+                  </select>
+                  <i></i> 
+                </label>
+              </div>
+
+
+              <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
+                <label class="select w-100">
+                  <select @change="thirdCatChanged($event)" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12">
+                    <option value=""></option>
+                    <option :value="cat.code" :selected="selected_3rd_cat==cat.code" v-for="(cat,index) in thirdcats" :key="index">{{cat.name}}</option>
+                  </select>
+                  <i></i> 
+                </label>
+              </div>
+            </div>
+          </section>
+          <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+            <button class="obtain btn btn-xl u-btn-secondary g-font-size-default g-px-40" @click="createNewProduct()">新建案例</button>
+          </div>
+        </div>
+
     </div>
 </template>
 <script>
@@ -148,6 +195,9 @@ export default {
     }
   },
   methods: {
+    createNewProduct(){
+      this.$emit('createNewProduct')
+    },
     refresh: function(level) {
       switch (level) {
         case 1:
