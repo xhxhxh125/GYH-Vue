@@ -1,270 +1,239 @@
 <template>
   <div id="app">
-    <ElPageFrame ref="pf"></ElPageFrame>
+    <ElPageFrame ref="pf">
+<div slot="mainslot">
 
-    <div id="main" role="main">
-      <!-- RIBBON -->
-      <div id="ribbon">
-        <span class="ribbon-button-alignment">
-          <span
-            id="refresh"
-            class="btn btn-ribbon"
-            data-action="resetWidgets"
-            data-title="refresh"
-            rel="tooltip"
-            data-placement="bottom"
-            data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
-            data-html="true"
-          >
-            <i class="fa fa-refresh"></i>
-          </span>
-        </span>
-        <!-- breadcrumb -->
-        <ol class="breadcrumb">
-          <li>个人中心</li>
-          <li>新闻管理</li>
-          <li>{{edit_mode=="edit"?'编辑':'新增'}}新闻</li>
-        </ol>
-        <!-- end breadcrumb -->
-      </div>
-      <!-- END RIBBON -->
-      <!-- MAIN CONTENT -->
-      <div id="content">
-        <section id="widget-grid" class>
-          <ElBlockAlert ref="alert"></ElBlockAlert>
-          <div class="row">
-            <article class="col-sm-12 col-md-12">
-              <div
-                class="jarviswidget jarviswidget-color-darken"
-                data-widget-colorbutton="false"
-                data-widget-editbutton="false"
-                data-widget-custombutton="false"
-              >
-                <header>
-                  <span class="widget-icon">
-                    <i class="fa fa-edit"></i>
-                  </span>
-                  <h2>编辑新闻</h2>
-                </header>
-                <div>
-                  <!-- widget edit box -->
-                  <div class="jarviswidget-editbox">
-                    <!-- This area used as dropdown edit box -->
-                  </div>
-                  <!-- end widget edit box -->
-                  <!-- widget content -->
-                  <div class="widget-body no-padding">
-                    <div id="query-form" class="smart-form">
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-lg-6">
-                            <label class="label">新闻标题（必填）</label>
-                            <label class="input">
-                              <section>
-                                <input type="text" name="text" v-model="news.caption">
-                              </section>
-                            </label>
-                          </section>
-                          <section class="col col-lg-6">
-                            <label class="label">新闻标签</label>
-                            <label class="input">
-                              <section>
-                                <input
-                                  type="text"
-                                  name="text"
-                                  v-model="news.tags"
-                                  placeholder="标签已逗号分隔"
-                                >
-                              </section>
-                            </label>
-                          </section>
-                        </div>
-                      </fieldset>
+  <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
+          <div class="g-pa-20">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+                  <form class="js-validate">
+                    <header>
+                      <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">编辑新闻</h2>
+                    </header>
 
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">新闻封面图片</label>
-                            <div class="textarea">
-                              <div class="superbox col-sm-12">
-                                <div
-                                  v-if="news.default_image!=undefined&&news.default_image.length>0"
-                                  class="superbox-list imgbox"
-                                  style="width:50%;"
-                                >
-                                  <img
-                                    :src="appsettings.news_attachment+news.default_image"
-                                    :data-img="appsettings.news_attachment+news.default_image"
-                                    class="superbox-img"
-                                    @click="chooseLocalPicture()"
-                                  >
-                                  <i class="fa ibtn" @click="chooseLocalPicture()">点击更新</i>
-                                </div>
-                                <div
-                                  v-else
-                                  class="superbox-list"
-                                  style="text-align:center;"
-                                  @click="chooseLocalPicture()"
-                                >
-                                  <!-- <img :src="appsettings.gyhImgPrefix+'add.png'" class="superbox-img" style="width: auto;" title="上传新的产品图片"> -->
-                                  <i
-                                    class="fa fa-plus-circle"
-                                    style="color: #3276B1;font-size: 50px;cursor:pointer;"
-                                    title="上传新的新闻封面图片"
-                                  ></i>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
-                      </fieldset>
-                      <fieldset>
-                        <div class="row">
-                          <section class="col col-sm-12">
-                            <label class="label">新闻正文</label>
-                            <div class="textarea">
-                              <ElUEditor ref="ueditor" :code="'2'"></ElUEditor>
-                            </div>
-                          </section>
-                        </div>
-                      </fieldset>
+                    <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
 
-                      <footer>
-                        <a
-                          @click="saveNews()"
-                          href="javascript:void(0);"
-                          :class="basicInfoSuc?'btn-success':'btn-danger'"
-                          class="btn pull-left"
-                          style="height: auto;padding: 10px 16px;"
-                        >
-                          <i class="fa fa-save"></i> 保存新闻
-                        </a>
-                      </footer>
+                    <div class="row g-mb-20">
+                      <div class="col-md-3">
+                        <label class="mb-0">新闻类别</label>
+                      </div>
+                      <div class="col-md-9 align-self-center">
+                        <input v-model="news.tags" type="text" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12">
+                      </div>
                     </div>
-                  </div>
-                  <!-- end widget content -->
-                </div>
-                <!-- end widget div -->
-              </div>
 
-              <div
-                class="jarviswidget jarviswidget-color-darken"
-                data-widget-colorbutton="false"
-                data-widget-editbutton="false"
-              >
-                <header>
-                  <span class="widget-icon">
-                    <i class="fa fa-table"></i>
-                  </span>
-                  <h2>新闻附件</h2>
-                </header>
+                    <div class="row g-mb-20">
+                      <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                        <label class="mb-0" for="#firstName">新闻名称</label>
+                      </div>
 
-                <!-- widget div-->
-                <div>
-                  <div class="btn-upload">
-                    <a
-                      href="javascript:void(0);"
-                      @click="uploadAttachment()"
-                      class="btn btn-success pull-left"
-                    >
-                      <i class="fa fa-save"></i>上传附件
-                    </a>
-                  </div>
+                      <div class="col-md-9 align-self-center">
+                        <div class="form-group g-pos-rel mb-0">
+                          <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                            <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                          </span>
+                          <input v-model="news.caption" id="firstName" name="firstName" class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                            type="text" value="Charlie" required="required" data-msg="This field is mandatory"
+                            data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+                        </div>
+                      </div>
+                    </div>
 
-                  <!-- widget edit box -->
-                  <div class="jarviswidget-editbox">
-                    <!-- This area used as dropdown edit box -->
-                  </div>
-                  <!-- end widget edit box -->
-                  <!-- widget content -->
-                  <div class="widget-body no-padding">
-                    <table
-                      id="datatable_tabletools1"
-                      class="table table-striped table-bordered table-hover"
-                      width="100%"
-                    >
-                      <thead>
-                        <tr>
-                          <th data-hide="phone">ID</th>
-                          <th data-class="expand">文件名称</th>
-                          <th>文件类型</th>
-                          <th data-hide="phone">上传时间</th>
-                          <th data-hide="phone,tablet">操作</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr></tr>
-                        <tr v-for="(f,index) in attachment_list" :key="index">
-                          <td>{{index+1}}</td>
-                          <td>{{f.file_name}}</td>
-                          <td>{{f.file_type!=null?f.file_type.toUpperCase().replace(".",""):""}}</td>
-                          <td>{{f.create_time}}</td>
-                          <td>
+                    <div class="col-md-12" style="padding:0;">
+                      <div class="g-pos-rel h-100 g-brd-around g-rounded-4">
+                        <header>
+                          <div class="align-self-center g-mb-5 g-mb-20">
+                            <label class="mb-0" for="#location">上传封面</label>
+                          </div>
+                        </header>
+                        
+                        
+           <form>
+             <div  v-if="news.default_image!=undefined&&news.default_image.length>0">
+              <div class="form-group">
+                <div class="align-self-center d-flex g-mb-15">
+ 
+                <div class="cbp-item identity design col-md-3">
+                    <div class="u-block-hover g-parent">
+                      <img
+                        class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
+                        :src="(appsettings.news_attachment+news.default_image)"
+                      >
+                      <div
+                        class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15"
+                      >
+                        <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                          <li class="list-inline-item">
                             <a
-                              href="javascript:void(0);"
-                              class="btn btn-danger btn-xs"
-                              @click="deleteAtttachment(f,index)"
-                            >删除</a>
-                          </td>
-                        </tr>
-
-                        <tr
-                          v-for="(uploading_file,index) in uploading_files"
-                          :key="index"
-                          v-if="uploading_file.ok!=true"
-                        >
-                          <td>{{attachment_list.length+index+1-uploading_ok_count}}</td>
-                          <td>
-                            <span
-                              style="padding-left:100px;"
-                            >{{uploading_file.name.replace('.'+uploading_file.ext,'')}}</span>
-                            <div class="progress">
-                              <div
-                                class="progress-bar bg-color-blue"
-                                :style="'width: '+uploading_progresses[uploading_file.index]+'%;'"
-                              ></div>
-                            </div>
-                          </td>
-                          <td>{{uploading_file.ext!=null?uploading_file.ext.toUpperCase():""}}</td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                              class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                              :href="(appsettings.news_attachment+news.default_image)"
+                            >
+                              <i class="hs-admin-image u-line-icon-pro"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="g-bg-white text-center g-pa-15">
+                      <h3 class="h6 g-color-black g-font-weight-700 mb-1"></h3>
+                      <p class="g-font-size-13 mb-0"></p>
+                    </div>
                   </div>
-                  <!-- end widget content -->
+                  </div>
+                  <!-- End Cube Portfolio Blocks - Item -->
                 </div>
-                <!-- end widget div -->
-              </div>
-
-              <div
-                class="jarviswidget jarviswidget-color-darken"
-                data-widget-colorbutton="false"
-                data-widget-editbutton="false"
-                data-widget-custombutton="false"
-              >
-                <div>
-                  <div class="jarviswidget-editbox"></div>
-                  <div class="widget-body no-padding" style="min-height:0;">
-                    <div id="query-form" class="smart-form">
-                      <footer>
-                        <a
-                          @click="applyPublish()"
-                          class="btn btn-success pull-left"
-                          :disabled="edit_mode=='edit'"
-                        >
-                          <i class="fa fa-check"></i> 发布新闻
-                        </a>
-                      </footer>
+                <!-- <input class="js-file-attachment" type="file" name="fileAttachment[]"> -->
+                <div
+                 @click="chooseLocalPicture()"
+                  class="g-parent g-pos-rel g-height-230 g-bg-gray-light-v8--hover g-brd-around g-brd-style-dashed g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-rounded-4 g-transition-0_2 g-transition--ease-in g-pa-15 g-pa-30--md"
+                >
+                  <div
+                    class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md"
+                  >
+                    <div>
+                      <div
+                        class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md"
+                      >
+                        <i
+                          class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"
+                        ></i>
+                      </div>
+                    </div>
+                    <div class="text-center text-md-left g-ml-20--md">
+                      <h3 class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10">点击更新</h3>
+                      <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
                     </div>
                   </div>
                 </div>
+             </div>
+             <div v-else>
+                <div
+                 @click="chooseLocalPicture()"
+                  class="g-parent g-pos-rel g-height-230 g-bg-gray-light-v8--hover g-brd-around g-brd-style-dashed g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-rounded-4 g-transition-0_2 g-transition--ease-in g-pa-15 g-pa-30--md"
+                >
+                  <div
+                    class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md"
+                  >
+                    <div>
+                      <div
+                        class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md"
+                      >
+                        <i
+                          class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"
+                        ></i>
+                      </div>
+                    </div>
+                    <div class="text-center text-md-left g-ml-20--md">
+                      <h3 class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10">上传新闻封面图</h3>
+                      <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
+                    </div>
+                  </div>
+                </div>
+             </div>
+        </form>
+                      </div>
+                    </div>
+
+                    <div class="g-mb-20">
+                        <label class="g-mb-10" for="#location">编辑正文</label>
+                      <div class="form-group mb-0">
+                        <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-mb-30">
+                          <ElUEditor ref="ueditor" :code="'2'"></ElUEditor>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12" style="padding:0;">
+                      <div class="g-pos-rel h-100 g-brd-around g-rounded-4">
+                        <header>
+                          <div class="align-self-center g-mb-5 g-mb-20">
+                            <label class="mb-0" for="#location">上传附件</label>
+                          </div>
+                        </header>
+                        
+            <form>
+           
+              <div class="form-group">
+                <div class="align-self-center d-flex g-mb-15">
+ 
+                <div v-for="(f,index) in attachment_list" :key="index" class="cbp-item identity design col-md-3">
+                    <!-- <div class="u-block-hover g-parent">
+                      <img
+                        class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
+                        :src="(appsettings.news_attachment+news.default_image)"
+                      >
+                      <div
+                        class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15"
+                      >
+                        <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                          <li class="list-inline-item">
+                            <a
+                              class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                              :href="(appsettings.news_attachment+news.default_image)"
+                            >
+                              <i class="hs-admin-image u-line-icon-pro"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div> -->
+                    <div>
+                      <h3 >{{f.file_name}}</h3>
+                      <p >{{f.create_time}}</p>
+                    </div>
+                  </div>
+                  </div>
+                  <!-- End Cube Portfolio Blocks - Item -->
+                </div>
+                <!-- <input class="js-file-attachment" type="file" name="fileAttachment[]"> -->
+                <div
+                
+                @click="uploadAttachment()"
+                  class="g-parent g-pos-rel g-height-230 g-bg-gray-light-v8--hover g-brd-around g-brd-style-dashed g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-rounded-4 g-transition-0_2 g-transition--ease-in g-pa-15 g-pa-30--md"
+                >
+                  <div
+                    class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md"
+                  >
+                    <div>
+                      <div
+                        class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md"
+                      >
+                        <i
+                          class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"
+                        ></i>
+                      </div>
+                    </div>
+                    <div class="text-center text-md-left g-ml-20--md">
+                      <h3 class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10">上传附件</h3>
+                      <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
+                    </div>
+                  </div>
+                </div>
+             
+        </form>
+                      </div>
+                    </div>
+                    <div>
+                     
+                       <button  @click="saveNews()" :class="basicInfoSuc?'btn-success':'btn-danger'" class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">保存</button>
+                      <button  @click="applyPublish()"  class="btn btn-xl u-btn-secondary g-font-size-default g-px-40 g-bg-darkblue-v2">发布</button>
+                    </div>
+                  </form>
+                </div>
               </div>
-            </article>
+            </div>
           </div>
-        </section>
-      </div>
-    </div>
+        </div>
+</div>
+
+   
+
+    
+    </ElPageFrame>
+
+    
 
     <div id="uploaderInput" ref="uploaderInput1" v-show="false"></div>
     <input
@@ -277,7 +246,7 @@
     <ElLoading ref="loading"></ElLoading>
 
     <ElConfirmDialog @confirm="doConfirm()" ref="confirmDlg"></ElConfirmDialog>
-  </div>
+  </div> 
 </template>
 
 <script>

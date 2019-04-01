@@ -1,92 +1,156 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" class="smart-style-6">
 
 <head>
 	<meta charset="utf-8">
-	<title> 编辑新闻 </title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title> 新闻编辑 </title>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	<!-- #CSS Links -->
-	<!-- Basic Styles -->
-	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>cidep-font.css">
+	  <!-- Favicon -->
+	  <link rel="shortcut icon" href="<%=appsettings.imgPrefix%>favicon/favicon.ico">
+	  <!-- CSS Global Compulsory -->
+	  <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>bootstrap/bootstrap.min.css">
+	  <!-- CSS Global Icons -->
+	  <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-awesome/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-line/css/simple-line-icons.css">
+	  <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-etlinefont/style.css">
+	  <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-line-pro/style.css">
+	  <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>icon-hs/style.css">
+	
+	  <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>hs-admin-icons/hs-admin-icons.css">
+	  <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>animate.css">
+	  <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+		<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>bootstrap-select/css/bootstrap-select.min.css">
+		<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>noty/lib/noty.css">
+		<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>flatpickr/dist/css/flatpickr.min.css">
+    <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>bootstrap-tagsinput/css/bootstrap-tagsinput.css">
+	
+		<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>/chartist-js/chartist.min.css">
+    <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>chartist-js-tooltip/chartist-plugin-tooltip.css">
+		<link rel="stylesheet" href="<%=appsettings.vendorPrefix%>fancybox/jquery.fancybox.min.css">
+		<link rel="stylesheet" href="<%=appsettings.gyhpluginsPrefix%>webuploader/webuploader.css">
 
-	<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>smartadmin-production-plugins.min.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>smartadmin-production.min.css">
-	 
-
-	<!-- SmartAdmin RTL Support -->
-	<link rel="stylesheet" type="text/css" media="screen" href="<%=appsettings.cssPrefix%>smartadmin-rtl.min.css">
-
-	<!-- #FAVICONS -->
-	<link rel="shortcut icon" href="<%=appsettings.imgPrefix%>favicon/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="<%=appsettings.imgPrefix%>favicon/favicon.ico" type="image/x-icon">
-
-	<!-- #APP SCREEN / ICONS -->
-	<!-- Specifying a Webpage Icon for Web Clip 
-			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-	<link rel="apple-touch-icon" href="<%=appsettings.imgPrefix%>splash/sptouch-icon-iphone.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="<%=appsettings.imgPrefix%>splash/touch-icon-ipad.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="<%=appsettings.imgPrefix%>splash/touch-icon-iphone-retina.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="<%=appsettings.imgPrefix%>splash/touch-icon-ipad-retina.png">
-
-	<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-	<!-- Startup image for web apps -->
-	<link rel="apple-touch-startup-image" href="<%=appsettings.imgPrefix%>splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-	<link rel="apple-touch-startup-image" href="<%=appsettings.imgPrefix%>splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-	<link rel="apple-touch-startup-image" href="<%=appsettings.imgPrefix%>splash/iphone.png" media="screen and (max-device-width: 320px)">
-    <link rel="stylesheet" href="<%=appsettings.gyhpluginsPrefix%>webuploader/webuploader.css">
+    <link rel="stylesheet" href="<%=appsettings.vendorPrefix%>summernote-themes/unify-lite.css">
+	
+	  <!-- CSS Unify -->
+	  <link rel="stylesheet" href="<%=appsettings.cssPrefix%>unify-admin.css">
+	
+	  <!-- CSS Customization -->
+	  <link rel="stylesheet" href="<%=appsettings.cssPrefix%>custom.css">
 </head>
 
 <body class="desktop-detected pace-done smart-style-6">
 	<div id="app"></div>
-	<!-- #PLUGINS -->
-	<script>
-		if (!window.jQuery) {
-			document.write('<script src="<%=appsettings.jsPrefix%>libs/jquery-2.1.1.min.js"><\/script>');
-		}
-	</script>
-	<script>
-		if (!window.jQuery.ui) {
-			document.write('<script src="<%=appsettings.jsPrefix%>libs/jquery-ui-1.10.3.min.js"><\/script>');
-		}
-	</script>
-	<!-- IMPORTANT: APP CONFIG -->
-	<script src="<%=appsettings.jsPrefix%>app.config.js"></script>
-	<!-- BOOTSTRAP JS -->
-	<script src="<%=appsettings.jsPrefix%>bootstrap/bootstrap.min.js"></script>
-	<!-- CUSTOM NOTIFICATION -->
-	<script src="<%=appsettings.jsPrefix%>notification/SmartNotification.min.js"></script>
-	<!-- JARVIS WIDGETS -->
-	<script src="<%=appsettings.jsPrefix%>smartwidgets/jarvis.widget.min.js"></script>
-	<!-- JQUERY VALIDATE -->
-	<script src="<%=appsettings.jsPrefix%>plugin/jquery-validate/jquery.validate.min.js"></script>
-	<!-- browser msie issue fix -->
-	<script src="<%=appsettings.jsPrefix%>plugin/msie-fix/jquery.mb.browser.min.js"></script>
-	<!-- MAIN APP JS FILE -->
-	<script src="<%=appsettings.jsPrefix%>app.min.js"></script>
-	<!-- JQUERY SELECT2 INPUT -->
-	<script src="<%=appsettings.jsPrefix%>plugin/select2/select2.min.js"></script>
 
-	<!-- 需要表格组件el-DataTable的界面需要这段script引用 -->
-	<script src="<%=appsettings.jsPrefix%>plugin/datatables/jquery.dataTables.min.js"></script>
-	<script src="<%=appsettings.jsPrefix%>plugin/datatables/dataTables.colVis.min.js"></script>
-	<script src="<%=appsettings.jsPrefix%>plugin/datatables/dataTables.tableTools.min.js"></script>
-	<script src="<%=appsettings.jsPrefix%>plugin/datatables/dataTables.bootstrap.min.js"></script>
-	<script src="<%=appsettings.jsPrefix%>plugin/datatable-responsive/datatables.responsive.min.js"></script>
-	<!-- end 需要表格组件el-DataTable的界面需要这段script引用 -->
-	<script src="<%=appsettings.gyhpluginsPrefix%>webuploader/webuploader.min.js"></script>
+	<!-- JS Global Compulsory -->
+	<script src="<%=appsettings.vendorPrefix%>jquery/jquery.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>jquery-migrate/jquery-migrate.min.js"></script>
+  
+	<script src="<%=appsettings.vendorPrefix%>popper.js/popper.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bootstrap/bootstrap.min.js"></script>
+  
+	<script src="<%=appsettings.vendorPrefix%>cookiejs/jquery.cookie.js"></script>
+  
+  
+	<!-- JS Plugins Init. -->
+	<script src="<%=appsettings.vendorPrefix%>jquery-validation/dist/jquery.validate.min.js"></script>
 
-		<!-- 使用my97datapicker 需要引用这三个js -->
-	<script src="<%=appsettings.gyhpluginsPrefix%>My97DatePicker/WdatePicker.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>appear.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>datatables/media/js/dataTables.select.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>table-edits/build/table-edits.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bloodhound-js/js/bloodhound.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>bloodhound-js/js/typeahead.jquery.min.js"></script>
+
+	<script src="<%=appsettings.vendorPrefix%>summernote/dist/summernote-bs4.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>chartist-js/chartist.min.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>fancybox/jquery.fancybox.min.js"></script>
+	<!-- JS Unify -->
+	<script src="<%=appsettings.jsPrefix%>hs.core.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.side-nav.js"></script>
+	<script src="<%=appsettings.jsPrefix%>helpers/hs.hamburgers.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.dropdown.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.scrollbar.js"></script>
+	<script src="<%=appsettings.jsPrefix%>helpers/hs.focus-state.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.datatables.js"></script>
+
+	<script src="<%=appsettings.jsPrefix%>components/hs.range-datepicker.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.validation.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>flatpickr/dist/js/flatpickr.min.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.text-editor.js"></script>
+	<script src="<%=appsettings.vendorPrefix%>noty/lib/noty.min.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.count-qty.js"></script>
+
+	<script src="<%=appsettings.jsPrefix%>components/hs.bar-chart.js"></script>
+	<script src="<%=appsettings.jsPrefix%>components/hs.popup.js"></script>
+	<!-- 完善开始 -->
+    <script src="<%=appsettings.vendorPrefix%>jquery.filer/js/jquery.filer.min.js"></script>
+    <!-- <script src="../assets/js/components/hs.file-attachement-pic.js"></script> -->
+		<script src="<%=appsettings.jsPrefix%>components/hs.file-attachement.js"></script>
+		<script src="<%=appsettings.jsPrefix%>laydate/laydate.js"></script>
+		<script src="<%=appsettings.gyhpluginsPrefix%>webuploader/webuploader.min.js"></script>
+	<!-- 用到imagecropper 需要引用这两个js -->
+	<script src="<%=appsettings.jsPrefix%>jcrop/jquery.Jcrop.min.js"></script>
+	<script src="<%=appsettings.jsPrefix%>jcrop/jquery.color.min.js"></script>
+    <!-- 完善结束 -->
+  
+	<!-- JS Custom -->
+	<script src="<%=appsettings.jsPrefix%>custom.js"></script>
 	
+	<script type="text/javascript">
+	
+	$(document).ready(function() {
+	// initialization of custom scrollbar
+	$.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+
+// initialization of hamburger
+$.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+// initialization of sidebar navigation component
+$.HSCore.components.HSSideNav.init('.js-side-nav');
+
+// initialization of custom select
+$('.js-select').selectpicker();
+
+// initialization of range datepicker
+$.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker2');
+
+// initialization of form validation
+$.HSCore.components.HSValidation.init('.js-validate');
+
+// initialization of charts
+$.HSCore.components.HSBarChart.init('.js-bar-chart');
+
+// initialization of forms
+$.HSCore.components.HSFileAttachment.init('.js-file-attachment');
+$.HSCore.components.HSFileAttachvideo.init('.js-file-attachment1');
+
+// initialization of HSDropdown component
+$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+
+// initialization of forms
+$.HSCore.components.HSCountQty.init('.js-quantity');
+
+// initialization of text editors
+$.HSCore.components.HSTextEditor.init('.js-text-editor');
+
+// initialization of popups
+$.HSCore.components.HSPopup.init('.js-fancybox', {
+  btnTpl: {
+	smallBtn: '<button data-fancybox-close class="btn g-pos-abs g-top-25 g-right-30 g-line-height-1 g-bg-transparent g-font-size-16 g-color-gray-light-v6 g-brd-none p-0" title=""><i class="hs-admin-close"></i></button>'
+  }
+});
+		
+	});	
+		
+	
+	</script>
 </body>
 
 </html>
