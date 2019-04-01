@@ -351,7 +351,7 @@
                           @change="profChanged(prof.enum_code,$event)"
                         >
                         <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                          <i class="fa" data-check-icon="&#xf00c"></i>
+                          <i class="fa" data-check-icon=""></i>
                         </div>
                         {{prof.enum_name}}
                       </label>
@@ -1053,30 +1053,28 @@
                               </td>
                             </tr>
 
-                            <tr
-                              v-for="(uploading_file,index) in uploading_files"
-                              :key="index"
-                              v-if="uploading_file.ok!==true"
-                            >
-                              <td>{{productInfo.attachment_list.length+index+1-uploading_ok_count}}</td>
-                              <td>
-                                <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" :data-percent="uploading_progress" data-pie-size="20">
-                                <span class="percent font-xs">{{uploading_progress}}</span></div>-->
-                                <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" data-percent="80" data-pie-size="20">
-                                <span class="percent font-xs">80</span></div>-->
-                                <span
-                                  style="padding-left:100px;"
-                                >{{uploading_file.name.replace('.'+uploading_file.ext,'')}}</span>
-                                <div class="progress">
-                                  <div
-                                    class="progress-bar bg-color-blue"
-                                    :style="'width: '+uploading_progresses[uploading_file.index]+'%;'"
-                                  ></div>
-                                </div>
-                              </td>
-                              <td>{{uploading_file.ext!=null?uploading_file.ext.toUpperCase():""}}</td>
-                              <td></td>
-                              <td></td>
+                            <tr v-for="(uploading_file,index) in uploading_files" :key="index">
+                              <div v-if="uploading_file.ok!==true">
+                                <td>{{productInfo.attachment_list.length+index+1-uploading_ok_count}}</td>
+                                <td>
+                                  <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" :data-percent="uploading_progress" data-pie-size="20">
+                                  <span class="percent font-xs">{{uploading_progress}}</span></div>-->
+                                  <!-- <div class="easy-pie-chart txt-color-blue easyPieChart" data-percent="80" data-pie-size="20">
+                                  <span class="percent font-xs">80</span></div>-->
+                                  <span
+                                    style="padding-left:100px;"
+                                  >{{uploading_file.name.replace('.'+uploading_file.ext,'')}}</span>
+                                  <div class="progress">
+                                    <div
+                                      class="progress-bar bg-color-blue"
+                                      :style="'width: '+uploading_progresses[uploading_file.index]+'%;'"
+                                    ></div>
+                                  </div>
+                                </td>
+                                <td>{{uploading_file.ext!=null?uploading_file.ext.toUpperCase():""}}</td>
+                                <td></td>
+                                <td></td>
+                              </div>
                             </tr>
                           </tbody>
                         </table>

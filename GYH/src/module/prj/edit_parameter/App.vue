@@ -280,7 +280,7 @@
                             @change="enumParaChanged(ch.enum_code,para,$event)"
                           >
                           <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                            <i class="fa" data-check-icon="&#xf00c"></i>
+                            <i class="fa" data-check-icon=" "></i>
                           </div>
                           {{ch.enum_name}}
                         </label>
@@ -306,7 +306,7 @@
                       <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
                         <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
                         <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                          <i class="fa" data-check-icon="&#xf00c"></i>
+                          <i class="fa" data-check-icon=" "></i>
                         </div>
                         设备加工
                       </label>
