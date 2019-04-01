@@ -66,7 +66,7 @@
                         >
                           <span
                             class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active"
-                          >上传案例附件</span>
+                          >案例附件</span>
                         </a>
                       </li>
                     </ul>
@@ -80,7 +80,7 @@
                   <header>
                     <h2
                       class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0"
-                    >产品参数信息</h2>
+                    >案例参数信息</h2>
                   </header>
 
                   <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">

@@ -50,7 +50,7 @@
                       <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
                         :href="'/prj/edit_file.html?id='+projectInfo.core.oid+'&c='+projectInfo.core.category_code+'&pid='+projectInfo.core.product_oid+'&sid='+projectInfo.core.service_oid+'&com='+projectInfo.core.company_oid+'&t='+subject_type">
                         <span
-                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">上传案例附件</span>
+                          class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">案例附件</span>
                       </a>
                     </li>
                   </ul>
@@ -63,7 +63,7 @@
             <div class="col-md-9">
               <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
                 <header>
-                  <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">案例基本信息</h2>
+                  <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">案例图库</h2>
                 </header>
 
                 <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
