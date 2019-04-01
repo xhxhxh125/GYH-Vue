@@ -19,14 +19,14 @@
                 <section>
                   <ul class="list-unstyled mb-0">
                     <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15 active"
+                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
                         :href="'/prj/edit.html?id='+projectInfo.core.oid+'&c='+projectInfo.core.category_code+'&pid='+projectInfo.core.product_oid+'&sid='+projectInfo.core.service_oid+'&com='+projectInfo.core.company_oid+'&t='+subject_type">
                         <span
                           class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">案例基本信息</span>
                       </a>
                     </li>
                     <li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15"
+                      <a class="d-flex align-items-center u-link-v5 g-parent g-py-15 active"
                         :href="'/prj/edit_parameter.html?id='+projectInfo.core.oid+'&c='+projectInfo.core.category_code+'&pid='+projectInfo.core.product_oid+'&sid='+projectInfo.core.service_oid+'&com='+projectInfo.core.company_oid+'&t='+subject_type">
                         <span
                           class="g-color-gray-dark-v6 g-color-primary--parent-hover g-color-primary--parent-active">案例参数信息</span>
@@ -149,7 +149,7 @@
                   </div>
 
                   <div>
-                    <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40" @click="saveBasicInfo()">保存</button>
+                    <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">保存</button>
                   </div>
 
                 </div>
