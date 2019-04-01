@@ -42,7 +42,6 @@
                         
                           <div
                             class="u-block-hover g-parent"
-                            v-if="(f.file_type!='.mp4' && f.file_type != '.wma')"
                           >
                             <img
                               class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
@@ -57,7 +56,7 @@
                                 <li class="list-inline-item">
                                   <a
                                     class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
-                                    :href="(appsettings.prsoduct_attachment+f.oid+f.file_type)"
+                                    :href="(appsettings.product_attachment+f.oid+f.file_type)"
                                   >
                                     <i class="hs-admin-image u-line-icon-pro"></i>
                                   </a>
@@ -100,7 +99,7 @@
                           <div class="text-center text-md-left g-ml-20--md">
                             <h3
                               class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10"
-                            >上传图片附件</h3>
+                            >上传附件</h3>
                             <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
                           </div>
                         </div>

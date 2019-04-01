@@ -2,29 +2,27 @@
   <div id="app">
     <ElPageFrame ref="pf">
       <div slot="mainslot">
-
         <!-- 新插入的页面 -->
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
           <div class="g-pa-20">
             <div class="row">
               <div class="col-md-12">
-                <h2 class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0">编辑产品</h2>
+                <h2
+                  class="text-uppercase g-font-size-20 g-font-size-default--md g-color-black mb-0"
+                >编辑产品</h2>
               </div>
               <hr class="g-my-15 g-my-15--md">
-              <ElProAsdiear :elProInfo='elProInfo' :activeIndex='2'></ElProAsdiear>
+              <ElProAsdiear :elProInfo="elProInfo" :activeIndex="2"></ElProAsdiear>
 
-              <div
-                class="col-md-9"
-                id="base_form"
-              >
+              <div class="col-md-9" id="base_form">
                 <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
                   <header>
-                    <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">产品视频</h2>
+                    <h2
+                      class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0"
+                    >产品视频</h2>
                   </header>
 
                   <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
-
-
 
                   <form>
                     <div class="form-group">
@@ -34,15 +32,15 @@
                           class="cbp-item identity design col-md-3"
                           v-for="(pic,index) in attachments"
                           :key="index"
-                        > -->
+                        >-->
                         <div
                           class="cbp-item identity design col-md-3"
-                          v-for="(f,index) in productInfo.attachment_list" :key="index"
+                          v-for="(f,index) in productInfo.attachment_list"
+                          :key="index"
                         >
-                        
                           <div
                             class="u-block-hover g-parent"
-                            v-if="(f.file_type!='.mp4' && f.file_type != '.wma')"
+                            v-if="(f.file_type!='.gif' && f.file_type != '.jpg' && f.file_type != '.jpeg' && f.file_type != '.bmp' && f.file_type != '.png')"
                           >
                             <img
                               class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
@@ -72,10 +70,11 @@
                                 </li>
                               </ul>
                             </div>
-                          </div>
-                          <div class="g-bg-white text-center g-pa-15">
-                            <h3 class="h6 g-color-black g-font-weight-700 mb-1">{{f.file_name}}</h3>
-                            <p class="g-font-size-13 mb-0">{{f.create_time}}</p>
+
+                            <div class="g-bg-white text-center g-pa-15">
+                              <h3 class="h6 g-color-black g-font-weight-700 mb-1">{{f.file_name}}</h3>
+                              <p class="g-font-size-13 mb-0">{{f.create_time}}</p>
+                            </div>
                           </div>
                         </div>
                         <!-- End Cube Portfolio Blocks - Item -->
@@ -100,7 +99,7 @@
                           <div class="text-center text-md-left g-ml-20--md">
                             <h3
                               class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10"
-                            >上传图片附件</h3>
+                            >上传视频附件</h3>
                             <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
                           </div>
                         </div>
@@ -108,42 +107,22 @@
                     </div>
                   </form>
 
-
-
-
-
-
-
-
-
-
-
-                  
-
                 </div>
               </div>
 
-              <div
-                id="uploaderInput"
-                ref="uploaderInput1"
-                v-show="false"
-              ></div>
+              <div id="uploaderInput" ref="uploaderInput1" v-show="false"></div>
               <input
                 id="uploaderPicture"
                 type="file"
                 ref="uploadPic"
                 v-show="false"
                 @change="uploadPicChanged()"
-              />
-
+              >
             </div>
           </div>
         </div>
 
-        <div
-          id="main"
-          role="main"
-        >
+        <div id="main" role="main">
           <!-- RIBBON -->
           <div id="ribbon">
             <span class="ribbon-button-alignment">
@@ -162,7 +141,9 @@
             </span>
             <!-- breadcrumb -->
             <ol class="breadcrumb">
-              <li><a :href="appsettings.portal_root">首页</a></li>
+              <li>
+                <a :href="appsettings.portal_root">首页</a>
+              </li>
               <li>个人中心</li>
               <li>产品</li>
               <li>{{edit_mode=="edit"?'编辑':'新增'}}产品</li>
@@ -173,16 +154,12 @@
 
           <!-- MAIN CONTENT -->
           <div id="content">
-
-            <section
-              id="widget-grid"
-              class=""
-            >
+            <section id="widget-grid" class>
               <ElBlockAlert ref="alert"></ElBlockAlert>
               <div class="row">
                 <article class="col-sm-12 col-md-12">
                   <div
-                    class="jarviswidget  jarviswidget-sortable"
+                    class="jarviswidget jarviswidget-sortable"
                     data-widget-colorbutton="false"
                     data-widget-editbutton="false"
                     data-widget-togglebutton="false"
@@ -196,7 +173,7 @@
                       <span class="widget-icon">
                         <i class="fa fa-edit"></i>
                       </span>
-                      <h2>产品基本信息 </h2>
+                      <h2>产品基本信息</h2>
                     </header>
                     <div>
                       <!-- widget edit box -->
@@ -207,11 +184,7 @@
 
                       <!-- widget content -->
                       <div class="widget-body no-padding">
-                        <div
-                          id="base_form"
-                          class="smart-form"
-                        >
-
+                        <div id="base_form" class="smart-form">
                           <fieldset>
                             <div class="row">
                               <section class="col col-8">
@@ -229,14 +202,16 @@
                                     @click="createNewProduct()"
                                     class="bope col-sm-6 btn btn-primary pull-left"
                                   >
-                                    <i class="fa fa-plus"></i> 新建产品</a>
+                                    <i class="fa fa-plus"></i> 新建产品
+                                  </a>
                                   <a
                                     v-if="edit_mode=='edit' && functionlist.indexOf('copy@information_product_edit')>=0"
                                     href="javascript:void(0);"
                                     @click="copyProduct()"
                                     class="bope col-sm-6 btn bg-color-orange txt-color-white pull-left"
                                   >
-                                    <i class="fa fa-files-o"></i> 复制本产品</a>
+                                    <i class="fa fa-files-o"></i> 复制本产品
+                                  </a>
                                 </label>
                               </section>
                             </div>
@@ -323,7 +298,7 @@
                                     >
                                       <!-- <img :src="appsettings.gyhImgPrefix+'add.png'" class="superbox-img" style="width: auto;" title="上传新的产品图片"> -->
                                       <i
-                                        class="fa  fa-plus-circle"
+                                        class="fa fa-plus-circle"
                                         style="color: #2196F3;font-size: 50px;cursor:pointer;"
                                         title="上传新的产品图片"
                                       ></i>
@@ -340,9 +315,8 @@
                                         </div>
 
                                     <div class="superbox-float"></div>
-                                    <div class="superbox-show" style="height:300px; display: none"></div> -->
+                                    <div class="superbox-show" style="height:300px; display: none"></div>-->
                                   </div>
-
                                 </div>
                               </section>
                             </div>
@@ -353,20 +327,14 @@
                               <section class="col col-3">
                                 <label class="label">产品系列</label>
                                 <label class="input">
-                                  <input
-                                    type="text"
-                                    v-model="productInfo.core.series"
-                                  >
+                                  <input type="text" v-model="productInfo.core.series">
                                 </label>
                               </section>
 
                               <section class="col col-3">
                                 <label class="label">产品工艺</label>
                                 <label class="input">
-                                  <input
-                                    type="text"
-                                    v-model="productInfo.core.process"
-                                  >
+                                  <input type="text" v-model="productInfo.core.process">
                                 </label>
                               </section>
 
@@ -381,7 +349,8 @@
                                       :checked="productInfo.core.product_source==0"
                                       @change="changeRource(0,$event)"
                                     >
-                                    <i></i>原厂</label>
+                                    <i></i>原厂
+                                  </label>
 
                                   <label class="radio">
                                     <input
@@ -391,7 +360,8 @@
                                       :checked="productInfo.core.product_source==2"
                                       @change="changeRource(2,$event)"
                                     >
-                                    <i></i>代理</label>
+                                    <i></i>代理
+                                  </label>
 
                                   <label class="radio">
                                     <input
@@ -401,11 +371,11 @@
                                       :checked="productInfo.core.product_source==1"
                                       @change="changeRource(1,$event)"
                                     >
-                                    <i></i>二手</label>
+                                    <i></i>二手
+                                  </label>
                                 </div>
                               </section>
                             </div>
-
                           </fieldset>
 
                           <fieldset>
@@ -425,8 +395,9 @@
                                         :checked="checkProfession(prof)"
                                         @change="profChanged(prof.enum_code,$event)"
                                       >
-                                      <i></i>{{prof.enum_name}}</label>
-
+                                      <i></i>
+                                      {{prof.enum_name}}
+                                    </label>
                                   </div>
                                 </div>
                               </section>
@@ -481,11 +452,7 @@
                               <section class="col col-sm-12">
                                 <label class="label">产品描述</label>
                                 <div class="textarea">
-                                  <ElUEditor
-                                    id="ueditor"
-                                    ref="ueditor"
-                                    :code="'2'"
-                                  ></ElUEditor>
+                                  <ElUEditor id="ueditor" ref="ueditor" :code="'2'"></ElUEditor>
                                 </div>
                               </section>
                             </div>
@@ -498,9 +465,9 @@
                               :class="need_save_basic?'btn-danger':'btn-primary'"
                               class="btn pull-left"
                             >
-                              <i class="fa fa-save"></i> 保存基本信息</a>
+                              <i class="fa fa-save"></i> 保存基本信息
+                            </a>
                           </footer>
-
                         </div>
                       </div>
                       <!-- end widget content -->
@@ -509,7 +476,7 @@
                   </div>
 
                   <div
-                    class="jarviswidget  jarviswidget-sortable"
+                    class="jarviswidget jarviswidget-sortable"
                     data-widget-colorbutton="false"
                     data-widget-editbutton="false"
                     data-widget-togglebutton="false"
@@ -523,47 +490,31 @@
                       <span class="widget-icon">
                         <i class="fa fa-edit"></i>
                       </span>
-                      <h2>产品参数信息 </h2>
+                      <h2>产品参数信息</h2>
                     </header>
                     <div>
-                      <div class="jarviswidget-editbox">
-                      </div>
+                      <div class="jarviswidget-editbox"></div>
 
                       <div class="widget-body no-padding">
-                        <div
-                          id="para_form"
-                          class="smart-form"
-                        >
-                          <fieldset
-                            v-for="group in parametergroups"
-                            :key="group.group_code"
-                          >
+                        <div id="para_form" class="smart-form">
+                          <fieldset v-for="group in parametergroups" :key="group.group_code">
                             <div class="row">
                               <section class="col col-3">
-                                <label
-                                  class="label"
-                                  style="font-size:15px"
-                                >{{group.group_name}}</label>
+                                <label class="label" style="font-size:15px">{{group.group_name}}</label>
                               </section>
                             </div>
 
                             <div class="row">
-                              <div
-                                v-for="para in group.parameters"
-                                :key="para.column_id"
-                              >
-
+                              <div v-for="para in group.parameters" :key="para.column_id">
                                 <section
                                   v-if="para.data_type==0 && para.is_enum_data!=1"
                                   class="col col-3"
                                 >
-                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label
+                                    class="label"
+                                  >{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <label class="input">
-                                    <input
-                                      type="text"
-                                      name="text"
-                                      v-model="para.value"
-                                    >
+                                    <input type="text" name="text" v-model="para.value">
                                   </label>
                                 </section>
 
@@ -571,31 +522,24 @@
                                   v-if="para.data_type==1 && para.is_region_data!=1&& para.is_enum_data!=1"
                                   class="col col-3"
                                 >
-                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label
+                                    class="label"
+                                  >{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <label class="input">
                                     <i
                                       class="icon-append fa unit"
                                       v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0"
                                     >{{para.unit}}</i>
-                                    <input
-                                      type="text"
-                                      name="num"
-                                      v-model="para.value"
-                                    >
+                                    <input type="text" name="num" v-model="para.value">
                                   </label>
                                 </section>
 
-                                <section
-                                  v-if="para.data_type==2"
-                                  class="col col-sm-12"
-                                >
-                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                <section v-if="para.data_type==2" class="col col-sm-12">
+                                  <label
+                                    class="label"
+                                  >{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <div class="textarea">
-                                    <textarea
-                                      rows="5"
-                                      width="100%"
-                                      v-model="para.value"
-                                    ></textarea>
+                                    <textarea rows="5" width="100%" v-model="para.value"></textarea>
                                   </div>
                                 </section>
 
@@ -603,21 +547,16 @@
                                   v-if="para.data_type==7 || para.is_region_data==1"
                                   class="col col-6"
                                 >
-                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
+                                  <label
+                                    class="label"
+                                  >{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
                                   <label class="input col col-6 nopaddingl rl">
-
-                                    <input
-                                      type="text"
-                                      v-model="para.mininput"
-                                    >
+                                    <input type="text" v-model="para.mininput">
                                   </label>
                                   <label class="nopaddingl col to">—</label>
                                   <label class="input col col-6 nopaddingl rr">
                                     <!-- <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i> -->
-                                    <input
-                                      type="text"
-                                      v-model="para.maxinput"
-                                    >
+                                    <input type="text" v-model="para.maxinput">
                                   </label>
 
                                   <!-- <ElRegionInput :min="para.mininput" :max="para.maxinput"  @change="changeRegionPara($event,para)" ></ElRegionInput> -->
@@ -627,13 +566,12 @@
                                   v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0"
                                   class="col col-3"
                                 >
-                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label
+                                    class="label"
+                                  >{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <label class="select">
-                                    <select
-                                      name="country"
-                                      v-model="para.value"
-                                    >
-                                      <option value=""></option>
+                                    <select name="country" v-model="para.value">
+                                      <option value></option>
                                       <option
                                         :selected="para.value==ch.enum_code"
                                         :value="ch.enum_code"
@@ -650,7 +588,9 @@
                                   class="border col col-sm-12"
                                 >
                                   <section>
-                                    <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                    <label
+                                      class="label"
+                                    >{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                     <div class="inline-group">
                                       <label
                                         class="checkbox"
@@ -663,18 +603,21 @@
                                           name="checkbox-inline"
                                           @change="enumParaChanged(ch.enum_code,para,$event)"
                                         >
-                                        <i></i>{{ch.enum_name}}</label>
+                                        <i></i>
+                                        {{ch.enum_name}}
+                                      </label>
                                     </div>
                                   </section>
                                 </fieldset>
 
-                                <section
-                                  v-if="para.data_type==9"
-                                  class="col col-3"
-                                >
-                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                <section v-if="para.data_type==9" class="col col-3">
+                                  <label
+                                    class="label"
+                                  >{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
                                   <label class="input">
-                                    <section v-if="para.value!=null && para.value!=undefined && para.value.indexOf('{')>=0">
+                                    <section
+                                      v-if="para.value!=null && para.value!=undefined && para.value.indexOf('{')>=0"
+                                    >
                                       <a
                                         :href="v.href"
                                         target="_blank"
@@ -688,10 +631,10 @@
                                       class="btn pull-left btn-primary"
                                       @click="editRefParameter(para)"
                                     >
-                                      <i class="fa fa-edit"></i>编辑</a>
+                                      <i class="fa fa-edit"></i>编辑
+                                    </a>
                                   </label>
                                 </section>
-
                               </div>
                             </div>
                           </fieldset>
@@ -703,9 +646,9 @@
                               class="btn pull-left"
                               @click="saveParas()"
                             >
-                              <i class="fa fa-save"></i> 保存参数信息</a>
+                              <i class="fa fa-save"></i> 保存参数信息
+                            </a>
                           </footer>
-
                         </div>
                       </div>
                       <!-- end widget content -->
@@ -714,7 +657,7 @@
                   </div>
 
                   <div
-                    class="jarviswidget  jarviswidget-sortable"
+                    class="jarviswidget jarviswidget-sortable"
                     data-widget-colorbutton="false"
                     data-widget-editbutton="false"
                     data-widget-togglebutton="false"
@@ -739,13 +682,13 @@
                           @click="uploadAttachment()"
                           class="btn btn-primary pull-left"
                         >
-                          <i class="fa fa-upload"></i>上传附件</a>
+                          <i class="fa fa-upload"></i>上传附件
+                        </a>
                       </div>
 
                       <!-- widget edit box -->
                       <div class="jarviswidget-editbox">
                         <!-- This area used as dropdown edit box -->
-
                       </div>
                       <!-- end widget edit box -->
 
@@ -791,7 +734,7 @@
                               </tr>
                           </tbody>
                         </table>
-                      </div> -->
+                      </div>-->
 
                       <!-- end widget content -->
                     </div>
@@ -804,33 +747,25 @@
                     data-widget-editbutton="false"
                     data-widget-custombutton="false"
                   >
-
                     <div>
-                      <div class="jarviswidget-editbox">
-                      </div>
+                      <div class="jarviswidget-editbox"></div>
 
-                      <div
-                        class="widget-body no-padding"
-                        style="min-height:0;"
-                      >
-                        <form
-                          id="query-form"
-                          class="smart-form"
-                        >
+                      <div class="widget-body no-padding" style="min-height:0;">
+                        <form id="query-form" class="smart-form">
                           <footer>
                             <!-- <a target="_blank" :href="appsettings.portal_root+'product/oneproduct.aspx?id='+product_oid" class="btn btn-primary pull-left"
                               :disabled="product_oid==null">
-                              <i class="fa fa-eye"></i> 预览产品</a> -->
+                            <i class="fa fa-eye"></i> 预览产品</a>-->
 
                             <!-- <a href="javascript:void(0);" class="btn btn-warning pull-left" @click="publishProduct()" :disabled="product_oid==null">
-                                <i class="fa fa-check"></i> 发布产品</a> -->
+                            <i class="fa fa-check"></i> 发布产品</a>-->
                             <button
                               class="btn btn-warning pull-left"
                               @click="editProjects()"
                               :disabled="product_oid==null"
                             >
-                              <i class="fa fa-envira"></i> 维护产品案例</button>
-
+                              <i class="fa fa-envira"></i> 维护产品案例
+                            </button>
                           </footer>
                         </form>
                       </div>
@@ -838,7 +773,6 @@
                     </div>
                     <!-- end widget div -->
                   </div>
-
                 </article>
               </div>
             </section>
@@ -859,24 +793,11 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              &times;
-            </button>
-            <h4 class="modal-title">
-              {{refModalData.para.column_name}}
-            </h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">{{refModalData.para.column_name}}</h4>
           </div>
           <div class="modal-body no-padding">
-
-            <form
-              id="ref-form"
-              class="smart-form"
-            >
+            <form id="ref-form" class="smart-form">
               <fieldset>
                 <div class="row">
                   <section
@@ -886,12 +807,9 @@
                     v-if="refModalData.selectedKeys.indexOf(row.key)>=0"
                   >
                     <label class="checkbox">
-                      <input
-                        type="checkbox"
-                        checked
-                        @change="oldValChanged(row,$event)"
-                      >
-                      <i></i>{{row.value}}
+                      <input type="checkbox" checked @change="oldValChanged(row,$event)">
+                      <i></i>
+                      {{row.value}}
                     </label>
                   </section>
 
@@ -901,31 +819,21 @@
                     :key="index"
                   >
                     <label class="checkbox">
-                      <input
-                        type="checkbox"
-                        checked
-                        @change="selectedValChanged(row,$event)"
-                      >
-                      <i></i>{{row.display_text}}
+                      <input type="checkbox" checked @change="selectedValChanged(row,$event)">
+                      <i></i>
+                      {{row.display_text}}
                     </label>
                   </section>
-
                 </div>
               </fieldset>
 
               <fieldset v-if="refModalData!=undefined && refModalData!=null">
                 <div class="row">
                   <section class="col col-sm-12">
-                    <label class="input">
-                      查询条件
-                    </label>
+                    <label class="input">查询条件</label>
                   </section>
 
-                  <div
-                    v-for="(cond,index) in refModalData.query_fields"
-                    :key="index"
-                  >
-
+                  <div v-for="(cond,index) in refModalData.query_fields" :key="index">
                     <section
                       v-if="(cond.data_type==0 && cond.is_enum_data!=1) || cond.data_type==2"
                       class="col col-3"
@@ -969,11 +877,7 @@
                       <label class="label">{{cond.column_name}}</label>
                       <label class="select">
                         <select name="country">
-                          <option
-                            value="0"
-                            selected=""
-                            disabled=""
-                          >{{cond.column_name}}</option>
+                          <option value="0" selected disabled>{{cond.column_name}}</option>
                           <option
                             v-for="ch in cond.choices"
                             :value="ch.code"
@@ -992,29 +896,20 @@
                   href="javascript:void(0);"
                   @click="queryRefPara()"
                 >
-                  <i class="fa fa-search"></i> 查询</a>
+                  <i class="fa fa-search"></i> 查询
+                </a>
               </footer>
               <fieldset>
                 <div>
                   <div>
-                    <div class="jarviswidget-editbox">
-                    </div>
-                    <div
-                      class="widget-body no-padding"
-                      v-if="refModalData!=null"
-                    >
-                      <table
-                        class="table table-striped table-bordered table-hover"
-                        width="100%"
-                      >
+                    <div class="jarviswidget-editbox"></div>
+                    <div class="widget-body no-padding" v-if="refModalData!=null">
+                      <table class="table table-striped table-bordered table-hover" width="100%">
                         <thead>
                           <tr>
                             <th style="width: 60px;">
                               <label class="checkbox">
-                                <input
-                                  type="checkbox"
-                                  v-model="selectAll"
-                                >
+                                <input type="checkbox" v-model="selectAll">
                                 <i></i>全选
                               </label>
                             </th>
@@ -1060,27 +955,16 @@
               </fieldset>
 
               <footer>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  @click="confirmRefPara()"
-                >
-                  确定
-                </button>
+                <button type="button" class="btn btn-primary" @click="confirmRefPara()">确定</button>
                 <button
                   type="button"
                   class="btn btn-default"
                   data-dismiss="modal"
                   @click="cancelRefPara()"
-                >
-                  取消
-                </button>
-
+                >取消</button>
               </footer>
             </form>
-
           </div>
-
         </div>
         <!-- /.modal-content -->
       </div>
@@ -1088,10 +972,7 @@
     </div>
     <!-- /.modal -->
     <ElToastAlert ref="toastAlert"></ElToastAlert>
-    <ElConfirmDialog
-      @confirm="doConfirm()"
-      ref="confirmDlg"
-    ></ElConfirmDialog>
+    <ElConfirmDialog @confirm="doConfirm()" ref="confirmDlg"></ElConfirmDialog>
   </div>
 </template>
 
@@ -1172,9 +1053,9 @@ export default {
       need_save_basic: false,
       need_save_para: false,
       elProInfo: {
-        oid:'',
-        category:'',
-        catInfoName:''
+        oid: "",
+        category: "",
+        catInfoName: ""
       }
     };
   },
@@ -1297,9 +1178,9 @@ export default {
     );
     this.elProInfo = {
       oid: $.getUrlParam("id"),
-      category:$.getUrlParam("c") || "",
-      catInfoName:$.getUrlParam("cnn") || ""
-      }
+      category: $.getUrlParam("c") || "",
+      catInfoName: $.getUrlParam("cnn") || ""
+    };
   },
   mounted: function() {
     var self = this;
@@ -1407,8 +1288,8 @@ export default {
   },
 
   methods: {
-    getIf (){
-      console.log(this.productInfo)
+    getIf() {
+      console.log(this.productInfo);
     },
     getParaDef: function() {
       var data = {};
@@ -2269,8 +2150,6 @@ export default {
 
       this.uploader.on("uploadSuccess", function(file, response) {
         response = JSON.parse(response);
-        console.log(response,435435);
-        
         if (response != null) {
           if (response.status == 0) {
             var index = file.index;

@@ -68,91 +68,86 @@
 
                 <hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
 
-                <div id="query-form">
-                  <div class="row g-mb-20">
-                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                      <label class="mb-0" for="#currentPassword">*案例名称</label>
-                    </div>
-
-                    <div class="col-md-9 align-self-center row">
-                      <div class="col-md-9 align-self-center">
-                        <div class="form-group g-pos-rel mb-0">
-                          <span
-                            class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                            <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                          </span>
-                          <input type="text" name="text" v-model="projectInfo.core.project_name"
-                            class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                <form>
+                  <div class="form-group">
+                    <div class="align-self-center d-flex g-mb-15" style="flex-wrap:wrap;">
+                      <!-- Cube Portfolio Blocks - Item -->
+                      <!-- <div
+                        class="cbp-item identity design col-md-3"
+                        v-for="(pic,index) in attachments"
+                        :key="index"
+                      > -->
+                      <div
+                        class="cbp-item identity design col-md-3"
+                        v-for="(f,index) in projectInfo.attachment_list" :key="index"
+                      >
+                      
+                        <div
+                          class="u-block-hover g-parent"
+                        >
+                          <img
+                            class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out"
+                            :src="(appsettings.project_attachment+f.oid+f.file_type)"
+                          >
+                          <div
+                            class="d-flex w-100 h-100 g-bg-black-opacity-0_6 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-15"
+                          >
+                            <ul
+                              class="align-items-end flex-column list-inline mt-auto ml-auto mb-0"
                             >
+                              <li class="list-inline-item">
+                                <a
+                                  class="cbp-lightbox u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                                  :href="(appsettings.project_attachment+f.oid+f.file_type)"
+                                >
+                                  <i class="hs-admin-image u-line-icon-pro"></i>
+                                </a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a
+                                  class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle"
+                                  @click="deleteAtttachment(f,index)"
+                                >
+                                  <i class="hs-admin-trash u-line-icon-pro"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="g-bg-white text-center g-pa-15">
+                          <h3 class="h6 g-color-black g-font-weight-700 mb-1">{{f.file_name}}</h3>
+                          <p class="g-font-size-13 mb-0">{{f.create_time}}</p>
                         </div>
                       </div>
-                      <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                        <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">{{edit_mode=="edit"?'编辑':'新增'}}案例</button>
-                      </div>
+                      <!-- End Cube Portfolio Blocks - Item -->
                     </div>
-                  </div>
-                
-                  <div class="row g-mb-20">
-                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                      <label class="mb-0" for="#currentPassword">关键词</label>
-                    </div>
-                    <div class="col-md-9 align-self-center">
-                      <div class="form-group g-pos-rel mb-0">
-                        <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                          <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                        </span>
-                        <input type="text" v-model="projectInfo.core.key_tag"
-                          class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
+                    <!-- <input class="js-file-attachment" type="file" name="fileAttachment[]"> -->
+                    <div
+                      @click="uploadAttachment()"
+                      class="g-parent g-pos-rel g-height-230 g-bg-gray-light-v8--hover g-brd-around g-brd-style-dashed g-brd-gray-light-v7 g-brd-lightblue-v3--hover g-rounded-4 g-transition-0_2 g-transition--ease-in g-pa-15 g-pa-30--md"
+                    >
+                      <div
+                        class="d-md-flex align-items-center g-absolute-centered--md w-100 g-width-auto--md"
+                      >
+                        <div>
+                          <div
+                            class="g-pos-rel g-width-80 g-width-100--lg g-height-80 g-height-100--lg g-bg-gray-light-v8 g-bg-white--parent-hover rounded-circle g-mb-20 g-mb-0--md g-transition-0_2 g-transition--ease-in mx-auto mx-0--md"
                           >
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row g-mb-20">
-                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                      <label class="mb-0" for="#currentPassword">适用工艺</label>
-                    </div>
-                    <div class="col-md-9 align-self-center">
-                      <div class="form-group g-pos-rel mb-0">
-                        <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                          <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                        </span>
-                        <input type="text" v-model="projectInfo.core.process"
-                          class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                          >
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row g-mb-20">
-                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                      <label class="mb-0" for="#currentPassword">适用行业</label>
-                    </div>
-                    <div class="col-md-9 align-self-center">
-                      <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40" v-for="(prof,index) in professions" :key="index">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox"  :value="prof.enum_code" :checked="checkProfession(prof)" @change="profChanged(prof.enum_code,$event)">
-                        <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                          <i class="fa" data-check-icon="&#xf00c"></i>
+                            <i
+                              class="hs-admin-cloud-up g-absolute-centered g-font-size-30 g-font-size-36--lg g-color-lightblue-v3"
+                            ></i>
+                          </div>
                         </div>
-                        {{prof.enum_name}}
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="g-mb-20">
-                    <label class="g-mb-10" for="#bio">案例描述</label>
-                    <div class="form-group mb-0">
-                      <div class="form-group g-mb-30">
-                        <textarea v-model="projectInfo.core.description" class="form-control form-control-md g-resize-none g-brd-gray-light-v7 g-brd-gray-light-v3--focus rounded-0" rows="10" placeholder="请在这里输入描述"></textarea>
+                        <div class="text-center text-md-left g-ml-20--md">
+                          <h3
+                            class="g-font-weight-400 g-font-size-16 g-color-black g-mb-10"
+                          >上传附件</h3>
+                          <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">单击“上传”按钮并从计算机中浏览。</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-
-                  <div>
-                    <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">保存</button>
-                  </div>
-
-                </div>
+                </form>
 
 
               </div>
