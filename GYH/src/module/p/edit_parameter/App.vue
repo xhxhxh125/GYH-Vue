@@ -14,7 +14,7 @@
               <hr class="g-my-15 g-my-15--md">
               <ElProAsdiear
                 :elProInfo='elProInfo'
-                :activeIndex='2'
+                :activeIndex='1'
               ></ElProAsdiear>
 
               <div class="col-md-9">
@@ -30,6 +30,11 @@
                     v-for="group in parametergroups"
                     :key="group.group_code"
                   >
+                    <div class="row g-mb-20">
+                      <section class="col col-3">
+                        <label class="label" style="font-size:15px">{{group.group_name}}</label>
+                      </section>
+                    </div>
                     <div
                       v-for="para in group.parameters"
                       :key="para.column_id"
@@ -209,23 +214,23 @@
                     </div>
 
                     <!-- <div class="row g-mb-20">
-                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                    <label class="mb-0">适用行业</label>
-                  </div>
-                  <div class="col-md-9 align-self-center">
-                    <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
-                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
-                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                        <i class="fa" data-check-icon=" "></i>
-                      </div>
-                      设备加工
-                    </label>
-                  </div>
-                </div> -->
+                          <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                            <label class="mb-0">适用行业</label>
+                          </div>
+                          <div class="col-md-9 align-self-center">
+                            <label class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40">
+                              <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+                              <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                                <i class="fa" data-check-icon=" "></i>
+                              </div>
+                              设备加工
+                            </label>
+                          </div>
+                        </div> -->
 
                   </div>
                   <div>
-                    <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40">保存</button>
+                    <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40" :class="need_save_para?'btn-danger':'btn-primary'">保存</button>
                   </div>
                 </div>
 
@@ -235,243 +240,245 @@
           </div>
         </div>
 
-      </div>
+      
 
-      <div
-        id="main"
-        role="main"
-      >
+        <div
+          id="main"
+          role="main"
+        >
 
-        <!-- MAIN CONTENT -->
-        <div id="content">
+          <!-- MAIN CONTENT -->
+          <div id="content">
 
-          <section
-            id="widget-grid"
-            class=""
-          >
-            <ElBlockAlert ref="alert"></ElBlockAlert>
-            <div class="row">
-              <article class="col-sm-12 col-md-12">
+            <section
+              id="widget-grid"
+              class=""
+            >
+              <ElBlockAlert ref="alert"></ElBlockAlert>
+              <div class="row">
+                <article class="col-sm-12 col-md-12">
 
-                <div
-                  class="jarviswidget  jarviswidget-sortable"
-                  data-widget-colorbutton="false"
-                  data-widget-editbutton="false"
-                  data-widget-togglebutton="false"
-                  data-widget-deletebutton="false"
-                  data-widget-fullscreenbutton="false"
-                  data-widget-custombutton="false"
-                  data-widget-collapsed="false"
-                  data-widget-sortable="false"
-                >
-                  <header>
-                    <span class="widget-icon">
-                      <i class="fa fa-edit"></i>
-                    </span>
-                    <h2>产品参数信息 </h2>
-                  </header>
-                  <div>
-                    <div class="jarviswidget-editbox">
-                    </div>
+                  <div
+                    class="jarviswidget  jarviswidget-sortable"
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="false"
+                    data-widget-sortable="false"
+                  >
+                    <header>
+                      <span class="widget-icon">
+                        <i class="fa fa-edit"></i>
+                      </span>
+                      <h2>产品参数信息 </h2>
+                    </header>
+                    <div>
+                      <div class="jarviswidget-editbox">
+                      </div>
 
-                    <div class="widget-body no-padding">
-                      <div
-                        id="para_form"
-                        class="smart-form"
-                      >
-                        <fieldset
-                          v-for="group in parametergroups"
-                          :key="group.group_code"
+                      <div class="widget-body no-padding">
+                        <div
+                          id="para_form"
+                          class="smart-form"
                         >
-                          <div class="row">
-                            <section class="col col-3">
-                              <label
-                                class="label"
-                                style="font-size:15px"
-                              >{{group.group_name}}</label>
-                            </section>
-                          </div>
-
-                          <div class="row">
-                            <div
-                              v-for="para in group.parameters"
-                              :key="para.column_id"
-                            >
-
-                              <section
-                                v-if="para.data_type==0 && para.is_enum_data!=1"
-                                class="col col-3"
-                              >
-                                <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                <label class="input">
-                                  <input
-                                    type="text"
-                                    name="text"
-                                    v-model="para.value"
-                                  >
-                                </label>
+                          <fieldset
+                            v-for="group in parametergroups"
+                            :key="group.group_code"
+                          >
+                            <div class="row">
+                              <section class="col col-3">
+                                <label
+                                  class="label"
+                                  style="font-size:15px"
+                                >{{group.group_name}}</label>
                               </section>
+                            </div>
 
-                              <section
-                                v-if="para.data_type==1 && para.is_region_data!=1&& para.is_enum_data!=1"
-                                class="col col-3"
+                            <div class="row">
+                              <div
+                                v-for="para in group.parameters"
+                                :key="para.column_id"
                               >
-                                <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                <label class="input">
-                                  <i
-                                    class="icon-append fa unit"
-                                    v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0"
-                                  >{{para.unit}}</i>
-                                  <input
-                                    type="text"
-                                    name="num"
-                                    v-model="para.value"
-                                  >
-                                </label>
-                              </section>
 
-                              <section
-                                v-if="para.data_type==2"
-                                class="col col-sm-12"
-                              >
-                                <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                <div class="textarea">
-                                  <textarea
-                                    rows="5"
-                                    width="100%"
-                                    v-model="para.value"
-                                  ></textarea>
-                                </div>
-                              </section>
-
-                              <section
-                                v-if="para.data_type==7 || para.is_region_data==1"
-                                class="col col-6"
-                              >
-                                <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
-                                <label class="input col col-6 nopaddingl rl">
-
-                                  <input
-                                    type="text"
-                                    v-model="para.mininput"
-                                  >
-                                </label>
-                                <label class="nopaddingl col to">—</label>
-                                <label class="input col col-6 nopaddingl rr">
-                                  <!-- <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i> -->
-                                  <input
-                                    type="text"
-                                    v-model="para.maxinput"
-                                  >
-                                </label>
-
-                                <!-- <ElRegionInput :min="para.mininput" :max="para.maxinput"  @change="changeRegionPara($event,para)" ></ElRegionInput> -->
-                              </section>
-
-                              <section
-                                v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0"
-                                class="col col-3"
-                              >
-                                <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                <label class="select">
-                                  <select
-                                    name="country"
-                                    v-model="para.value"
-                                  >
-                                    <option value=""></option>
-                                    <option
-                                      :selected="para.value==ch.enum_code"
-                                      :value="ch.enum_code"
-                                      v-for="ch in para.enum_list"
-                                      :key="ch.enum_code"
-                                    >{{ch.enum_name}}</option>
-                                  </select>
-                                  <i></i>
-                                </label>
-                              </section>
-
-                              <fieldset
-                                v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1"
-                                class="border col col-sm-12"
-                              >
-                                <section>
-                                  <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                                    <label class="label mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                  </div>
-                                  <div class="col-md-9 align-self-center">
-                                    <label
-                                      class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40"
-                                      v-for="ch in para.enum_list"
-                                      :key="ch.enum_code"
+                                <section
+                                  v-if="para.data_type==0 && para.is_enum_data!=1"
+                                  class="col col-3"
+                                >
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="input">
+                                    <input
+                                      type="text"
+                                      name="text"
+                                      v-model="para.value"
                                     >
-                                      <input
-                                        class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0"
-                                        type="checkbox"
-                                        :checked="checkEnumValue(ch.enum_code,para)"
-                                        name="checkbox-inline"
-                                        @change="enumParaChanged(ch.enum_code,para,$event)"
-                                      >
-                                      <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                                        <i
-                                          class="fa"
-                                          data-check-icon=" "
-                                        ></i>
-                                      </div>
-                                      {{ch.enum_name}}
-                                    </label>
+                                  </label>
+                                </section>
+
+                                <section
+                                  v-if="para.data_type==1 && para.is_region_data!=1&& para.is_enum_data!=1"
+                                  class="col col-3"
+                                >
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="input">
+                                    <i
+                                      class="icon-append fa unit"
+                                      v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0"
+                                    >{{para.unit}}</i>
+                                    <input
+                                      type="text"
+                                      name="num"
+                                      v-model="para.value"
+                                    >
+                                  </label>
+                                </section>
+
+                                <section
+                                  v-if="para.data_type==2"
+                                  class="col col-sm-12"
+                                >
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <div class="textarea">
+                                    <textarea
+                                      rows="5"
+                                      width="100%"
+                                      v-model="para.value"
+                                    ></textarea>
                                   </div>
                                 </section>
-                              </fieldset>
 
-                              <section
-                                v-if="para.data_type==9"
-                                class="col col-3"
-                              >
-                                <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                                <label class="input">
-                                  <section v-if="para.value!=null && para.value!=undefined && para.value.indexOf('{')>=0">
-                                    <a
-                                      :href="v.href"
-                                      target="_blank"
-                                      class="btn pull-left"
-                                      v-for="(v,ridx) in JSON.parse(para.value)"
-                                      :key="ridx"
-                                    >{{ridx>0?",":""+v.value}}</a>
+                                <section
+                                  v-if="para.data_type==7 || para.is_region_data==1"
+                                  class="col col-6"
+                                >
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}({{para.unit}})</label>
+                                  <label class="input col col-6 nopaddingl rl">
+
+                                    <input
+                                      type="text"
+                                      v-model="para.mininput"
+                                    >
+                                  </label>
+                                  <label class="nopaddingl col to">—</label>
+                                  <label class="input col col-6 nopaddingl rr">
+                                    <!-- <i class="icon-append fa unit" v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0">{{para.unit}}</i> -->
+                                    <input
+                                      type="text"
+                                      v-model="para.maxinput"
+                                    >
+                                  </label>
+
+                                  <!-- <ElRegionInput :min="para.mininput" :max="para.maxinput"  @change="changeRegionPara($event,para)" ></ElRegionInput> -->
+                                </section>
+
+                                <section
+                                  v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0"
+                                  class="col col-3"
+                                >
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="select">
+                                    <select
+                                      name="country"
+                                      v-model="para.value"
+                                    >
+                                      <option value=""></option>
+                                      <option
+                                        :selected="para.value==ch.enum_code"
+                                        :value="ch.enum_code"
+                                        v-for="ch in para.enum_list"
+                                        :key="ch.enum_code"
+                                      >{{ch.enum_name}}</option>
+                                    </select>
+                                    <i></i>
+                                  </label>
+                                </section>
+
+                                <fieldset
+                                  v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1"
+                                  class="border col col-sm-12"
+                                >
+                                  <section>
+                                    <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                                      <label class="label mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                    </div>
+                                    <div class="col-md-9 align-self-center">
+                                      <label
+                                        class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40"
+                                        v-for="ch in para.enum_list"
+                                        :key="ch.enum_code"
+                                      >
+                                        <input
+                                          class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0"
+                                          type="checkbox"
+                                          :checked="checkEnumValue(ch.enum_code,para)"
+                                          name="checkbox-inline"
+                                          @change="enumParaChanged(ch.enum_code,para,$event)"
+                                        >
+                                        <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                                          <i
+                                            class="fa"
+                                            data-check-icon=" "
+                                          ></i>
+                                        </div>
+                                        {{ch.enum_name}}
+                                      </label>
+                                    </div>
                                   </section>
-                                  <a
-                                    href="javascript:void(0);"
-                                    class="btn pull-left btn-primary"
-                                    @click="editRefParameter(para)"
-                                  >
-                                    <i class="fa fa-edit"></i>编辑</a>
-                                </label>
-                              </section>
+                                </fieldset>
 
+                                <section
+                                  v-if="para.data_type==9"
+                                  class="col col-3"
+                                >
+                                  <label class="label">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                                  <label class="input">
+                                    <section v-if="para.value!=null && para.value!=undefined && para.value.indexOf('{')>=0">
+                                      <a
+                                        :href="v.href"
+                                        target="_blank"
+                                        class="btn pull-left"
+                                        v-for="(v,ridx) in JSON.parse(para.value)"
+                                        :key="ridx"
+                                      >{{ridx>0?",":""+v.value}}</a>
+                                    </section>
+                                    <a
+                                      href="javascript:void(0);"
+                                      class="btn pull-left btn-primary"
+                                      @click="editRefParameter(para)"
+                                    >
+                                      <i class="fa fa-edit"></i>编辑</a>
+                                  </label>
+                                </section>
+
+                              </div>
                             </div>
-                          </div>
-                        </fieldset>
+                          </fieldset>
 
-                        <footer>
-                          <a
-                            href="javascript:void(0);"
-                            :class="need_save_para?'btn-danger':'btn-primary'"
-                            class="btn pull-left"
-                            @click="saveParas()"
-                          >
-                            <i class="fa fa-save"></i> 保存参数信息</a>
-                        </footer>
+                          <footer>
+                            <a
+                              href="javascript:void(0);"
+                              :class="need_save_para?'btn-danger':'btn-primary'"
+                              class="btn pull-left"
+                              @click="saveParas()"
+                            >
+                              <i class="fa fa-save"></i> 保存参数信息</a>
+                          </footer>
 
+                        </div>
                       </div>
+                      <!-- end widget content -->
                     </div>
-                    <!-- end widget content -->
+                    <!-- end widget div -->
                   </div>
-                  <!-- end widget div -->
-                </div>
 
-              </article>
-            </div>
-          </section>
+                </article>
+              </div>
+            </section>
+          </div>
         </div>
+        
       </div>
     </ElPageFrame>
     <div
@@ -1387,6 +1394,7 @@ export default {
             }
           }
         }
+        console.log(this.parametergroups)
       }
     },
     saveParas: function() {
