@@ -30,10 +30,10 @@
                     v-for="group in parametergroups"
                     :key="group.group_code"
                   >
-                    <div class="row g-mb-20">
-                      <section class="col col-3">
-                        <label class="label" style="font-size:15px">{{group.group_name}}</label>
-                      </section>
+                    <div class="g-mb-20">
+                      <header>
+                        <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">{{group.group_name}}</h2>
+                      </header>
                     </div>
                     <div
                       v-for="para in group.parameters"
@@ -60,13 +60,7 @@
                               name="text"
                               v-model="para.value"
                               class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                              value=""
-                              required="required"
-                              data-msg="This field is mandatory"
-                              data-error-class="u-has-error-v3"
-                              data-success-class="has-success"
-                              aria-required="true"
-                            >
+                              >
                           </div>
                         </div>
                       </div>
@@ -79,28 +73,21 @@
                           <label
                             class="mb-0"
                             for="#currentPassword"
-                          >{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                          >{{para.is_required=='1'?'*':''}}{{para.column_name}}
+                          <i v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0"
+                              >{{para.unit}}</i></label>
                         </div>
                         <div class="col-md-9 align-self-center">
                           <div class="form-group g-pos-rel mb-0">
                             <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                              <i
-                                v-if="para.unit!=null && para.unit!=undefined && para.unit.length>0"
-                                class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"
-                              >{{para.unit}}</i>
+                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
                             </span>
                             <input
                               type="text"
                               name="num"
                               v-model="para.value"
                               class="form-control h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-12"
-                              value=""
-                              required="required"
-                              data-msg="This field is mandatory"
-                              data-error-class="u-has-error-v3"
-                              data-success-class="has-success"
-                              aria-required="true"
-                            >
+                              >
                           </div>
                         </div>
                       </div>
@@ -141,12 +128,6 @@
                               v-model="para.maxinput"
                               class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
                             >
-                            <input
-                              type="text"
-                              class="u-select--v2 h-100 form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-primary--error g-rounded-4 g-px-20 g-py-5"
-                              placeholder="单位"
-                              v-model="productInfo.core.price_unit"
-                            >
                           </div>
                         </div>
                       </div>
@@ -154,64 +135,64 @@
                       <div
                         class="row g-mb-20"
                         v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==0"
-                      ></div>
-                      <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                        <label class="mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                      </div>
+                      >
+                        <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                          <label class="mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                        </div>
 
-                      <div class="col-md-9 align-self-center">
-                        <div class="row g-mx-minus-10">
-                          <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-                            <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                              <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                                <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
-                              </span>
-                              <select class="js-select u-select--v2-select w-100">
-                                <option value=""></option>
-                                <option
-                                  :selected="para.value==ch.enum_code"
-                                  :value="ch.enum_code"
-                                  v-for="ch in para.enum_list"
-                                  :key="ch.enum_code"
-                                >{{ch.enum_name}}</option>
-                              </select>
-                              <i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                        <div class="col-md-9 align-self-center">
+                          <div class="row g-mx-minus-10">
+                            <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
+                              <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
+                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                  <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                </span>
+                                <select class="js-select u-select--v2-select w-100">
+                                  <option value=""></option>
+                                  <option
+                                    :selected="para.value==ch.enum_code"
+                                    :value="ch.enum_code"
+                                    v-for="ch in para.enum_list"
+                                    :key="ch.enum_code"
+                                  >{{ch.enum_name}}</option>
+                                </select>
+                                <i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div
-                      class="row g-mb-20"
-                      v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1"
-                    >
-                      <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                        <label class="mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
-                      </div>
-                      <div class="col-md-9 align-self-center">
-                        <label
-                          class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40"
-                          v-for="ch in para.enum_list"
-                          :key="ch.enum_code"
-                        >
-                          <input
-                            class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0"
-                            type="checkbox"
-                            :checked="checkEnumValue(ch.enum_code,para)"
-                            name="checkbox-inline"
-                            @change="enumParaChanged(ch.enum_code,para,$event)"
+                      <div
+                        class="row g-mb-20"
+                        v-if="(para.data_type==8||para.is_enum_data==1) && para.enum_type==1"
+                      >
+                        <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                          <label class="mb-0">{{para.is_required=='1'?'*':''}}{{para.column_name}}</label>
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                          <label
+                            class="form-check-inline u-check g-pl-25 col-md-3 g-mr-40"
+                            v-for="ch in para.enum_list"
+                            :key="ch.enum_code"
                           >
-                          <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                            <i
-                              class="fa"
-                              data-check-icon=" "
-                            ></i>
-                          </div>
-                          {{ch.enum_name}}
-                        </label>
+                            <input
+                              class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0"
+                              type="checkbox"
+                              :checked="checkEnumValue(ch.enum_code,para)"
+                              name="checkbox-inline"
+                              @change="enumParaChanged(ch.enum_code,para,$event)"
+                            >
+                            <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                              <i
+                                class="fa"
+                                data-check-icon=" "
+                              ></i>
+                            </div>
+                            {{ch.enum_name}}
+                          </label>
+                        </div>
                       </div>
-                    </div>
 
                     <!-- <div class="row g-mb-20">
                           <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
@@ -227,10 +208,10 @@
                             </label>
                           </div>
                         </div> -->
-
+</div>
                   </div>
                   <div>
-                    <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40" :class="need_save_para?'btn-danger':'btn-primary'">保存</button>
+                    <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40" @click="saveParas()">保存</button>
                   </div>
                 </div>
 
