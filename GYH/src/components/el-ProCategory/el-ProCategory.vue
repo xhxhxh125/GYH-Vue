@@ -131,7 +131,7 @@
             </div>
           </section>
           <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-            <button class="obtain btn btn-xl u-btn-secondary g-font-size-default g-px-40" @click="createNewProduct()">新建产品</button>
+            <button class="btn btn-xl u-btn-secondary g-font-size-default g-px-40 btn-primary" @click="createNewProduct()">新建产品</button>
           </div>
         </div>
 

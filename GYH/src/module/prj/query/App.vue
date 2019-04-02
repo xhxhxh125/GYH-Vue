@@ -26,7 +26,7 @@
                         <div class="media-body align-self-center g-ml-10 g-ml-0--md">
                           <div class="input-group g-pos-rel g-max-width-380 float-right">
                             <input class="form-control h-100 g-font-size-default g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-rounded-20 g-pl-20 g-pr-50 g-py-10"
-                              type="text" placeholder="搜索">
+                              type="text" placeholder="搜索" @change="queryStatusChanged('',$event)">
                             <button class="btn g-pos-abs g-top-0 g-right-0 g-z-index-2 g-width-60 h-100 g-bg-transparent g-font-size-16 g-color-primary g-color-secondary--hover rounded-0"
                               type="submit">
                               <i class="hs-admin-search g-absolute-centered"></i>

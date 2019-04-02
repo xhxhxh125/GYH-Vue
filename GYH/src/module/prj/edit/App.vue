@@ -179,7 +179,7 @@
                             @change="profChanged(prof.enum_code,$event)"
                           >
                           <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                            <i class="fa" data-check-icon="#xf00c"></i>
+                            <i class="fa" data-check-icon=""></i>
                           </div>
                           {{prof.enum_name}}
                         </label>
@@ -204,7 +204,6 @@
                       <button
                         class="btn btn-xl u-btn-secondary g-font-size-default g-px-40"
                         @click="saveBasicInfo()"
-                        :class="basicInfoSuc?'btn-success':'btn-primary'"
                       >保存基本信息</button>
                     </div>
                   </div>
